@@ -227,7 +227,7 @@ void DoSharedWork()
 	srand(time(0)); //set random seed
 
 	while (1) {
-		AddTime(&(data->sysTime), SCHEDULER_CLOCK_ADD_INC); //increment clock between tasks to advance the clock a little
+		AddTime(&(data->sysTime), CLOCK_ADD_INC); //increment clock between tasks to advance the clock a little
 
 		pid_t pid; //pid temp
 
@@ -251,7 +251,7 @@ void DoSharedWork()
 			nextExec.seconds = data->sysTime.seconds; //capture current time
 			nextExec.ns = data->sysTime.ns;
 
-			AddTimeLong(&nextExec, abs((long)(rand() % 501) * (long)1000000); //set new exec time to 0 - 500ms after now
+			AddTimeLong(&nextExec, abs((long)(rand() % 501) * (long)1000000)); //set new exec time to 0 - 500ms after now
 
 			/* Setup the child proccess and its proccess block if there is a available slot in the control block */
 			int pos = FindEmptyProcBlock();
@@ -260,7 +260,7 @@ void DoSharedWork()
 				/* Initialize the proccess table */
 				data->proc[pos].pid = pid; //we stored the pid from fork call and now assign it to PID
 
-                fprintf(o, "proc created");
+                		fprintf(o, "proc created");
 				activeProcs++; //increment active execs
 			}
 			else
@@ -294,8 +294,6 @@ void DoSharedWork()
 
 		if (remainingExecs <= 0 && exitCount >= 100) //only get out of loop if we run out of execs or we have maxed out child count
 		{
-			totalTime.seconds = data->sysTime.seconds; //after the simulation has finished, copy over the final clock values over to a local structure
-			totalTime.ns = data->sysTime.ns;
 			break;
 		}
 
