@@ -30,7 +30,7 @@ int childCount = 19; //Max children concurrent
 
 FILE* o;  //output log file pointer
 
-const int CLOCK_ADD_INC = 50;
+const int CLOCK_ADD_INC = 5000;
 int VERBOSE_LEVEL = 0;
 int LINE_COUNT = 0;
 
@@ -268,12 +268,12 @@ void DoSharedWork()
 				kill(pid, SIGTERM); //if child failed to find a proccess block, just kill it off
 			}
 		}
-
+/*
         if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), data->proc[activeProcIndex].pid, 0)) > -1) //blocking wait while waiting for child to respond
         {
 
         }
-
+*/
 
 		if ((pid = waitpid((pid_t)-1, &status, WNOHANG)) > 0) //if a PID is returned meaning the child died
 		{
@@ -396,7 +396,7 @@ int main(int argc, int** argv)
 		}
 	}
 
-	o = fopen("./oss: output.log", "w"); //open output file
+	o = fopen("output.log", "w"); //open output file
 
 	if(o == NULL) //check if file was opened
 	{
