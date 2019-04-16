@@ -389,17 +389,17 @@ void DoSharedWork()
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
-				printf("Got request from %i", msgbuf.mtype);
+				printf("\nGot request from %i", msgbuf.mtype);
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 
 			{
 				int procpos = FindPID(msgbuf.mtype);
-				printf("Got release from %i", msgbuf.mtype);
+				printf("\nGot release from %i", msgbuf.mtype);
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0) 
 			{
 				int procpos = FindPID(msgbuf.mtype);
-				printf("Got terminate from %i", msgbuf.mtype);
+				printf("\nGot terminate from %i", msgbuf.mtype);
 			}
         }
 
