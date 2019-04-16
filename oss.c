@@ -232,7 +232,7 @@ void GenerateResources()
 	DisplayResources();
 }
 
-void CheckForExistence(int *values, int size, int value)
+int CheckForExistence(int *values, int size, int value)
 {
 	int i;
 	for (i = 0; i < size; i++)
@@ -314,7 +314,7 @@ int AllocResource(int procRow)
 		{
 			if(data->allocVec[i] - data->req[i][procRow] >= 0)
 			{
-				(data->alloc[i][procRow]) += req[i][procRow];
+				(data->alloc[i][procRow]) += (data->req[i][procRow]);
 				if(CheckForExistence(&(data->sharedRes), 5, i) != 1)
 					(data->allocVec[i]) -= req[i][procRow];
 				(data->req[i][procRow]) = 0;
