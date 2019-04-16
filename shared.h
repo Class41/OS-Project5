@@ -15,6 +15,10 @@ typedef struct {
 typedef struct {
 	Time sysTime;
 	Process proc[MAX_PROCS]; //process table
+	int allocVec[20];
+	int resVec[20];
+	int req[20][19];
+	int alloc[20][19];
 } Shared;
 
 #define SHARED_H

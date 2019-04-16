@@ -30,7 +30,7 @@ int childCount = 19; //Max children concurrent
 
 FILE* o;  //output log file pointer
 
-const int CLOCK_ADD_INC = 5000;
+const int CLOCK_ADD_INC = 50000;
 int VERBOSE_LEVEL = 0;
 int LINE_COUNT = 0;
 
@@ -77,6 +77,17 @@ void AddTimeLong(Time* time, long amount)
 		(time->seconds)++;
 	}
 	time->ns = (int)newnano; //since newnano is now < 1 billion, it is less than second. Assign it to ns
+}
+
+int CompareTime(Time* time1, Time* time2)
+{
+	long time1Epoch = ((long)(time1->seconds) * (long)1000000000) + (long)(time1->ns);
+	long time2Epoch = ((long)(time2->seconds) * (long)1000000000) + (long)(time2->ns);
+
+	if(time1Epoch > time2Epoch)
+		return 1;
+	else
+		return 0; 
 }
 
 /* handle ctrl-c and timer hit */
@@ -189,6 +200,17 @@ void SweepProcBlocks()
 		data->proc[i].pid = -1;
 }
 
+void GenerateResources()
+{
+	srand(time(NULL));
+	int i;
+	for(i = 0; i < 19; i++)
+	{
+		data->resVec[i] = ((rand() % 100) < 20) ? (rand() % 3) + 1 : 1;
+		data->allocVec[i] = data->resVec[i];
+	}
+}
+
 /* Find the proccess block with the given pid and return the position in the array */
 int FindPID(int pid)
 {
@@ -232,7 +254,7 @@ void DoSharedWork()
 		pid_t pid; //pid temp
 
 		/* Only executes when there is a proccess ready to be launched, given the time is right for exec, there is room in the proc table, annd there are execs remaining */
-		if (activeProcs < childCount && (data->sysTime.seconds >= nextExec.seconds) && (data->sysTime.ns >= nextExec.ns)) 
+		if (activeProcs < childCount && CompareTime(&(data->sysTime), &nextExec)) 
 		{
 			pid = fork(); //the mircle of proccess creation
 
@@ -285,6 +307,8 @@ void DoSharedWork()
 					activeProcs--;
 
 					int position = FindPID(pid);
+
+					//printf("Exit count: %i Active procs: %i", exitCount, activeProcs);
 
 					if (position > -1)
 						data->proc[position].pid = -1;
@@ -407,6 +431,7 @@ int main(int argc, int** argv)
 	ShmAttatch(); //attach to shared mem
 	QueueAttatch(); //attach to queues
 	SweepProcBlocks(); //reset all proc blocks
+	GenerateResources();
 	signal(SIGINT, Handler); //setup handler for CTRL-C
 	DoSharedWork(); //fattest function west of the mississippi
 
