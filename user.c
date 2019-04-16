@@ -186,7 +186,7 @@ int main(int argc, int argv)
 	int pid = getpid(); //shorthand for getpid every time from now
 
 	/* Variables to keep tabs on time to be added instead of creating new ints every time */
-	Time nextActionTime;
+	Time nextActionTime = {0,0};
 
 	srand(time(NULL) ^ (pid << 16)); //ensure randomness by bitshifting and ORing the time based on the pid
 
