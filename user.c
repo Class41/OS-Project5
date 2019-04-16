@@ -193,6 +193,7 @@ int main(int argc, int argv)
 	while (1)
 	{
 		if (CompareTime(&(nextActionTime), &(data->sysTime)))
+		{
 
 			if ((rand() % 100) <= CHANCE_TO_DIE_PERCENT) //roll for termination
 			{
