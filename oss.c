@@ -390,6 +390,7 @@ void DoSharedWork()
 			{
 				int procpos = FindPID(msgbuf.mtype);
 				printf("\nGot request from %i", msgbuf.mtype);
+				DisplayResources();
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 
 			{
