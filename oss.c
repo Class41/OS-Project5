@@ -316,7 +316,7 @@ int AllocResource(int procRow)
 			{
 				(data->alloc[i][procRow]) += (data->req[i][procRow]);
 				if(CheckForExistence(&(data->sharedRes), 5, i) != 1)
-					(data->allocVec[i]) -= req[i][procRow];
+					(data->allocVec[i]) -= (data->req[i][procRow]);
 				(data->req[i][procRow]) = 0;
 				return 1;
 			}
