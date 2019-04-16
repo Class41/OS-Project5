@@ -310,14 +310,14 @@ int AllocResource(int procRow)
 	int i;
 	for(i = 0; i < 20; i++)
 	{
-		if(req[i][procRow] > 0)
+		if(data->req[i][procRow] > 0)
 		{
-			if(allocVec[i] - req[i][procRow] >= 0)
+			if(data->allocVec[i] - data->req[i][procRow] >= 0)
 			{
-				data->alloc[i][procRow] += req[i][procRow];
+				(data->alloc[i][procRow]) += req[i][procRow];
 				if(CheckForExistence(&(data->sharedRes), 5, i) != 1)
-					data->allocVec[i] -= req[i][procRow];
-				data->req[i][procRow] = 0;
+					(data->allocVec[i]) -= req[i][procRow];
+				(data->req[i][procRow]) = 0;
 				return 1;
 			}
 			else
@@ -330,8 +330,8 @@ int AllocResource(int procRow)
 
 int DellocResource(int procRow, int resID)
 {
-	data->allocVec[resID][procRow] += data->alloc[resID][procRow];
-	data->alloc[resID][procRow] = 0;
+	/*data->allocVec[resID][procRow] += data->alloc[resID][procRow];
+	data->alloc[resID][procRow] = 0;*/
 }
 
 /* Find the proccess block with the given pid and return the position in the array */
