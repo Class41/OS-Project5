@@ -206,6 +206,9 @@ int main(int argc, int argv)
 
 			if ((rand() % 100) <= CHANCE_TO_REQUEST)
 			{
+				int resToRequest = (rand() % 20) + 1;
+				data->req[resToRequest][FindPID(pid)] = (rand() % data->resVec[resToRequest]) + 1;
+
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REQ");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send used all signal to parent
