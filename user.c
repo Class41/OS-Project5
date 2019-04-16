@@ -212,6 +212,8 @@ int main(int argc, int argv)
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REQ");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send used all signal to parent
+				msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
+
 				CalcNextActionTime(&nextActionTime);
 			}
 			else

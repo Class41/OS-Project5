@@ -50,6 +50,7 @@ int FindPID(int pid);
 void QueueAttatch();
 void GenerateResources();
 void DisplayResources();
+int AllocResource(int procRow);
 
 /* Message queue standard message buffer */
 struct
@@ -304,6 +305,35 @@ void DisplayResources()
 	printf("\n\n##### Ending print of resource tables #####\n\n");
 }
 
+int AllocResource(int procRow)
+{
+	int i;
+	for(i = 0; i < 20; i++)
+	{
+		if(req[i][procRow] > 0)
+		{
+			if(allocVec[i] - req[i][procRow] >= 0)
+			{
+				data->alloc[i][procRow] += req[i][procRow];
+				if(CheckForExistence(&(data->sharedRes), 5, i) != 1)
+					data->allocVec[i] -= req[i][procRow];
+				data->req[i][procRow] = 0;
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}		
+		}
+	}
+}
+
+int DellocResource(int procRow, int resID)
+{
+	data->allocVec[resID][procRow] += data->alloc[resID][procRow];
+	data->alloc[resID][procRow] = 0;
+}
+
 /* Find the proccess block with the given pid and return the position in the array */
 int FindPID(int pid)
 {
@@ -390,7 +420,18 @@ void DoSharedWork()
 			{
 				int procpos = FindPID(msgbuf.mtype);
 				printf("\nGot request from %i", msgbuf.mtype);
-				DisplayResources();
+				
+				int procRow = msgbuf.mtype;	
+
+				if(AllocResource(procRow) != 1)
+				{
+					enqueue(resQueue, procRow);
+				}
+				else 
+				{
+					msgbuf.mtext = "REQ_GRANT";
+					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+				}
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 
 			{
