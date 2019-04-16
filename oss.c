@@ -217,21 +217,60 @@ void GenerateResources()
 
 void DisplayResources()
 {
-	printf("** Allocated Resources **\n");
+	printf("\n\n##### Beginning print of resource tables #####\n\n");
+	printf("** Allocated Resources **\nX -> resources, Y -> proccess\n");
 	printf("Proc ");
 	int i;
 	for(i = 0; i < 20; i++)
 	{
-		printf("%i ", i);
+		printf("%3i ", i);
 	}
 
 	int j;
 	for(i = 0; i < 19; i++)
 	{
-		printf("\n %i |", i);
+		printf("\n %3i|", i);
 		for(j = 0; j < 20; j++)
-			printf("%i ", data->alloc[i][j]);
+			printf("%4i", data->alloc[i][j]);
 	}
+
+	printf("\n\n\n** Requested Resources **\nX -> resources, Y -> proccess\n");
+	printf("Proc ");
+	for(i = 0; i < 20; i++)
+	{
+		printf("%3i ", i);
+	}
+
+	for(i = 0; i < 19; i++)
+	{
+		printf("\n %3i|", i);
+		for(j = 0; j < 20; j++)
+			printf("%4i", data->req[i][j]);
+	}
+
+	printf("\n\n\n** Resource Vector **\n");
+	for(i = 0; i < 20; i++)
+	{
+		printf("%3i ", i);
+	}
+	printf("\n");
+	for(i = 0; i < 20; i++)
+	{	
+		printf("%3i ", data->resVec[i]);
+	}
+
+	printf("\n\n\n** Allocation Vector **\n");
+	for(i = 0; i < 20; i++)
+	{
+		printf("%3i ", i);
+	}
+	printf("\n");
+	for(i = 0; i < 20; i++)
+	{	
+		printf("%3i ", data->allocVec[i]);
+	}
+
+	printf("\n\n##### Ending print of resource tables #####\n\n");
 }
 
 /* Find the proccess block with the given pid and return the position in the array */
