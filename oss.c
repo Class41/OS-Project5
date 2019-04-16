@@ -218,10 +218,10 @@ void GenerateResources()
 		{
 			int tempval = rand() % 20;
 
-			if(CheckForExistence(sharedRes, 5, tempval))
+			if(CheckForExistence(data->sharedRes, 5, tempval))
 				continue;
 			
-			sharedRes[i] = tempval;
+			data->sharedRes[i] = tempval;
 		}
 	}
 
