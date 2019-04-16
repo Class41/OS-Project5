@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/wait.h>
-#include <sys/ipc.h> 
-#include <sys/shm.h> 
+#include <sys/ipc.h>
+#include <sys/shm.h>
 #include <errno.h>
 #include <signal.h>
 #include <sys/time.h>
@@ -26,20 +26,23 @@ int CHANCE_TO_DIE_PERCENT = 1;
 const int CHANCE_TO_REQUEST = 55;
 
 /* Housekeeping holders for shared memory and file name alias */
-Shared* data;
+Shared *data;
 int toChildQueue;
 int toMasterQueue;
 int ipcid;
-char* filen;
+char *filen;
 
 /* Function prototypes */
 void ShmAttatch();
 void QueueAttatch();
-void AddTime(Time* time, int amount);
+void AddTime(Time *time, int amount);
 int FindPID(int pid);
+int CompareTime(Time *time1, Time *time2);
+void AddTimeLong(Time *time, long amount);
 
 /* Message queue standard message buffer */
-struct {
+struct
+{
 	long mtype;
 	char mtext[100];
 } msgbuf;
@@ -55,7 +58,7 @@ int FindPID(int pid)
 }
 
 /* Add time to given time structure, max 2.147billion ns */
-void AddTime(Time* time, int amount)
+void AddTime(Time *time, int amount)
 {
 	int newnano = time->ns + amount;
 	while (newnano >= 1000000000) //nano = 10^9, so keep dividing until we get to something less and increment seconds
@@ -66,6 +69,28 @@ void AddTime(Time* time, int amount)
 	time->ns = newnano; //since ns is < 10^9, it is our new nanoseconds
 }
 
+/* Add more than 2.147 billion nanoseconds to the time */
+void AddTimeLong(Time *time, long amount)
+{
+	long newnano = time->ns + amount;
+	while (newnano >= 1000000000) //nano = 10^9, so keep dividing until we get to something less and increment seconds
+	{
+		newnano -= 1000000000;
+		(time->seconds)++;
+	}
+	time->ns = (int)newnano; //since newnano is now < 1 billion, it is less than second. Assign it to ns
+}
+
+int CompareTime(Time *time1, Time *time2)
+{
+	long time1Epoch = ((long)(time1->seconds) * (long)1000000000) + (long)(time1->ns);
+	long time2Epoch = ((long)(time2->seconds) * (long)1000000000) + (long)(time2->ns);
+
+	if (time1Epoch > time2Epoch)
+		return 1;
+	else
+		return 0;
+}
 
 /* Attach to queues incoming/outgoing */
 void QueueAttatch()
@@ -134,9 +159,9 @@ void ShmAttatch() //same exact memory attach function from master minus the init
 		return;
 	}
 
-	data = (Shared*)shmat(ipcid, (void*)0, 0); //attach to shared mem
+	data = (Shared *)shmat(ipcid, (void *)0, 0); //attach to shared mem
 
-	if (data == (void*)-1) //check if the input file exists
+	if (data == (void *)-1) //check if the input file exists
 	{
 		printf("\n%s: ", filen);
 		fflush(stdout);
@@ -145,49 +170,53 @@ void ShmAttatch() //same exact memory attach function from master minus the init
 	}
 }
 
+void CalcNextActionTime(Time *t)
+{
+	t->seconds = data->sysTime.seconds;
+	t->ns = data->sysTime.ns;
+	long mstoadd = (rand() % 251) * 1000000;
+	AddTimeLong(t, mstoadd);
+}
+
 int main(int argc, int argv)
 {
-	ShmAttatch(); //attach to shared mem
+	ShmAttatch();   //attach to shared mem
 	QueueAttatch(); //attach to queues
 
 	int pid = getpid(); //shorthand for getpid every time from now
 
 	/* Variables to keep tabs on time to be added instead of creating new ints every time */
-	int secstoadd = 0;
-	int mstoadd = 0;
 	Time nextActionTime;
 
 	srand(time(NULL) ^ (pid << 16)); //ensure randomness by bitshifting and ORing the time based on the pid
 
 	while (1)
 	{
-		if ((rand() % 100) <= CHANCE_TO_DIE_PERCENT) //roll for termination
-		{
-			msgbuf.mtype = pid;
-			strcpy(msgbuf.mtext, "TER");
-			msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
+		if (CompareTime(&(nextActionTime), &(data->sysTime)))
 
-			exit(21);
-		}
+			if ((rand() % 100) <= CHANCE_TO_DIE_PERCENT) //roll for termination
+			{
+				msgbuf.mtype = pid;
+				strcpy(msgbuf.mtext, "TER");
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
 
-		if ((rand() % 100) <= CHANCE_TO_REQUEST)
-		{
-			msgbuf.mtype = pid;
-			strcpy(msgbuf.mtext, "REQ");
-			msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send used all signal to parent
-		}
-		else
-		{
-			msgbuf.mtype = pid;
-			strcpy(msgbuf.mtext, "REL");
-			msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send used all signal to parent
+				exit(21);
+			}
 
-/*
-				nextActionTime.seconds = data->sysTime.seconds;
-				nextActionTime.ns = data->sysTime.ns;
-				secstoadd = rand() % 6;
-				mstoadd = (rand() % 1001) * 1000000;
-*/
+			if ((rand() % 100) <= CHANCE_TO_REQUEST)
+			{
+				msgbuf.mtype = pid;
+				strcpy(msgbuf.mtext, "REQ");
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send used all signal to parent
+				CalcNextActionTime(&nextActionTime);
+			}
+			else
+			{
+				msgbuf.mtype = pid;
+				strcpy(msgbuf.mtext, "REL");
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send used all signal to parent
+				CalcNextActionTime(&nextActionTime);
+			}
 		}
 	}
 }
