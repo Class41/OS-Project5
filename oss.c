@@ -318,6 +318,7 @@ int AllocResource(int procRow)
 				if(CheckForExistence(&(data->sharedRes), 5, i) != 1)
 					(data->allocVec[i]) -= (data->req[i][procRow]);
 				(data->req[i][procRow]) = 0;
+				DisplayResources();
 				return 1;
 			}
 			else
