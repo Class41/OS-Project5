@@ -49,7 +49,7 @@ void AddTime(Time* time, int amount);
 int FindPID(int pid);
 void QueueAttatch();
 void GenerateResources();
-void DisplayResources()
+void DisplayResources();
 
 /* Message queue standard message buffer */
 struct {
