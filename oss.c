@@ -381,12 +381,25 @@ void DoSharedWork()
 				kill(pid, SIGTERM); //if child failed to find a proccess block, just kill it off
 			}
 		}
-		/*
-        if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), data->proc[activeProcIndex].pid, 0)) > -1) //blocking wait while waiting for child to respond
-        {
 
+        if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
+        {
+			if (strcmp(msgbuf.mtext, "REQ") == 0)
+			{
+				int procpos = FindPID(msgbuf.mtype);
+				printf("Got request from %i", msgbuf.mtype);
+			}
+			else if (strcmp(msgbuf.mtext, "REL") == 0) 
+			{
+				int procpos = FindPID(msgbuf.mtype);
+				printf("Got release from %i", msgbuf.mtype);
+			}
+			else if (strcmp(msgbuf.mtext, "TER") == 0) 
+			{
+				int procpos = FindPID(msgbuf.mtype);
+				printf("Got terminate from %i", msgbuf.mtype);
+			}
         }
-*/
 
 		if ((pid = waitpid((pid_t)-1, &status, WNOHANG)) > 0) //if a PID is returned meaning the child died
 		{
