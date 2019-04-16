@@ -212,14 +212,16 @@ void GenerateResources()
 		data->allocVec[i] = data->resVec[i];
 	}
 
+	srand(time(NULL));
 	for (i = 0; i < 5; i++)
 	{
 		while (1)
 		{
 			int tempval = rand() % 20;
-
-			if (!CheckForExistence(data->sharedRes, 5, tempval))
+			
+			if (CheckForExistence(data->sharedRes, 5, tempval) != 1)
 			{
+				printf("I should be inserting %i", tempval);
 				data->sharedRes[i] = tempval;
 				break;
 			}
