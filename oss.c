@@ -222,6 +222,7 @@ void GenerateResources()
 				continue;
 			
 			data->sharedRes[i] = tempval;
+			break;
 		}
 	}
 
