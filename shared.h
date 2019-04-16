@@ -18,7 +18,8 @@ typedef struct {
 	int allocVec[20];
 	int resVec[20];
 	int req[20][19];
-	int alloc[20][19];
+	int alloc[20][19]; 
+	int sharedRes[5];
 } Shared;
 
 #define SHARED_H

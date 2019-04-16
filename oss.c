@@ -206,13 +206,34 @@ void GenerateResources()
 {
 	srand(time(NULL));
 	int i;
-	for(i = 0; i < 19; i++)
+	for(i = 0; i < 20; i++)
 	{
-		data->resVec[i] = ((rand() % 100) < 20) ? (rand() % 3) + 1 : 1;
+		data->resVec[i] = (rand() % 5) + 1;
 		data->allocVec[i] = data->resVec[i];
 	}
 
+	for(i = 0; i < 5; i++)
+	{
+		while(1)
+		{
+			int tempval = rand() % 20;
+
+			if(CheckForExistence(sharedRes, 5, tempval))
+				continue;
+			
+			sharedRes[i] = tempval;
+		}
+	}
+
 	 DisplayResources();
+}
+
+void CheckForExistence(int* values, int size, int value) {
+	int i;
+	for(i = 0; i < size; i++)
+		if(values[i] == value)
+			return 1;
+	return 0;
 }
 
 void DisplayResources()
@@ -268,6 +289,12 @@ void DisplayResources()
 	for(i = 0; i < 20; i++)
 	{	
 		printf("%3i ", data->allocVec[i]);
+	}
+
+	printf("\n\n\n** Shared Resource IDs **\n");
+	for(i = 0; i < 5; i++)
+	{	
+		printf("%3i ", data->sharedRes[i]);
 	}
 
 	printf("\n\n##### Ending print of resource tables #####\n\n");
