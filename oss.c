@@ -429,7 +429,7 @@ void DoSharedWork()
 				}
 				else 
 				{
-					msgbuf.mtext = "REQ_GRANT";
+					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 				}
 			}
