@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/wait.h>
-#include <sys/ipc.h> 
-#include <sys/shm.h> 
+#include <sys/ipc.h>
+#include <sys/shm.h>
 #include <errno.h>
 #include <signal.h>
 #include <sys/time.h>
@@ -21,14 +21,14 @@
 *	Purpose: Launch user processes, allocate resourced or deny them depending on a shared memory table
 */
 
-int ipcid; //inter proccess shared memory
-Shared* data; //shared memory data
-int toChildQueue; //queue for communicating to child from master
-int toMasterQueue; //queue for communicating from child to master
-char* filen; //name of this executable
+int ipcid;			 //inter proccess shared memory
+Shared *data;		 //shared memory data
+int toChildQueue;	//queue for communicating to child from master
+int toMasterQueue;   //queue for communicating from child to master
+char *filen;		 //name of this executable
 int childCount = 19; //Max children concurrent
 
-FILE* o;  //output log file pointer
+FILE *o; //output log file pointer
 
 const int CLOCK_ADD_INC = 50000;
 int VERBOSE_LEVEL = 0;
@@ -44,21 +44,22 @@ int SetupTimer();
 void DoSharedWork();
 int FindEmptyProcBlock();
 void SweepProcBlocks();
-void AddTimeLong(Time* time, long amount);
-void AddTime(Time* time, int amount);
+void AddTimeLong(Time *time, long amount);
+void AddTime(Time *time, int amount);
 int FindPID(int pid);
 void QueueAttatch();
 void GenerateResources();
 void DisplayResources();
 
 /* Message queue standard message buffer */
-struct {
+struct
+{
 	long mtype;
 	char mtext[100];
 } msgbuf;
 
 /* Add time to given time structure, max 2.147billion ns */
-void AddTime(Time* time, int amount)
+void AddTime(Time *time, int amount)
 {
 	int newnano = time->ns + amount;
 	while (newnano >= 1000000000) //nano = 10^9, so keep dividing until we get to something less and increment seconds
@@ -70,7 +71,7 @@ void AddTime(Time* time, int amount)
 }
 
 /* Add more than 2.147 billion nanoseconds to the time */
-void AddTimeLong(Time* time, long amount)
+void AddTimeLong(Time *time, long amount)
 {
 	long newnano = time->ns + amount;
 	while (newnano >= 1000000000) //nano = 10^9, so keep dividing until we get to something less and increment seconds
@@ -81,19 +82,19 @@ void AddTimeLong(Time* time, long amount)
 	time->ns = (int)newnano; //since newnano is now < 1 billion, it is less than second. Assign it to ns
 }
 
-int CompareTime(Time* time1, Time* time2)
+int CompareTime(Time *time1, Time *time2)
 {
 	long time1Epoch = ((long)(time1->seconds) * (long)1000000000) + (long)(time1->ns);
 	long time2Epoch = ((long)(time2->seconds) * (long)1000000000) + (long)(time2->ns);
 
-	if(time1Epoch > time2Epoch)
+	if (time1Epoch > time2Epoch)
 		return 1;
 	else
-		return 0; 
+		return 0;
 }
 
 /* handle ctrl-c and timer hit */
-void Handler(int signal) 
+void Handler(int signal)
 {
 	fflush(stdout); //make sure that messages are output correctly before we start terminating things
 
@@ -102,9 +103,9 @@ void Handler(int signal)
 		if (data->proc[i].pid != -1)
 			kill(data->proc[i].pid, SIGTERM);
 
-	fflush(o); //flush out the output file
-	fclose(o); //close output file
-	shmctl(ipcid, IPC_RMID, NULL); //free shared mem
+	fflush(o);							  //flush out the output file
+	fclose(o);							  //close output file
+	shmctl(ipcid, IPC_RMID, NULL);		  //free shared mem
 	msgctl(toChildQueue, IPC_RMID, NULL); //free queues
 	msgctl(toMasterQueue, IPC_RMID, NULL);
 
@@ -116,10 +117,9 @@ void Handler(int signal)
 /* Perform a forking call to launch a user proccess */
 void DoFork(int value) //do fun fork stuff here. I know, very useful comment.
 {
-	char* forkarg[] = { //null terminated args set
-			"./user",
-			NULL
-	}; //null terminated parameter array of chars
+	char *forkarg[] = {//null terminated args set
+					   "./user",
+					   NULL}; //null terminated parameter array of chars
 
 	execv(forkarg[0], forkarg); //exec
 	Handler(1);
@@ -146,9 +146,9 @@ void ShmAttatch() //attach to shared memory
 		return;
 	}
 
-	data = (Shared*)shmat(ipcid, (void*)0, 0); //attach to shared mem
+	data = (Shared *)shmat(ipcid, (void *)0, 0); //attach to shared mem
 
-	if (data == (void*)-1) //check if the input file exists
+	if (data == (void *)-1) //check if the input file exists
 	{
 		fflush(stdout);
 		perror("Error: Failed to attach to shared memory");
@@ -206,33 +206,34 @@ void GenerateResources()
 {
 	srand(time(NULL));
 	int i;
-	for(i = 0; i < 20; i++)
+	for (i = 0; i < 20; i++)
 	{
 		data->resVec[i] = (rand() % 5) + 1;
 		data->allocVec[i] = data->resVec[i];
 	}
 
-	for(i = 0; i < 5; i++)
+	for (i = 0; i < 5; i++)
 	{
-		while(1)
+		while (1)
 		{
 			int tempval = rand() % 20;
 
-			if(CheckForExistence(data->sharedRes, 5, tempval))
-				continue;
-			
-			data->sharedRes[i] = tempval;
-			break;
+			if (!CheckForExistence(data->sharedRes, 5, tempval))
+			{
+				data->sharedRes[i] = tempval;
+				break;
+			}
 		}
 	}
 
-	 DisplayResources();
+	DisplayResources();
 }
 
-void CheckForExistence(int* values, int size, int value) {
+void CheckForExistence(int *values, int size, int value)
+{
 	int i;
-	for(i = 0; i < size; i++)
-		if(values[i] == value)
+	for (i = 0; i < size; i++)
+		if (values[i] == value)
 			return 1;
 	return 0;
 }
@@ -243,58 +244,58 @@ void DisplayResources()
 	printf("** Allocated Resources **\nX -> resources, Y -> proccess\n");
 	printf("Proc ");
 	int i;
-	for(i = 0; i < 20; i++)
+	for (i = 0; i < 20; i++)
 	{
 		printf("%3i ", i);
 	}
 
 	int j;
-	for(i = 0; i < 19; i++)
+	for (i = 0; i < 19; i++)
 	{
 		printf("\n %3i|", i);
-		for(j = 0; j < 20; j++)
+		for (j = 0; j < 20; j++)
 			printf("%4i", data->alloc[i][j]);
 	}
 
 	printf("\n\n\n** Requested Resources **\nX -> resources, Y -> proccess\n");
 	printf("Proc ");
-	for(i = 0; i < 20; i++)
+	for (i = 0; i < 20; i++)
 	{
 		printf("%3i ", i);
 	}
 
-	for(i = 0; i < 19; i++)
+	for (i = 0; i < 19; i++)
 	{
 		printf("\n %3i|", i);
-		for(j = 0; j < 20; j++)
+		for (j = 0; j < 20; j++)
 			printf("%4i", data->req[i][j]);
 	}
 
 	printf("\n\n\n** Resource Vector **\n");
-	for(i = 0; i < 20; i++)
+	for (i = 0; i < 20; i++)
 	{
 		printf("%3i ", i);
 	}
 	printf("\n");
-	for(i = 0; i < 20; i++)
-	{	
+	for (i = 0; i < 20; i++)
+	{
 		printf("%3i ", data->resVec[i]);
 	}
 
 	printf("\n\n\n** Allocation Vector **\n");
-	for(i = 0; i < 20; i++)
+	for (i = 0; i < 20; i++)
 	{
 		printf("%3i ", i);
 	}
 	printf("\n");
-	for(i = 0; i < 20; i++)
-	{	
+	for (i = 0; i < 20; i++)
+	{
 		printf("%3i ", data->allocVec[i]);
 	}
 
 	printf("\n\n\n** Shared Resource IDs **\n");
-	for(i = 0; i < 5; i++)
-	{	
+	for (i = 0; i < 5; i++)
+	{
 		printf("%3i ", data->sharedRes[i]);
 	}
 
@@ -330,21 +331,21 @@ void DoSharedWork()
 	data->sysTime.ns = 0;
 
 	/* Setup time for random child spawning */
-	Time nextExec = { 0,0 };
+	Time nextExec = {0, 0};
 
 	/* Create queues */
-	struct Queue* resQueue = createQueue(childCount); //Queue of local PIDS (fake/emulated pids)
-
+	struct Queue *resQueue = createQueue(childCount); //Queue of local PIDS (fake/emulated pids)
 
 	srand(time(0)); //set random seed
 
-	while (1) {
+	while (1)
+	{
 		AddTime(&(data->sysTime), CLOCK_ADD_INC); //increment clock between tasks to advance the clock a little
 
 		pid_t pid; //pid temp
 
 		/* Only executes when there is a proccess ready to be launched, given the time is right for exec, there is room in the proc table, annd there are execs remaining */
-		if (activeProcs < childCount && CompareTime(&(data->sysTime), &nextExec)) 
+		if (activeProcs < childCount && CompareTime(&(data->sysTime), &nextExec))
 		{
 			pid = fork(); //the mircle of proccess creation
 
@@ -372,7 +373,7 @@ void DoSharedWork()
 				/* Initialize the proccess table */
 				data->proc[pos].pid = pid; //we stored the pid from fork call and now assign it to PID
 
-                		fprintf(o, "proc created");
+				fprintf(o, "proc created");
 				activeProcs++; //increment active execs
 			}
 			else
@@ -380,7 +381,7 @@ void DoSharedWork()
 				kill(pid, SIGTERM); //if child failed to find a proccess block, just kill it off
 			}
 		}
-/*
+		/*
         if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), data->proc[activeProcIndex].pid, 0)) > -1) //blocking wait while waiting for child to respond
         {
 
@@ -463,7 +464,7 @@ void QueueAttatch()
 }
 
 /* Program entry point */
-int main(int argc, int** argv)
+int main(int argc, int **argv)
 {
 	//alias for file name
 	filen = argv[0]; //shorthand for filename
@@ -488,18 +489,19 @@ int main(int argc, int** argv)
 			printf("\t%s Help Menu\n\
 		\t-h : show help dialog \n\
         \t-v : enable verbose mode \n\
-		\t-n [count] : max proccesses at the same time. Default: 19\n\n", filen);
+		\t-n [count] : max proccesses at the same time. Default: 19\n\n",
+				   filen);
 			return;
 		case 'v': //max # of children
-            VERBOSE_LEVEL = 1;
-            printf("%s: Verbose mode enabled...\n", argv[0]);
-            break;
+			VERBOSE_LEVEL = 1;
+			printf("%s: Verbose mode enabled...\n", argv[0]);
+			break;
 		case 'n': //max # of children
 			childCount = atoi(optarg);
-			if(childCount > 19 || childCount < 0) //if 0  > n > 20 
+			if (childCount > 19 || childCount < 0) //if 0  > n > 20
 			{
 				printf("%s: Max -n is 19. Must be > 0 Aborting.\n", argv[0]);
-				return -1;					
+				return -1;
 			}
 
 			printf("\n%s: Info: set max concurrent children to: %s", argv[0], optarg);
@@ -512,18 +514,18 @@ int main(int argc, int** argv)
 
 	o = fopen("output.log", "w"); //open output file
 
-	if(o == NULL) //check if file was opened
+	if (o == NULL) //check if file was opened
 	{
 		perror("oss: Failed to open output file: ");
 		return 1;
 	}
 
-	ShmAttatch(); //attach to shared mem
-	QueueAttatch(); //attach to queues
+	ShmAttatch();	  //attach to shared mem
+	QueueAttatch();	//attach to queues
 	SweepProcBlocks(); //reset all proc blocks
 	GenerateResources();
 	signal(SIGINT, Handler); //setup handler for CTRL-C
-	DoSharedWork(); //fattest function west of the mississippi
+	DoSharedWork();			 //fattest function west of the mississippi
 
 	return 0;
 }
