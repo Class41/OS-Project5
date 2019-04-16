@@ -48,6 +48,8 @@ void AddTimeLong(Time* time, long amount);
 void AddTime(Time* time, int amount);
 int FindPID(int pid);
 void QueueAttatch();
+void GenerateResources();
+void DisplayResources()
 
 /* Message queue standard message buffer */
 struct {
@@ -208,6 +210,27 @@ void GenerateResources()
 	{
 		data->resVec[i] = ((rand() % 100) < 20) ? (rand() % 3) + 1 : 1;
 		data->allocVec[i] = data->resVec[i];
+	}
+
+	 DisplayResources();
+}
+
+void DisplayResources()
+{
+	printf("** Allocated Resources **\n");
+	printf("Proc ");
+	int i;
+	for(i = 0; i < 20; i++)
+	{
+		printf("%i ", i);
+	}
+
+	int j;
+	for(i = 0; i < 19; i++)
+	{
+		printf("\n %i |", i);
+		for(j = 0; j < 20; j++)
+			printf("%i ", data->alloc[i][j]);
 	}
 }
 
