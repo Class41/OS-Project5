@@ -237,6 +237,9 @@ int main(int argc, int argv)
 			}
 			else if((resToReleasePos = getResourceToRelease(pid)) > 1)
 			{
+				printf("RELEASING!");
+				fflush(stdout);
+				
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); 
