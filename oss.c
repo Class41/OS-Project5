@@ -448,12 +448,10 @@ void DoSharedWork()
 
 				fprintf(o, "%s: [REQUEST] pid: %i resID: %i\n", filen, msgbuf.mtype, resID);
 		
-
 				if(AllocResource(procpos, resID) == -1)
 				{
 					enqueue(resQueue, msgbuf.mtype);
 					fprintf(o, "\t-> [REQUEST] pid: %i request unfulfilled...\n\n", msgbuf.mtype);
-
 				}
 				else 
 				{
@@ -462,7 +460,7 @@ void DoSharedWork()
 					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n",  msgbuf.mtype);
 				}
 
-				//DisplayResources();
+				DisplayResources();
 				printf("\nIn queue: %i", getSize(resQueue));
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 

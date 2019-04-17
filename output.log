@@ -1,51 +1,152 @@
-./oss: [PROC CREATE] pid: 985
-./oss: [PROC CREATE] pid: 986
-./oss: [PROC CREATE] pid: 987
-./oss: [PROC CREATE] pid: 988
-./oss: [PROC CREATE] pid: 989
-./oss: [PROC CREATE] pid: 990
-./oss: [PROC CREATE] pid: 992
-./oss: [PROC CREATE] pid: 993
-./oss: [PROC CREATE] pid: 994
-./oss: [PROC CREATE] pid: 995
-./oss: [PROC CREATE] pid: 996
-./oss: [TERMINATE] pid: 993
-./oss: [PROC CREATE] pid: 997
-./oss: [PROC CREATE] pid: 998
-./oss: [PROC CREATE] pid: 999
-./oss: [PROC CREATE] pid: 1000
-./oss: [PROC CREATE] pid: 1002
-./oss: [PROC CREATE] pid: 1003
-./oss: [PROC CREATE] pid: 1004
-./oss: [PROC CREATE] pid: 1005
-./oss: [PROC CREATE] pid: 1006
-./oss: [TERMINATE] pid: 997
-./oss: [PROC CREATE] pid: 1007
-./oss: [TERMINATE] pid: 999
-./oss: [TERMINATE] pid: 988
-./oss: [PROC CREATE] pid: 1008
-./oss: [TERMINATE] pid: 998
-./oss: [TERMINATE] pid: 987
-./oss: [PROC CREATE] pid: 1010
-./oss: [PROC CREATE] pid: 1011
-./oss: [PROC CREATE] pid: 1012
-./oss: [TERMINATE] pid: 990
-./oss: [TERMINATE] pid: 992
-./oss: [PROC CREATE] pid: 1013
-./oss: [PROC CREATE] pid: 1014
-./oss: [TERMINATE] pid: 994
-./oss: [PROC CREATE] pid: 1016
-./oss: [TERMINATE] pid: 995
-./oss: [PROC CREATE] pid: 1017
-./oss: [TERMINATE] pid: 1012
-./oss: [PROC CREATE] pid: 1018
-./oss: [TERMINATE] pid: 1013
-./oss: [PROC CREATE] pid: 1020
-./oss: [TERMINATE] pid: 986
-./oss: [PROC CREATE] pid: 1021
-./oss: [TERMINATE] pid: 1000
-./oss: [PROC CREATE] pid: 1022
-./oss: [TERMINATE] pid: 1007
-./oss: [PROC CREATE] pid: 1023
-./oss: [TERMINATE] pid: 1011
-./oss: [PROC CREATE] pid: 1024
+./oss: [PROC CREATE] pid: 2505
+./oss: [REQUEST] pid: 2505 resID: 0
+	-> [REQUEST] pid: 2505 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2506
+./oss: [PROC CREATE] pid: 2507
+./oss: [REQUEST] pid: 2506 resID: 0
+	-> [REQUEST] pid: 2506 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2508
+./oss: [PROC CREATE] pid: 2509
+./oss: [PROC CREATE] pid: 2511
+./oss: [REQUEST] pid: 2508 resID: 8
+	-> [REQUEST] pid: 2508 request fulfilled...
+
+./oss: [REQUEST] pid: 2511 resID: 0
+	-> [REQUEST] pid: 2511 request fulfilled...
+
+./oss: [REQUEST] pid: 2506 resID: 13
+	-> [REQUEST] pid: 2506 request fulfilled...
+
+./oss: [REQUEST] pid: 2505 resID: 18
+	-> [REQUEST] pid: 2505 request fulfilled...
+
+./oss: [REQUEST] pid: 2508 resID: 8
+	-> [REQUEST] pid: 2508 request fulfilled...
+
+./oss: [REQUEST] pid: 2509 resID: 18
+	-> [REQUEST] pid: 2509 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2512
+./oss: [RELEASE] pid: 2509 resID: 18
+./oss: [PROC CREATE] pid: 2513
+./oss: [PROC CREATE] pid: 2514
+./oss: [REQUEST] pid: 2509 resID: 12
+	-> [REQUEST] pid: 2509 request fulfilled...
+
+./oss: [REQUEST] pid: 2506 resID: 0
+	-> [REQUEST] pid: 2506 request fulfilled...
+
+./oss: [REQUEST] pid: 2513 resID: 0
+	-> [REQUEST] pid: 2513 request fulfilled...
+
+./oss: [REQUEST] pid: 2512 resID: 0
+	-> [REQUEST] pid: 2512 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2515
+./oss: [REQUEST] pid: 2507 resID: 0
+	-> [REQUEST] pid: 2507 request fulfilled...
+
+./oss: [REQUEST] pid: 2509 resID: 8
+	-> [REQUEST] pid: 2509 request unfulfilled...
+
+./oss: [REQUEST] pid: 2506 resID: 1
+	-> [REQUEST] pid: 2506 request fulfilled...
+
+./oss: [REQUEST] pid: 2513 resID: 13
+	-> [REQUEST] pid: 2513 request fulfilled...
+
+./oss: [REQUEST] pid: 2511 resID: 5
+	-> [REQUEST] pid: 2511 request fulfilled...
+
+./oss: [REQUEST] pid: 2512 resID: 19
+	-> [REQUEST] pid: 2512 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2516
+./oss: [PROC CREATE] pid: 2517
+./oss: [REQUEST] pid: 2506 resID: 5
+	-> [REQUEST] pid: 2506 request fulfilled...
+
+./oss: [REQUEST] pid: 2517 resID: 0
+	-> [REQUEST] pid: 2517 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2518
+./oss: [PROC CREATE] pid: 2519
+./oss: [RELEASE] pid: 2513 resID: 13
+./oss: [REQUEST] pid: 2507 resID: 18
+	-> [REQUEST] pid: 2507 request fulfilled...
+
+./oss: [REQUEST] pid: 2512 resID: 12
+	-> [REQUEST] pid: 2512 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2520
+./oss: [REQUEST] pid: 2512 resID: 6
+	-> [REQUEST] pid: 2512 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2521
+./oss: [REQUEST] pid: 2516 resID: 0
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2522
+./oss: [REQUEST] pid: 2522 resID: 0
+	-> [REQUEST] pid: 2522 request fulfilled...
+
+./oss: [PROC CREATE] pid: 2523
+./oss: [PROC CREATE] pid: 2524
+./oss: [REQUEST] pid: 2521 resID: 0
+	-> [REQUEST] pid: 2521 request fulfilled...
+
+./oss: [REQUEST] pid: 2524 resID: 6
+	-> [REQUEST] pid: 2524 request fulfilled...
+
+./oss: [REQUEST] pid: 2516 resID: 6
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [REQUEST] pid: 2521 resID: 0
+	-> [REQUEST] pid: 2521 request fulfilled...
+
+./oss: [REQUEST] pid: 2517 resID: 0
+	-> [REQUEST] pid: 2517 request fulfilled...
+
+./oss: [RELEASE] pid: 2516 resID: 6
+./oss: [RELEASE] pid: 2524 resID: 6
+./oss: [REQUEST] pid: 2524 resID: 5
+	-> [REQUEST] pid: 2524 request unfulfilled...
+
+./oss: [REQUEST] pid: 2516 resID: 19
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [REQUEST] pid: 2521 resID: 0
+	-> [REQUEST] pid: 2521 request fulfilled...
+
+./oss: [RELEASE] pid: 2516 resID: 19
+./oss: [REQUEST] pid: 2521 resID: 19
+	-> [REQUEST] pid: 2521 request fulfilled...
+
+./oss: [RELEASE] pid: 2521 resID: 19
+./oss: [REQUEST] pid: 2516 resID: 15
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [REQUEST] pid: 2517 resID: 8
+	-> [REQUEST] pid: 2517 request unfulfilled...
+
+./oss: [REQUEST] pid: 2516 resID: 0
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [REQUEST] pid: 2516 resID: 12
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [REQUEST] pid: 2516 resID: 11
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [RELEASE] pid: 2516 resID: 11
+./oss: [REQUEST] pid: 2516 resID: 0
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [REQUEST] pid: 2516 resID: 0
+	-> [REQUEST] pid: 2516 request fulfilled...
+
+./oss: [REQUEST] pid: 2516 resID: 6
+	-> [REQUEST] pid: 2516 request fulfilled...
+

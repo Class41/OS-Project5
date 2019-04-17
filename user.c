@@ -23,7 +23,7 @@
 
 /* Constants for termination and using all time--the reason termination is not const is because it changes depending if it is a realtime proccess or not */
 int CHANCE_TO_DIE_PERCENT = 1;
-const int CHANCE_TO_REQUEST = 0;
+const int CHANCE_TO_REQUEST = 50;
 
 /* Housekeeping holders for shared memory and file name alias */
 Shared *data;
@@ -238,14 +238,13 @@ int main(int argc, int argv)
 				{
 					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
 				}			
-
 				CalcNextActionTime(&nextActionTime);
 			}
 			else if (resToReleasePos > 1)
 			{
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
 
 				char *convert[5];
 				sprintf(convert, "%i", resToReleasePos);
