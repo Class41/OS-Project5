@@ -353,6 +353,7 @@ void DoSharedWork()
 	int remainingExecs = 100;
 	int exitCount = 0;
 	int status;
+	int iterator;
 
 	/* Proc toChildQueue and message toChildQueue data */
 	int activeProcIndex = -1;
@@ -414,6 +415,20 @@ void DoSharedWork()
 				kill(pid, SIGTERM); //if child failed to find a proccess block, just kill it off
 			}
 		}
+	for(iterator = 0; iterator < getSize(resQueue); iterator++)
+	{
+		int procpos = dequeue(resQueue);
+		if(AllocResource(procpos) != 1)
+		{
+			enqueue(resQueue, procpos);
+		}
+		else 
+		{
+			printf("\nResource has been granted");
+			strcpy(msgbuf.mtext, "REQ_GRANT");
+			msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+		}
+	}
 
         if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
         {
@@ -446,6 +461,12 @@ void DoSharedWork()
 			else if (strcmp(msgbuf.mtext, "TER") == 0) 
 			{
 				int procpos = FindPID(msgbuf.mtype);
+
+				for(iterator = 0; iterator < 20; iterator++)
+				{
+					DellocResource(procpos, iterator);	
+				}
+				
 				printf("\nGot terminate from %i", msgbuf.mtype);
 			}
         }
