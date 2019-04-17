@@ -223,21 +223,21 @@ int main(int argc, int argv)
 			if ((rand() % 100) < CHANCE_TO_REQUEST)
 			{
 				int resToRequest;
-				do {
-			 		resToRequest = (rand() % 20) + 1;
-				}
-				while(data->alloc[FindPID(pid)][resToRequest] > 0);
-	
+				do
+				{
+					resToRequest = (rand() % 20) + 1;
+				} while (data->alloc[FindPID(pid)][resToRequest] > 0);
+
 				data->req[resToRequest][FindPID(pid)] = (rand() % (data->resVec[resToRequest] - 1));
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REQ");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
-				
-				while(!(strcmp(msgbuf.mtext, "REQ_GRANT") == 0))
+
+				while (!(strcmp(msgbuf.mtext, "REQ_GRANT") == 0))
 				{
 					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, IPC_NOWAIT);
-				}			
+				}
 				CalcNextActionTime(&nextActionTime);
 			}
 			else if (resToReleasePos >= 0)

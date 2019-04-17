@@ -220,7 +220,7 @@ void GenerateResources()
 		while (1)
 		{
 			int tempval = rand() % 20;
-			
+
 			if (CheckForExistence(data->sharedRes, 5, tempval) == -1)
 			{
 				data->sharedRes[i] = tempval;
@@ -308,34 +308,33 @@ void DisplayResources()
 int FindAllocationRequest(int procRow)
 {
 	int i;
-	for(i = 0; i < 20; i++)
+	for (i = 0; i < 20; i++)
 	{
-		if(data->req[i][procRow] > 0)
+		if (data->req[i][procRow] > 0)
 			return i;
 	}
 }
 
-
 int AllocResource(int procRow, int resID)
-{	
-			if(data->allocVec[resID] - data->req[resID][procRow] >= 0)
-			{
-				(data->alloc[resID][procRow]) += (data->req[resID][procRow]);
-				if(CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-					(data->allocVec[resID]) -= (data->req[resID][procRow]);
+{
+	if (data->allocVec[resID] - data->req[resID][procRow] >= 0)
+	{
+		(data->alloc[resID][procRow]) += (data->req[resID][procRow]);
+		if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+			(data->allocVec[resID]) -= (data->req[resID][procRow]);
 
-				(data->req[resID][procRow]) = 0;
-				return 1;
-			}
-			else
-			{
-				return -1;
-			}		
+		(data->req[resID][procRow]) = 0;
+		return 1;
+	}
+	else
+	{
+		return -1;
+	}
 }
 
 int DellocResource(int procRow, int resID)
 {
-	if(CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+	if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
 		(data->allocVec[resID]) += (data->alloc[resID][procRow]);
 	data->alloc[resID][procRow] = 0;
 }
@@ -421,27 +420,27 @@ void DoSharedWork()
 				kill(pid, SIGTERM); //if child failed to find a proccess block, just kill it off
 			}
 		}
-	for(iterator = 0; iterator < getSize(resQueue); iterator++)
-	{
-		int cpid = dequeue(resQueue);
-		int procpos = FindPID(cpid);
-		int resID = FindAllocationRequest(procpos);
-
-		if(AllocResource(procpos, resID) == -1)
+		for (iterator = 0; iterator < getSize(resQueue); iterator++)
 		{
-			enqueue(resQueue, cpid);
-		}
-		else 
-		{
-			fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
-			strcpy(msgbuf.mtext, "REQ_GRANT");
-			msgbuf.mtype = cpid;
-			msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-		}
-	}
+			int cpid = dequeue(resQueue);
+			int procpos = FindPID(cpid);
+			int resID = FindAllocationRequest(procpos);
 
-        if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
-        {
+			if (AllocResource(procpos, resID) == -1)
+			{
+				enqueue(resQueue, cpid);
+			}
+			else
+			{
+				fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
+				strcpy(msgbuf.mtext, "REQ_GRANT");
+				msgbuf.mtype = cpid;
+				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+			}
+		}
+
+		if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
+		{
 			requestCounter++;
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
 			{
@@ -449,22 +448,22 @@ void DoSharedWork()
 				int resID = FindAllocationRequest(procpos);
 
 				fprintf(o, "%s: [REQUEST] pid: %i proc: resID: %i\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), resID);
-		
-				if(AllocResource(procpos, resID) == -1)
+
+				if (AllocResource(procpos, resID) == -1)
 				{
 					enqueue(resQueue, msgbuf.mtype);
 					fprintf(o, "\t-> [REQUEST] pid: %i request unfulfilled...\n\n", msgbuf.mtype);
 				}
-				else 
+				else
 				{
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n",  msgbuf.mtype);
+					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n", msgbuf.mtype);
 				}
 
 				printf("\nIn queue: %i", getSize(resQueue));
 			}
-			else if (strcmp(msgbuf.mtext, "REL") == 0) 
+			else if (strcmp(msgbuf.mtext, "REL") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
 
@@ -472,24 +471,23 @@ void DoSharedWork()
 				DellocResource(procpos, atoi(msgbuf.mtext));
 				fprintf(o, "%s: [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}
-			else if (strcmp(msgbuf.mtext, "TER") == 0) 
+			else if (strcmp(msgbuf.mtext, "TER") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
 
-				for(iterator = 0; iterator < 20; iterator++)
+				for (iterator = 0; iterator < 20; iterator++)
 				{
-					DellocResource(procpos, iterator);	
+					DellocResource(procpos, iterator);
 				}
-				
-				fprintf(o, "%s: [TERMINATE] pid: %i\n\n", filen, msgbuf.mtype);
 
+				fprintf(o, "%s: [TERMINATE] pid: %i\n\n", filen, msgbuf.mtype);
 			}
-			if(requestCounter == 19) 
+			if (requestCounter == 19)
 			{
 				DisplayResources();
 				requestCounter = 0;
 			}
-        }
+		}
 
 		if ((pid = waitpid((pid_t)-1, &status, WNOHANG)) > 0) //if a PID is returned meaning the child died
 		{
