@@ -306,7 +306,7 @@ void DisplayResources()
 }
 
 int AllocResource(int procRow)
-{
+{	
 	int i;
 	for(i = 0; i < 20; i++)
 	{
@@ -421,12 +421,11 @@ void DoSharedWork()
 			{
 				int procpos = FindPID(msgbuf.mtype);
 				printf("\nGot request from %i", msgbuf.mtype);
-				
-				int procRow = msgbuf.mtype;	
+					
 
-				if(AllocResource(procRow) != 1)
+				if(AllocResource(procpos) != 1)
 				{
-					enqueue(resQueue, procRow);
+					enqueue(resQueue, procpos);
 				}
 				else 
 				{
