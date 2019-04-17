@@ -234,9 +234,6 @@ int main(int argc, int argv)
 			}
 			else if (resToReleasePos > 1)
 			{
-				printf("RELEASING!");
-				fflush(stdout);
-
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
@@ -246,6 +243,9 @@ int main(int argc, int argv)
 
 				strcpy(msgbuf.mtext, convert);
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
+
+				printf("RESPONSE RECIEVED!!");
+				fflush(stdout);
 
 				CalcNextActionTime(&nextActionTime);
 			}
