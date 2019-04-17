@@ -178,6 +178,24 @@ void CalcNextActionTime(Time *t)
 	AddTimeLong(t, mstoadd);
 }
 
+int getResourceToRelease()
+{
+	int myPos = FindPID(pid);
+	int i;
+
+	for(i = 0; i < 20; i++)
+	{
+		if( data->alloc[i][myPos] > 0 )
+		{
+			return i;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+}
+
 int main(int argc, int argv)
 {
 	ShmAttatch();   //attach to shared mem
@@ -189,6 +207,7 @@ int main(int argc, int argv)
 	Time nextActionTime = {0,0};
 
 	srand(time(NULL) ^ (pid << 16)); //ensure randomness by bitshifting and ORing the time based on the pid
+	int resToReleasePos;
 
 	while (1)
 	{
@@ -216,13 +235,26 @@ int main(int argc, int argv)
 
 				CalcNextActionTime(&nextActionTime);
 			}
-			else
+			else if((resToReleasePos = getResourceToRelease()) > 1)
 			{
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send used all signal to parent
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); 
+
+				char* convert[5];
+				sprintf(convert, "%i", resToReleasePos);
+
+				strcpy(msgbuf.mtext, convert);
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); 
+
 				CalcNextActionTime(&nextActionTime);
 			}
+			else
+			{
+				printf("No resources to release, skipping turn.");
+				CalcNextActionTime(&nextActionTime);
+			}
+			
 		}
 	}
 }
