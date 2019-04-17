@@ -254,7 +254,7 @@ int main(int argc, int argv)
 			}
 			else
 			{
-				printf("\nNo resources to release, skipping turn.\n");
+				printf("\nNo resources to release, skipping turn. %i", resToReleasePos);
 				CalcNextActionTime(&nextActionTime);
 			}
 			
