@@ -223,6 +223,7 @@ int main(int argc, int argv)
 				exit(21);
 			}
 
+			resToReleasePos = getResourceToRelease(pid);
 			if ((rand() % 100) <= CHANCE_TO_REQUEST)
 			{
 				int resToRequest = (rand() % 20) + 1;
@@ -235,7 +236,7 @@ int main(int argc, int argv)
 
 				CalcNextActionTime(&nextActionTime);
 			}
-			else if((resToReleasePos = getResourceToRelease(pid)) > 1)
+			else if(resToReleasePos > 1)
 			{
 				printf("RELEASING!");
 				fflush(stdout);
