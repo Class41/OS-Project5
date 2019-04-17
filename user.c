@@ -23,7 +23,7 @@
 
 /* Constants for termination and using all time--the reason termination is not const is because it changes depending if it is a realtime proccess or not */
 int CHANCE_TO_DIE_PERCENT = 1;
-const int CHANCE_TO_REQUEST = 80;
+const int CHANCE_TO_REQUEST = 0;
 
 /* Housekeeping holders for shared memory and file name alias */
 Shared *data;
@@ -220,7 +220,7 @@ int main(int argc, int argv)
 			}
 
 			resToReleasePos = getResourceToRelease(pid);
-			if ((rand() % 100) <= CHANCE_TO_REQUEST)
+			if ((rand() % 100) < CHANCE_TO_REQUEST)
 			{
 				int resToRequest;
 				do {
@@ -232,10 +232,12 @@ int main(int argc, int argv)
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REQ");
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send used all signal to parent
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 				
 				while(!(strcmp(msgbuf.mtext, "REQ_GRANT") == 0))
+				{
 					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
+				}			
 
 				CalcNextActionTime(&nextActionTime);
 			}

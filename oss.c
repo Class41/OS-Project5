@@ -50,7 +50,8 @@ int FindPID(int pid);
 void QueueAttatch();
 void GenerateResources();
 void DisplayResources();
-int AllocResource(int procRow);
+int AllocResource(int procRow, int resID);
+int FindAllocationRequest(int procRow);
 
 /* Message queue standard message buffer */
 struct
@@ -304,28 +305,32 @@ void DisplayResources()
 	printf("\n\n##### Ending print of resource tables #####\n\n");
 }
 
-int AllocResource(int procRow)
-{	
+int FindAllocationRequest(int procRow)
+{
 	int i;
 	for(i = 0; i < 20; i++)
 	{
 		if(data->req[i][procRow] > 0)
-		{
-			if(data->allocVec[i] - data->req[i][procRow] >= 0)
+			return i;
+	}
+}
+
+
+int AllocResource(int procRow, int resID)
+{	
+			if(data->allocVec[resID] - data->req[resID][procRow] >= 0)
 			{
-				(data->alloc[i][procRow]) += (data->req[i][procRow]);
-				if(CheckForExistence(&(data->sharedRes), 5, i) == -1)
-					(data->allocVec[i]) -= (data->req[i][procRow]);
-				(data->req[i][procRow]) = 0;
-				//DisplayResources();
+				(data->alloc[resID][procRow]) += (data->req[resID][procRow]);
+				if(CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+					(data->allocVec[resID]) -= (data->req[resID][procRow]);
+
+				(data->req[resID][procRow]) = 0;
 				return 1;
 			}
 			else
 			{
 				return -1;
 			}		
-		}
-	}
 }
 
 int DellocResource(int procRow, int resID)
@@ -419,8 +424,9 @@ void DoSharedWork()
 	{
 		int cpid = dequeue(resQueue);
 		int procpos = FindPID(cpid);
+		int resID = FindAllocationRequest(procpos);
 
-		if(AllocResource(procpos) != 1)
+		if(AllocResource(procpos, resID) == -1)
 		{
 			enqueue(resQueue, cpid);
 		}
@@ -438,10 +444,12 @@ void DoSharedWork()
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
-				fprintf(o, "%s: [REQUEST] pid: %i\n", filen, msgbuf.mtype);
+				int resID = FindAllocationRequest(procpos);
+
+				fprintf(o, "%s: [REQUEST] pid: %i resID: %i\n", filen, msgbuf.mtype, resID);
 		
 
-				if(AllocResource(procpos) == -1)
+				if(AllocResource(procpos, resID) == -1)
 				{
 					enqueue(resQueue, msgbuf.mtype);
 					fprintf(o, "\t-> [REQUEST] pid: %i request unfulfilled...\n\n", msgbuf.mtype);
@@ -454,7 +462,7 @@ void DoSharedWork()
 					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n",  msgbuf.mtype);
 				}
 
-				DisplayResources();
+				//DisplayResources();
 				printf("\nIn queue: %i", getSize(resQueue));
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 
