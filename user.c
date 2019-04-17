@@ -239,7 +239,7 @@ int main(int argc, int argv)
 			{
 				printf("RELEASING!");
 				fflush(stdout);
-				
+
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); 
@@ -254,7 +254,7 @@ int main(int argc, int argv)
 			}
 			else
 			{
-				printf("No resources to release, skipping turn.");
+				printf("\nNo resources to release, skipping turn.\n");
 				CalcNextActionTime(&nextActionTime);
 			}
 			
