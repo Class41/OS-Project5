@@ -220,7 +220,7 @@ void GenerateResources()
 		{
 			int tempval = rand() % 20;
 			
-			if (CheckForExistence(data->sharedRes, 5, tempval) != 1)
+			if (CheckForExistence(data->sharedRes, 5, tempval) == -1)
 			{
 				data->sharedRes[i] = tempval;
 				break;
@@ -237,7 +237,7 @@ int CheckForExistence(int *values, int size, int value)
 	for (i = 0; i < size; i++)
 		if (values[i] == value)
 			return 1;
-	return 0;
+	return -1;
 }
 
 void DisplayResources()
@@ -314,7 +314,7 @@ int AllocResource(int procRow)
 			if(data->allocVec[i] - data->req[i][procRow] >= 0)
 			{
 				(data->alloc[i][procRow]) += (data->req[i][procRow]);
-				if(CheckForExistence(&(data->sharedRes), 5, i) != 1)
+				if(CheckForExistence(&(data->sharedRes), 5, i) == -1)
 					(data->allocVec[i]) -= (data->req[i][procRow]);
 				(data->req[i][procRow]) = 0;
 				//DisplayResources();
@@ -330,7 +330,7 @@ int AllocResource(int procRow)
 
 int DellocResource(int procRow, int resID)
 {
-	if(CheckForExistence(&(data->sharedRes), 5, resID) != 1)
+	if(CheckForExistence(&(data->sharedRes), 5, resID) == -1)
 		(data->allocVec[resID]) += (data->alloc[resID][procRow]);
 	data->alloc[resID][procRow] = 0;
 }
@@ -407,7 +407,7 @@ void DoSharedWork()
 				/* Initialize the proccess table */
 				data->proc[pos].pid = pid; //we stored the pid from fork call and now assign it to PID
 
-				fprintf(o, "proc created");
+				fprintf(o, "%s: [PROC CREATE] pid: %i\n", filen, pid);
 				activeProcs++; //increment active execs
 			}
 			else
@@ -426,7 +426,7 @@ void DoSharedWork()
 		}
 		else 
 		{
-			printf("\nResource has been granted");
+			fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
 			strcpy(msgbuf.mtext, "REQ_GRANT");
 			msgbuf.mtype = cpid;
 			msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
@@ -438,17 +438,20 @@ void DoSharedWork()
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
-				printf("\nGot request from %i", msgbuf.mtype);
-					
+				fprintf(o, "%s: [REQUEST] pid: %i\n", filen, msgbuf.mtype);
+		
 
 				if(AllocResource(procpos) == -1)
 				{
 					enqueue(resQueue, msgbuf.mtype);
+					fprintf(o, "\t-> [REQUEST] pid: %i request unfulfilled...\n\n", msgbuf.mtype);
+
 				}
 				else 
 				{
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n",  msgbuf.mtype);
 				}
 
 				DisplayResources();
@@ -460,7 +463,7 @@ void DoSharedWork()
 
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), msgbuf.mtype, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
-				printf("\nGot release from %i", msgbuf.mtype);
+				fprintf(o, "%s: [RELEASE] pid: %i resID: %i\n", filen, msgbuf.mtype, atoi(msgbuf.mtext));
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0) 
 			{
@@ -471,7 +474,8 @@ void DoSharedWork()
 					DellocResource(procpos, iterator);	
 				}
 				
-				printf("\nGot terminate from %i", msgbuf.mtype);
+				fprintf(o, "%s: [TERMINATE] pid: %i\n", filen, msgbuf.mtype);
+
 			}
         }
 
