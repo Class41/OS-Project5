@@ -359,6 +359,7 @@ void DoSharedWork()
 	int exitCount = 0;
 	int status;
 	int iterator;
+	int requestCounter = 0;
 
 	/* Proc toChildQueue and message toChildQueue data */
 	int activeProcIndex = -1;
@@ -412,7 +413,7 @@ void DoSharedWork()
 				/* Initialize the proccess table */
 				data->proc[pos].pid = pid; //we stored the pid from fork call and now assign it to PID
 
-				fprintf(o, "%s: [PROC CREATE] pid: %i\n", filen, pid);
+				fprintf(o, "%s: [PROC CREATE] pid: %i\n\n", filen, pid);
 				activeProcs++; //increment active execs
 			}
 			else
@@ -441,12 +442,13 @@ void DoSharedWork()
 
         if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
         {
+			requestCounter++;
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
 				int resID = FindAllocationRequest(procpos);
 
-				fprintf(o, "%s: [REQUEST] pid: %i resID: %i\n", filen, msgbuf.mtype, resID);
+				fprintf(o, "%s: [REQUEST] pid: %i proc: resID: %i\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), resID);
 		
 				if(AllocResource(procpos, resID) == -1)
 				{
@@ -460,7 +462,6 @@ void DoSharedWork()
 					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n",  msgbuf.mtype);
 				}
 
-				DisplayResources();
 				printf("\nIn queue: %i", getSize(resQueue));
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 
@@ -469,7 +470,7 @@ void DoSharedWork()
 
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), msgbuf.mtype, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
-				fprintf(o, "%s: [RELEASE] pid: %i resID: %i\n", filen, msgbuf.mtype, atoi(msgbuf.mtext));
+				fprintf(o, "%s: [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0) 
 			{
@@ -480,8 +481,13 @@ void DoSharedWork()
 					DellocResource(procpos, iterator);	
 				}
 				
-				fprintf(o, "%s: [TERMINATE] pid: %i\n", filen, msgbuf.mtype);
+				fprintf(o, "%s: [TERMINATE] pid: %i\n\n", filen, msgbuf.mtype);
 
+			}
+			if(requestCounter == 19) 
+			{
+				DisplayResources();
+				requestCounter = 0;
 			}
         }
 

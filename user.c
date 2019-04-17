@@ -232,15 +232,15 @@ int main(int argc, int argv)
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REQ");
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
 				
 				while(!(strcmp(msgbuf.mtext, "REQ_GRANT") == 0))
 				{
-					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
+					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, IPC_NOWAIT);
 				}			
 				CalcNextActionTime(&nextActionTime);
 			}
-			else if (resToReleasePos > 1)
+			else if (resToReleasePos >= 0)
 			{
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
@@ -250,7 +250,7 @@ int main(int argc, int argv)
 				sprintf(convert, "%i", resToReleasePos);
 
 				strcpy(msgbuf.mtext, convert);
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
 
 				CalcNextActionTime(&nextActionTime);
 			}
