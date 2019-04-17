@@ -322,7 +322,7 @@ int AllocResource(int procRow)
 			}
 			else
 			{
-				return 0;
+				return -1;
 			}		
 		}
 	}
@@ -417,15 +417,18 @@ void DoSharedWork()
 		}
 	for(iterator = 0; iterator < getSize(resQueue); iterator++)
 	{
-		int procpos = dequeue(resQueue);
+		int cpid = dequeue(resQueue);
+		int procpos = FindPID(cpid);
+
 		if(AllocResource(procpos) != 1)
 		{
-			enqueue(resQueue, procpos);
+			enqueue(resQueue, cpid);
 		}
 		else 
 		{
 			printf("\nResource has been granted");
 			strcpy(msgbuf.mtext, "REQ_GRANT");
+			msgbuf.mtype = cpid;
 			msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 		}
 	}
@@ -438,9 +441,9 @@ void DoSharedWork()
 				printf("\nGot request from %i", msgbuf.mtype);
 					
 
-				if(AllocResource(procpos) != 1)
+				if(AllocResource(procpos) == -1)
 				{
-					enqueue(resQueue, procpos);
+					enqueue(resQueue, msgbuf.mtype);
 				}
 				else 
 				{
@@ -448,7 +451,8 @@ void DoSharedWork()
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 				}
 
-				//DisplayResources();
+				DisplayResources();
+				printf("\nIn queue: %i", getSize(resQueue));
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 
 			{

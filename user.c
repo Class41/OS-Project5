@@ -222,8 +222,13 @@ int main(int argc, int argv)
 			resToReleasePos = getResourceToRelease(pid);
 			if ((rand() % 100) <= CHANCE_TO_REQUEST)
 			{
-				int resToRequest = (rand() % 20) + 1;
-				data->req[resToRequest][FindPID(pid)] = (rand() % data->resVec[resToRequest]) + 1;
+				int resToRequest;
+				do {
+			 		resToRequest = (rand() % 20) + 1;
+				}
+				while(data->alloc[FindPID(pid)][resToRequest] > 0);
+	
+				data->req[resToRequest][FindPID(pid)] = (rand() % (data->resVec[resToRequest] - 1));
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REQ");
