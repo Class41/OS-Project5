@@ -244,14 +244,10 @@ int main(int argc, int argv)
 				strcpy(msgbuf.mtext, convert);
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
-				printf("RESPONSE RECIEVED!!");
-				fflush(stdout);
-
 				CalcNextActionTime(&nextActionTime);
 			}
 			else
 			{
-				printf("\nNo resources to release, skipping turn. %i", resToReleasePos);
 				CalcNextActionTime(&nextActionTime);
 			}
 		}
