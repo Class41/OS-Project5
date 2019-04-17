@@ -332,7 +332,7 @@ int AllocResource(int procRow)
 int DellocResource(int procRow, int resID)
 {
 	if(CheckForExistence(&(data->sharedRes), 5, resID) != 1)
-		data->allocVec[resID][procRow] += data->alloc[resID][procRow];
+		(data->allocVec[resID][procRow]) += (data->alloc[resID][procRow]);
 	data->alloc[resID][procRow] = 0;
 }
 
@@ -437,9 +437,9 @@ void DoSharedWork()
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 
 			{
 				int procpos = FindPID(msgbuf.mtype);
-				
+
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), msgbuf.mtype, 0);
-				DellocResource(procpos, atoi(msgbuf.mtext))
+				DellocResource(procpos, atoi(msgbuf.mtext));
 				printf("\nGot release from %i", msgbuf.mtype);
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0) 
