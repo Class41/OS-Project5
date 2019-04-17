@@ -222,7 +222,6 @@ void GenerateResources()
 			
 			if (CheckForExistence(data->sharedRes, 5, tempval) != 1)
 			{
-				printf("I should be inserting %i", tempval);
 				data->sharedRes[i] = tempval;
 				break;
 			}
@@ -318,7 +317,7 @@ int AllocResource(int procRow)
 				if(CheckForExistence(&(data->sharedRes), 5, i) != 1)
 					(data->allocVec[i]) -= (data->req[i][procRow]);
 				(data->req[i][procRow]) = 0;
-				DisplayResources();
+				//DisplayResources();
 				return 1;
 			}
 			else
@@ -433,6 +432,8 @@ void DoSharedWork()
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 				}
+
+				//DisplayResources();
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) 
 			{
