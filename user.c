@@ -178,7 +178,7 @@ void CalcNextActionTime(Time *t)
 	AddTimeLong(t, mstoadd);
 }
 
-int getResourceToRelease()
+int getResourceToRelease(int pid)
 {
 	int myPos = FindPID(pid);
 	int i;
@@ -235,7 +235,7 @@ int main(int argc, int argv)
 
 				CalcNextActionTime(&nextActionTime);
 			}
-			else if((resToReleasePos = getResourceToRelease()) > 1)
+			else if((resToReleasePos = getResourceToRelease(pid)) > 1)
 			{
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
