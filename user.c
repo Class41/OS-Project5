@@ -183,17 +183,13 @@ int getResourceToRelease(int pid)
 	int myPos = FindPID(pid);
 	int i;
 
-	for(i = 0; i < 20; i++)
+	for (i = 0; i < 20; i++)
 	{
-		if( data->alloc[i][myPos] > 0 )
-		{
+		if (data->alloc[i][myPos] > 0)
 			return i;
-		}
-		else
-		{
-			return -1;
-		}
 	}
+
+	return -1;
 }
 
 int main(int argc, int argv)
@@ -204,7 +200,7 @@ int main(int argc, int argv)
 	int pid = getpid(); //shorthand for getpid every time from now
 
 	/* Variables to keep tabs on time to be added instead of creating new ints every time */
-	Time nextActionTime = {0,0};
+	Time nextActionTime = {0, 0};
 
 	srand(time(NULL) ^ (pid << 16)); //ensure randomness by bitshifting and ORing the time based on the pid
 	int resToReleasePos;
@@ -236,20 +232,20 @@ int main(int argc, int argv)
 
 				CalcNextActionTime(&nextActionTime);
 			}
-			else if(resToReleasePos > 1)
+			else if (resToReleasePos > 1)
 			{
 				printf("RELEASING!");
 				fflush(stdout);
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); 
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
-				char* convert[5];
+				char *convert[5];
 				sprintf(convert, "%i", resToReleasePos);
 
 				strcpy(msgbuf.mtext, convert);
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); 
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
 				CalcNextActionTime(&nextActionTime);
 			}
@@ -258,7 +254,6 @@ int main(int argc, int argv)
 				printf("\nNo resources to release, skipping turn. %i", resToReleasePos);
 				CalcNextActionTime(&nextActionTime);
 			}
-			
 		}
 	}
 }
