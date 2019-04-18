@@ -574,7 +574,7 @@ void DoSharedWork()
 
 				for (i = 0; i < 19; i++)
 				{
-					if(procFlags[i] == 1)
+					if (procFlags[i] == 1)
 						continue;
 
 					if (procFlags[i] == 0 && CompareArrayAgainstReq(tempVec, i) == 1)
@@ -589,7 +589,6 @@ void DoSharedWork()
 					{
 						procFlags[i] = 0;
 					}
-					
 				}
 
 				/*updated = 0;
@@ -632,6 +631,25 @@ void DoSharedWork()
 					fprintf(o, "%s: [TERMINATE] [DEADLOCKER] pid: %i proc: %i\n\n", filen, data->proc[i].pid, i);
 
 					data->proc[i].pid = -1;
+				}
+			}
+
+			for (iterator = 0; iterator < getSize(resQueue); iterator++)
+			{
+				int cpid = dequeue(resQueue);
+				int procpos = FindPID(cpid);
+				int resID = FindAllocationRequest(procpos);
+
+				if (AllocResource(procpos, resID) == 1)
+				{
+					fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
+					strcpy(msgbuf.mtext, "REQ_GRANT");
+					msgbuf.mtype = cpid;
+					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+				}
+				else
+				{
+					enqueue(resQueue, cpid);
 				}
 			}
 		}
