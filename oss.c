@@ -100,6 +100,7 @@ void Handler(int signal)
 {
 	fflush(stdout); //make sure that messages are output correctly before we start terminating things
 
+	DisplayResources();
 	int i;
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
 		if (data->proc[i].pid != -1)
