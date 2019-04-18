@@ -207,24 +207,24 @@ int main(int argc, int argv)
 
 	while (1)
 	{
-		strcpy(data->proc[FindPID(pid)], "ST NEW LOOP");
+		strcpy(data->proc[FindPID(pid)].status, "ST NEW LOOP");
 		if (CompareTime(&(data->sysTime), &(nextActionTime)) == 1)
 		{
-			strcpy(data->proc[FindPID(pid)], "EN TIME START");
+			strcpy(data->proc[FindPID(pid)].status, "EN TIME START");
 			if ((rand() % 100) <= CHANCE_TO_DIE_PERCENT) //roll for termination
 			{
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "TER");
-				strcpy(data->proc[FindPID(pid)], "SND MSTR TERM");
+				strcpy(data->proc[FindPID(pid)].status, "SND MSTR TERM");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
-				strcpy(data->proc[FindPID(pid)], "EXT MSTR GOT");
+				strcpy(data->proc[FindPID(pid)].status, "EXT MSTR GOT");
 				exit(21);
 			}
 
 			resToReleasePos = getResourceToRelease(pid);
 			if ((rand() % 100) < CHANCE_TO_REQUEST)
 			{
-				strcpy(data->proc[FindPID(pid)], "EN REQ BLOK");
+				strcpy(data->proc[FindPID(pid)].status, "EN REQ BLOK");
 				int resToRequest;
 				do
 				{
@@ -236,32 +236,32 @@ int main(int argc, int argv)
 				msgbuf.mtype = pid;
 
 				strcpy(msgbuf.mtext, "REQ");
-				strcpy(data->proc[FindPID(pid)], "SND MASTER REQ");
+				strcpy(data->proc[FindPID(pid)].status, "SND MASTER REQ");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
-				strcpy(data->proc[FindPID(pid)], "GOT MASTER REQ RES");
-				strcpy(data->proc[FindPID(pid)], "WAIT MASTER GRANT");
+				strcpy(data->proc[FindPID(pid)].status, "GOT MASTER REQ RES");
+				strcpy(data->proc[FindPID(pid)].status, "WAIT MASTER GRANT");
 				while (!(strcmp(msgbuf.mtext, "REQ_GRANT") == 0))
 				{
 					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
 				}
-				strcpy(data->proc[FindPID(pid)], "GOT REQ GRANT");
+				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
 				CalcNextActionTime(&nextActionTime);
 			}
 			else if (resToReleasePos >= 0)
 			{
-				strcpy(data->proc[FindPID(pid)], "START RELEASE");
+				strcpy(data->proc[FindPID(pid)].status, "START RELEASE");
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REL");
-				strcpy(data->proc[FindPID(pid)], "SND MASTER REL REQ");
+				strcpy(data->proc[FindPID(pid)].status, "SND MASTER REL REQ");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
 
 				char *convert[5];
 				sprintf(convert, "%i", resToReleasePos);
 
 				strcpy(msgbuf.mtext, convert);
-				strcpy(data->proc[FindPID(pid)], "SND MASTER RELEASE ID");
+				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RELEASE ID");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
-				strcpy(data->proc[FindPID(pid)], "MASTER ACCEPT RELEASE ID");
+				strcpy(data->proc[FindPID(pid)].status, "MASTER ACCEPT RELEASE ID");
 				CalcNextActionTime(&nextActionTime);
 			}
 			else
