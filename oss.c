@@ -554,7 +554,7 @@ void DoSharedWork()
 			int isMatch = 0;
 
 			for (i = 0; i < 20; i++)
-				tempvec[i] = data->allocVec[i];
+				tempVec[i] = data->allocVec[i];
 
 			for (i = 0; i < 19; i++)
 			{
@@ -569,7 +569,7 @@ void DoSharedWork()
 				if (isMatch == 1)
 				{
 					for (j = 0; j < 20; j++)
-						tempvec[j] += data->alloc[j][i];
+						tempVec[j] += data->alloc[j][i];
 				}
 			}
 
