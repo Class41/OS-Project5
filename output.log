@@ -1,641 +1,1677 @@
-./oss: [PROC CREATE] pid: 26995
+./oss: [PROC CREATE] pid: 6341
 
-./oss: [REQUEST] pid: 26995 proc: resID: 0
-	-> [REQUEST] pid: 26995 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [PROC CREATE] pid: 26996
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 26996 proc: resID: 1
-	-> [REQUEST] pid: 26996 request fulfilled...
+./oss: [PROC CREATE] pid: 6342
 
-./oss: [PROC CREATE] pid: 26997
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 26997 proc: resID: 2
-	-> [REQUEST] pid: 26997 request fulfilled...
+./oss: [RELEASE] pid: 6341 proc: 0  resID: 15
 
-./oss: [RELEASE] pid: 26995 proc: 0  resID: 1
+./oss: [PROC CREATE] pid: 6343
 
-./oss: [REQUEST] pid: 26997 proc: resID: 2
-	-> [REQUEST] pid: 26997 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 26996 proc: resID: 1
-	-> [REQUEST] pid: 26996 request unfulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request unfulfilled...
 
-./oss: [RELEASE] pid: 26997 proc: 2  resID: 0
+./oss: [RELEASE] pid: 6341 proc: 0  resID: 17
 
-./oss: [REQUEST] [QUEUE] pid: 26997 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6341 request fulfilled...
 
-./oss: [TERMINATE] pid: 26996 proc: 1
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 17
 
-./oss: [REQUEST] pid: 26997 proc: resID: 2
-	-> [REQUEST] pid: 26997 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [PROC CREATE] pid: 26998
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 26995 proc: resID: 0
-	-> [REQUEST] pid: 26995 request unfulfilled...
+./oss: [PROC CREATE] pid: 6344
 
-./oss: [REQUEST] pid: 26997 proc: resID: 2
-	-> [REQUEST] pid: 26997 request unfulfilled...
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 10
 
-./oss: [RELEASE] pid: 26998 proc: 1  resID: 16
+./oss: [REQUEST] pid: 6342 proc: resID: 1
+	-> [REQUEST] pid: 6342 request fulfilled...
 
-./oss: [PROC CREATE] pid: 26999
+./oss: [RELEASE] pid: 6341 proc: 0  resID: 2
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request fulfilled...
+./oss: [REQUEST] pid: 6342 proc: resID: 1
+	-> [REQUEST] pid: 6342 request fulfilled...
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request unfulfilled...
 
-./oss: [RELEASE] pid: 26998 proc: 1  resID: 8
+./oss: [PROC CREATE] pid: 6345
 
-./oss: [RELEASE] pid: 26998 proc: 1  resID: 19
+./oss: [PROC CREATE] pid: 6346
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request fulfilled...
+./oss: [REQUEST] pid: 6345 proc: resID: 4
+	-> [REQUEST] pid: 6345 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27000
+./oss: [REQUEST] pid: 6346 proc: resID: 5
+	-> [REQUEST] pid: 6346 request fulfilled...
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [PROC CREATE] pid: 6347
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 11
 
-./oss: [PROC CREATE] pid: 27001
+./oss: [REQUEST] pid: 6344 proc: resID: 3
+	-> [REQUEST] pid: 6344 request fulfilled...
 
-./oss: [RELEASE] pid: 27000 proc: 4  resID: 7
+./oss: [RELEASE] pid: 6344 proc: 3  resID: 17
 
-./oss: [RELEASE] pid: 26999 proc: 3  resID: 1
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [RELEASE] pid: 6342 proc: 1  resID: 5
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6342 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [REQUEST] pid: 6345 proc: resID: 4
+	-> [REQUEST] pid: 6345 request fulfilled...
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request fulfilled...
+./oss: [RELEASE] pid: 6346 proc: 5  resID: 7
 
-./oss: [RELEASE] pid: 27001 proc: 5  resID: 11
+./oss: [PROC CREATE] pid: 6348
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [REQUEST] pid: 6345 proc: resID: 4
+	-> [REQUEST] pid: 6345 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27002
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [PROC CREATE] pid: 6349
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [REQUEST] pid: 6345 proc: resID: 4
+	-> [REQUEST] pid: 6345 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 27002 proc: resID: 6
-	-> [REQUEST] pid: 27002 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [REQUEST] pid: 6347 proc: resID: 6
+	-> [REQUEST] pid: 6347 request unfulfilled...
 
-./oss: [RELEASE] pid: 27001 proc: 5  resID: 13
+./oss: [RELEASE] pid: 6342 proc: 1  resID: 9
 
-./oss: [REQUEST] pid: 27002 proc: resID: 6
-	-> [REQUEST] pid: 27002 request fulfilled...
+./oss: [RELEASE] pid: 6345 proc: 4  resID: 0
 
-./oss: [PROC CREATE] pid: 27003
+./oss: [REQUEST] pid: 6345 proc: resID: 4
+	-> [REQUEST] pid: 6345 request fulfilled...
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [RELEASE] pid: 26999 proc: 3  resID: 10
+./oss: [TERMINATE] pid: 6342 proc: 1
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request fulfilled...
 
-./oss: [REQUEST] pid: 27002 proc: resID: 6
-	-> [REQUEST] pid: 27002 request fulfilled...
+./oss: [REQUEST] pid: 6346 proc: resID: 5
+	-> [REQUEST] pid: 6346 request fulfilled...
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [PROC CREATE] pid: 6350
 
-./oss: [RELEASE] pid: 26998 proc: 1  resID: 0
+./oss: [RELEASE] pid: 6341 proc: 0  resID: 5
 
-./oss: [REQUEST] pid: 27002 proc: resID: 6
-	-> [REQUEST] pid: 27002 request fulfilled...
+./oss: [REQUEST] pid: 6348 proc: resID: 7
+	-> [REQUEST] pid: 6348 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [REQUEST] pid: 6346 proc: resID: 5
+	-> [REQUEST] pid: 6346 request unfulfilled...
 
-./oss: [PROC CREATE] pid: 27004
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request unfulfilled...
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [REQUEST] pid: 6345 proc: resID: 4
+	-> [REQUEST] pid: 6345 request unfulfilled...
 
-./oss: [RELEASE] pid: 27002 proc: 6  resID: 6
+./oss: [RELEASE] pid: 6341 proc: 0  resID: 7
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6345 proc: 4
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6346 proc: 5
 
-./oss: [PROC CREATE] pid: 27005
+./oss: [REQUEST] [QUEUE] pid: 6349 request fulfilled...
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request unfulfilled...
+./oss: [PROC CREATE] pid: 6351
 
-./oss: [RELEASE] pid: 27002 proc: 6  resID: 8
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request unfulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [RELEASE] pid: 27000 proc: 4  resID: 1
+./oss: [REQUEST] [QUEUE] pid: 6341 request fulfilled...
 
-./oss: [RELEASE] pid: 26998 proc: 1  resID: 13
+./oss: [REQUEST] pid: 6350 proc: resID: 1
+	-> [REQUEST] pid: 6350 request fulfilled...
 
-./oss: [RELEASE] pid: 27002 proc: 6  resID: 11
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [RELEASE] pid: 27000 proc: 4  resID: 2
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [TERMINATE] pid: 6350 proc: 1
 
-./oss: [REQUEST] pid: 27000 proc: resID: 4
-	-> [REQUEST] pid: 27000 request fulfilled...
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 1
 
-./oss: [PROC CREATE] pid: 27006
+./oss: [REQUEST] pid: 6344 proc: resID: 3
+	-> [REQUEST] pid: 6344 request fulfilled...
 
-./oss: [REQUEST] pid: 26998 proc: resID: 1
-	-> [REQUEST] pid: 26998 request unfulfilled...
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request fulfilled...
 
-./oss: [REQUEST] pid: 27004 proc: resID: 8
-	-> [REQUEST] pid: 27004 request fulfilled...
+./oss: [PROC CREATE] pid: 6352
 
-./oss: [RELEASE] pid: 27002 proc: 6  resID: 17
+./oss: [PROC CREATE] pid: 6353
 
-./oss: [REQUEST] pid: 27002 proc: resID: 6
-	-> [REQUEST] pid: 27002 request fulfilled...
+./oss: [RELEASE] pid: 6349 proc: 8  resID: 2
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request unfulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [REQUEST] pid: 6353 proc: resID: 5
+	-> [REQUEST] pid: 6353 request fulfilled...
 
-./oss: [TERMINATE] pid: 27000 proc: 4
+./oss: [REQUEST] pid: 6351 proc: resID: 4
+	-> [REQUEST] pid: 6351 request fulfilled...
 
-./oss: [REQUEST] pid: 27006 proc: resID: 10
-	-> [REQUEST] pid: 27006 request unfulfilled...
+./oss: [REQUEST] pid: 6352 proc: resID: 1
+	-> [REQUEST] pid: 6352 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 27006 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 26999 request fulfilled...
+./oss: [REQUEST] pid: 6348 proc: resID: 7
+	-> [REQUEST] pid: 6348 request unfulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 27003 request fulfilled...
+./oss: [RELEASE] pid: 6353 proc: 5  resID: 2
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [PROC CREATE] pid: 6354
 
-./oss: [RELEASE] pid: 27005 proc: 9  resID: 15
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27007
+./oss: [RELEASE] pid: 6349 proc: 8  resID: 7
 
-./oss: [RELEASE] pid: 27003 proc: 7  resID: 12
+./oss: [REQUEST] pid: 6351 proc: resID: 4
+	-> [REQUEST] pid: 6351 request unfulfilled...
 
-./oss: [RELEASE] pid: 26999 proc: 3  resID: 4
+./oss: [REQUEST] [QUEUE] pid: 6351 request fulfilled...
 
-./oss: [TERMINATE] pid: 27004 proc: 8
+./oss: [REQUEST] pid: 6352 proc: resID: 1
+	-> [REQUEST] pid: 6352 request unfulfilled...
 
-./oss: [PROC CREATE] pid: 27008
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [RELEASE] pid: 6349 proc: 8  resID: 9
 
-./oss: [RELEASE] pid: 27001 proc: 5  resID: 3
+./oss: [RELEASE] pid: 6351 proc: 4  resID: 13
 
-./oss: [REQUEST] pid: 27008 proc: resID: 8
-	-> [REQUEST] pid: 27008 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 27007 proc: resID: 4
-	-> [REQUEST] pid: 27007 request fulfilled...
+./oss: [RELEASE] pid: 6341 proc: 0  resID: 12
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [REQUEST] pid: 6344 proc: resID: 3
+	-> [REQUEST] pid: 6344 request fulfilled...
 
-./oss: [REQUEST] pid: 27002 proc: resID: 6
-	-> [REQUEST] pid: 27002 request fulfilled...
+./oss: [REQUEST] pid: 6353 proc: resID: 5
+	-> [REQUEST] pid: 6353 request fulfilled...
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [RELEASE] pid: 26999 proc: 3  resID: 10
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request unfulfilled...
 
-./oss: [PROC CREATE] pid: 27009
+./oss: [RELEASE] pid: 6353 proc: 5  resID: 2
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 27008 proc: resID: 8
-	-> [REQUEST] pid: 27008 request fulfilled...
+./oss: [REQUEST] pid: 6351 proc: resID: 4
+	-> [REQUEST] pid: 6351 request unfulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] pid: 6344 proc: resID: 3
+	-> [REQUEST] pid: 6344 request fulfilled...
 
-./oss: [RELEASE] pid: 27007 proc: 4  resID: 4
+./oss: [PROC CREATE] pid: 6355
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [REQUEST] pid: 6353 proc: resID: 5
+	-> [REQUEST] pid: 6353 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27010
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27011
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 4
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [REQUEST] pid: 6353 proc: resID: 5
+	-> [REQUEST] pid: 6353 request fulfilled...
 
-./oss: [REQUEST] pid: 27011 proc: resID: 13
-	-> [REQUEST] pid: 27011 request fulfilled...
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
 
-./oss: [REQUEST] pid: 27010 proc: resID: 12
-	-> [REQUEST] pid: 27010 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request fulfilled...
 
-./oss: [REQUEST] pid: 27009 proc: resID: 11
-	-> [REQUEST] pid: 27009 request fulfilled...
+./oss: [REQUEST] pid: 6344 proc: resID: 3
+	-> [REQUEST] pid: 6344 request fulfilled...
 
-./oss: [REQUEST] pid: 27002 proc: resID: 6
-	-> [REQUEST] pid: 27002 request unfulfilled...
+./oss: [RELEASE] pid: 6354 proc: 9  resID: 2
 
-./oss: [REQUEST] pid: 27007 proc: resID: 4
-	-> [REQUEST] pid: 27007 request unfulfilled...
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 7
 
-./oss: [PROC CREATE] pid: 27012
+./oss: [REQUEST] [QUEUE] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 27009 proc: resID: 11
-	-> [REQUEST] pid: 27009 request fulfilled...
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 8
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request unfulfilled...
+./oss: [RELEASE] pid: 6341 proc: 0  resID: 4
 
-./oss: [RELEASE] pid: 27008 proc: 8  resID: 1
+./oss: [RELEASE] pid: 6354 proc: 9  resID: 12
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [PROC CREATE] pid: 6356
 
-./oss: [RELEASE] pid: 27003 proc: 7  resID: 4
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 9
 
-./oss: [REQUEST] [QUEUE] pid: 27003 request fulfilled...
+./oss: [REQUEST] pid: 6353 proc: resID: 5
+	-> [REQUEST] pid: 6353 request fulfilled...
 
-./oss: [REQUEST] pid: 27011 proc: resID: 13
-	-> [REQUEST] pid: 27011 request fulfilled...
+./oss: [RELEASE] pid: 6341 proc: 0  resID: 14
 
-./oss: [RELEASE] pid: 26999 proc: 3  resID: 6
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request unfulfilled...
 
-./oss: [REQUEST] pid: 27012 proc: resID: 14
-	-> [REQUEST] pid: 27012 request fulfilled...
+./oss: [REQUEST] pid: 6356 proc: resID: 11
+	-> [REQUEST] pid: 6356 request fulfilled...
 
-./oss: [RELEASE] pid: 27001 proc: 5  resID: 4
+./oss: [REQUEST] pid: 6344 proc: resID: 3
+	-> [REQUEST] pid: 6344 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [PROC CREATE] pid: 6357
 
-./oss: [TERMINATE] pid: 27010 proc: -1
+./oss: [RELEASE] pid: 6349 proc: 8  resID: 7
 
-./oss: [REQUEST] pid: 27011 proc: resID: 13
-	-> [REQUEST] pid: 27011 request fulfilled...
+./oss: [REQUEST] pid: 6341 proc: resID: 0
+	-> [REQUEST] pid: 6341 request unfulfilled...
 
-./oss: [RELEASE] pid: 26999 proc: 3  resID: 7
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request unfulfilled...
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [REQUEST] pid: 6356 proc: resID: 11
+	-> [REQUEST] pid: 6356 request fulfilled...
 
-./oss: [RELEASE] pid: 27011 proc: 13  resID: 0
+./oss: [REQUEST] pid: 6357 proc: resID: 12
+	-> [REQUEST] pid: 6357 request unfulfilled...
 
-./oss: [PROC CREATE] pid: 27013
+./oss: [TERMINATE] [DEADLOCKER] pid: 6341 proc: 0
 
-./oss: [RELEASE] pid: 27003 proc: 7  resID: 2
+./oss: [TERMINATE] [DEADLOCKER] pid: 6352 proc: 1
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6351 proc: 4
 
-./oss: [PROC CREATE] pid: 27014
+./oss: [REQUEST] [QUEUE] pid: 6357 request fulfilled...
 
-./oss: [REQUEST] pid: 27009 proc: resID: 11
-	-> [REQUEST] pid: 27009 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6351 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27015
+./oss: [REQUEST] [QUEUE] pid: 6352 request fulfilled...
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request unfulfilled...
 
-./oss: [REQUEST] pid: 27014 proc: resID: 15
-	-> [REQUEST] pid: 27014 request unfulfilled...
+./oss: [RELEASE] pid: 6344 proc: 3  resID: 3
 
-./oss: [RELEASE] pid: 27001 proc: 5  resID: 17
+./oss: [REQUEST] [QUEUE] pid: 6344 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 27001 request fulfilled...
+./oss: [PROC CREATE] pid: 6358
 
-./oss: [REQUEST] pid: 27013 proc: resID: 12
-	-> [REQUEST] pid: 27013 request fulfilled...
+./oss: [RELEASE] pid: 6344 proc: 3  resID: 4
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [RELEASE] pid: 6344 proc: 3  resID: 8
 
-./oss: [REQUEST] pid: 27012 proc: resID: 14
-	-> [REQUEST] pid: 27012 request fulfilled...
+./oss: [RELEASE] pid: 6356 proc: 11  resID: 6
 
-./oss: [REQUEST] pid: 27009 proc: resID: 11
-	-> [REQUEST] pid: 27009 request fulfilled...
+./oss: [REQUEST] pid: 6356 proc: resID: 11
+	-> [REQUEST] pid: 6356 request fulfilled...
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [RELEASE] pid: 6353 proc: 5  resID: 5
 
-./oss: [PROC CREATE] pid: 27016
+./oss: [REQUEST] [QUEUE] pid: 6353 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [REQUEST] pid: 6358 proc: resID: 0
+	-> [REQUEST] pid: 6358 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] pid: 6357 proc: resID: 12
+	-> [REQUEST] pid: 6357 request fulfilled...
 
-./oss: [REQUEST] pid: 27012 proc: resID: 14
-	-> [REQUEST] pid: 27012 request fulfilled...
+./oss: [RELEASE] pid: 6344 proc: 3  resID: 15
 
-./oss: [REQUEST] pid: 27013 proc: resID: 12
-	-> [REQUEST] pid: 27013 request fulfilled...
+./oss: [REQUEST] pid: 6344 proc: resID: 3
+	-> [REQUEST] pid: 6344 request fulfilled...
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [RELEASE] pid: 6354 proc: 9  resID: 5
 
-./oss: [RELEASE] pid: 27014 proc: 15  resID: 17
+./oss: [REQUEST] [QUEUE] pid: 6354 request fulfilled...
 
-./oss: [REQUEST] pid: 27008 proc: resID: 8
-	-> [REQUEST] pid: 27008 request unfulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [TERMINATE] pid: 27015 proc: -1
+./oss: [PROC CREATE] pid: 6359
 
-./oss: [REQUEST] pid: 27011 proc: resID: 13
-	-> [REQUEST] pid: 27011 request fulfilled...
+./oss: [TERMINATE] pid: 6357 proc: 12
 
-./oss: [RELEASE] pid: 27003 proc: 7  resID: 12
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [RELEASE] pid: 27009 proc: 11  resID: 2
+./oss: [RELEASE] pid: 6344 proc: 3  resID: 6
 
-./oss: [REQUEST] pid: 27013 proc: resID: 12
-	-> [REQUEST] pid: 27013 request fulfilled...
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request fulfilled...
+./oss: [PROC CREATE] pid: 6360
 
-./oss: [REQUEST] pid: 27012 proc: resID: 14
-	-> [REQUEST] pid: 27012 request unfulfilled...
+./oss: [REQUEST] pid: 6358 proc: resID: 0
+	-> [REQUEST] pid: 6358 request unfulfilled...
 
-./oss: [TERMINATE] pid: 27011 proc: 13
+./oss: [REQUEST] [QUEUE] pid: 6358 request fulfilled...
 
-./oss: [REQUEST] pid: 27014 proc: resID: 15
-	-> [REQUEST] pid: 27014 request unfulfilled...
+./oss: [REQUEST] pid: 6353 proc: resID: 5
+	-> [REQUEST] pid: 6353 request unfulfilled...
 
-./oss: [RELEASE] pid: 27003 proc: 7  resID: 16
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27017
+./oss: [RELEASE] pid: 6356 proc: 11  resID: 18
 
-./oss: [REQUEST] pid: 26999 proc: resID: 3
-	-> [REQUEST] pid: 26999 request unfulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6356 request fulfilled...
 
-./oss: [RELEASE] pid: 27001 proc: 5  resID: 5
+./oss: [REQUEST] pid: 6360 proc: resID: 4
+	-> [REQUEST] pid: 6360 request fulfilled...
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [PROC CREATE] pid: 6361
 
-./oss: [RELEASE] pid: 27013 proc: 12  resID: 11
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request fulfilled...
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request fulfilled...
+./oss: [REQUEST] pid: 6360 proc: resID: 4
+	-> [REQUEST] pid: 6360 request fulfilled...
 
-./oss: [REQUEST] pid: 27009 proc: resID: 11
-	-> [REQUEST] pid: 27009 request fulfilled...
+./oss: [REQUEST] pid: 6356 proc: resID: 11
+	-> [REQUEST] pid: 6356 request fulfilled...
 
-./oss: [RELEASE] pid: 27001 proc: 5  resID: 7
+./oss: [RELEASE] pid: 6359 proc: 1  resID: 7
 
-./oss: [REQUEST] pid: 27001 proc: resID: 5
-	-> [REQUEST] pid: 27001 request unfulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 27013 proc: resID: 12
-	-> [REQUEST] pid: 27013 request fulfilled...
+./oss: [REQUEST] pid: 6358 proc: resID: 0
+	-> [REQUEST] pid: 6358 request fulfilled...
 
-./oss: [REQUEST] pid: 27016 proc: resID: 17
-	-> [REQUEST] pid: 27016 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [RELEASE] pid: 6360 proc: 4  resID: 2
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request fulfilled...
 
-./oss: [REQUEST] pid: 27009 proc: resID: 11
-	-> [REQUEST] pid: 27009 request fulfilled...
+./oss: [RELEASE] pid: 6356 proc: 11  resID: 4
 
-./oss: [RELEASE] pid: 27013 proc: 12  resID: 15
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 27013 request fulfilled...
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27018
+./oss: [PROC CREATE] pid: 6362
 
-./oss: [REQUEST] pid: 27016 proc: resID: 17
-	-> [REQUEST] pid: 27016 request fulfilled...
+./oss: [REQUEST] pid: 6356 proc: resID: 11
+	-> [REQUEST] pid: 6356 request fulfilled...
 
-./oss: [REQUEST] pid: 27013 proc: resID: 12
-	-> [REQUEST] pid: 27013 request fulfilled...
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [REQUEST] pid: 27009 proc: resID: 11
-	-> [REQUEST] pid: 27009 request fulfilled...
+./oss: [PROC CREATE] pid: 6363
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [REQUEST] pid: 6360 proc: resID: 4
+	-> [REQUEST] pid: 6360 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27019
+./oss: [REQUEST] pid: 6358 proc: resID: 0
+	-> [REQUEST] pid: 6358 request fulfilled...
 
-./oss: [RELEASE] pid: 27014 proc: 15  resID: 15
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 4
 
-./oss: [RELEASE] pid: 27016 proc: 17  resID: 17
+./oss: [TERMINATE] pid: 6344 proc: -1
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [REQUEST] pid: 27019 proc: resID: 18
-	-> [REQUEST] pid: 27019 request fulfilled...
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
 
-./oss: [RELEASE] pid: 27009 proc: 11  resID: 3
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 27009 request fulfilled...
+./oss: [REQUEST] pid: 6362 proc: resID: 13
+	-> [REQUEST] pid: 6362 request unfulfilled...
 
-./oss: [RELEASE] pid: 27005 proc: 9  resID: 6
+./oss: [REQUEST] pid: 6358 proc: resID: 0
+	-> [REQUEST] pid: 6358 request fulfilled...
 
-./oss: [REQUEST] pid: 27019 proc: resID: 18
-	-> [REQUEST] pid: 27019 request fulfilled...
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [RELEASE] pid: 27009 proc: 11  resID: 4
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request unfulfilled...
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [REQUEST] pid: 6360 proc: resID: 4
+	-> [REQUEST] pid: 6360 request unfulfilled...
 
-./oss: [REQUEST] pid: 27007 proc: resID: 4
-	-> [REQUEST] pid: 27007 request fulfilled...
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 3
 
-./oss: [REQUEST] pid: 27018 proc: resID: 16
-	-> [REQUEST] pid: 27018 request unfulfilled...
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [RELEASE] pid: 27013 proc: 12  resID: 16
+./oss: [REQUEST] pid: 6358 proc: resID: 0
+	-> [REQUEST] pid: 6358 request unfulfilled...
 
-./oss: [RELEASE] pid: 27009 proc: 11  resID: 8
+./oss: [RELEASE] pid: 6343 proc: 2  resID: 5
 
-./oss: [RELEASE] pid: 27003 proc: 7  resID: 2
+./oss: [REQUEST] [QUEUE] pid: 6343 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 27003 request fulfilled...
+./oss: [REQUEST] pid: 6349 proc: resID: 8
+	-> [REQUEST] pid: 6349 request unfulfilled...
 
-./oss: [RELEASE] pid: 27005 proc: 9  resID: 11
+./oss: [REQUEST] pid: 6363 proc: resID: 3
+	-> [REQUEST] pid: 6363 request unfulfilled...
 
-./oss: [REQUEST] pid: 27009 proc: resID: 11
-	-> [REQUEST] pid: 27009 request unfulfilled...
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [REQUEST] pid: 27016 proc: resID: 17
-	-> [REQUEST] pid: 27016 request fulfilled...
+./oss: [REQUEST] pid: 6356 proc: resID: 11
+	-> [REQUEST] pid: 6356 request fulfilled...
 
-./oss: [REQUEST] pid: 27017 proc: resID: 13
-	-> [REQUEST] pid: 27017 request fulfilled...
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [REQUEST] pid: 27014 proc: resID: 15
-	-> [REQUEST] pid: 27014 request unfulfilled...
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [REQUEST] pid: 27007 proc: resID: 4
-	-> [REQUEST] pid: 27007 request fulfilled...
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [REQUEST] pid: 27019 proc: resID: 18
-	-> [REQUEST] pid: 27019 request unfulfilled...
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [REQUEST] pid: 6343 proc: resID: 2
+	-> [REQUEST] pid: 6343 request unfulfilled...
 
-./oss: [REQUEST] pid: 27013 proc: resID: 12
-	-> [REQUEST] pid: 27013 request unfulfilled...
+./oss: [RELEASE] pid: 6359 proc: 1  resID: 12
 
-./oss: [RELEASE] pid: 27007 proc: 4  resID: 3
+./oss: [REQUEST] pid: 6356 proc: resID: 11
+	-> [REQUEST] pid: 6356 request unfulfilled...
 
-./oss: [REQUEST] pid: 27018 proc: resID: 16
-	-> [REQUEST] pid: 27018 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6358 proc: 0
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6343 proc: 2
 
-./oss: [RELEASE] pid: 27016 proc: 17  resID: 7
+./oss: [TERMINATE] [DEADLOCKER] pid: 6363 proc: 3
 
-./oss: [RELEASE] pid: 27017 proc: 13  resID: 5
+./oss: [TERMINATE] [DEADLOCKER] pid: 6360 proc: 4
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6353 proc: 5
 
-./oss: [REQUEST] pid: 27016 proc: resID: 17
-	-> [REQUEST] pid: 27016 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6347 proc: 6
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6348 proc: 7
 
-./oss: [REQUEST] pid: 27007 proc: resID: 4
-	-> [REQUEST] pid: 27007 request unfulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6349 proc: 8
 
-./oss: [REQUEST] pid: 27018 proc: resID: 16
-	-> [REQUEST] pid: 27018 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6356 proc: 11
 
-./oss: [REQUEST] pid: 27017 proc: resID: 13
-	-> [REQUEST] pid: 27017 request unfulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 6362 proc: 13
 
-./oss: [REQUEST] pid: 27018 proc: resID: 16
-	-> [REQUEST] pid: 27018 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6356 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6358 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6353 request fulfilled...
 
-./oss: [REQUEST] pid: 27016 proc: resID: 17
-	-> [REQUEST] pid: 27016 request unfulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6348 request fulfilled...
 
-./oss: [RELEASE] pid: 27003 proc: 7  resID: 8
+./oss: [REQUEST] [QUEUE] pid: 6347 request fulfilled...
 
-./oss: [REQUEST] pid: 27018 proc: resID: 16
-	-> [REQUEST] pid: 27018 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6362 request fulfilled...
 
-./oss: [RELEASE] pid: 27003 proc: 7  resID: 12
+./oss: [REQUEST] [QUEUE] pid: 6360 request fulfilled...
 
-./oss: [REQUEST] pid: 27018 proc: resID: 16
-	-> [REQUEST] pid: 27018 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6349 request fulfilled...
 
-./oss: [RELEASE] pid: 27005 proc: 9  resID: 7
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
 
-./oss: [RELEASE] pid: 27005 proc: 9  resID: 17
+./oss: [REQUEST] [QUEUE] pid: 6355 request fulfilled...
 
-./oss: [REQUEST] pid: 27018 proc: resID: 16
-	-> [REQUEST] pid: 27018 request unfulfilled...
+./oss: [RELEASE] pid: 6359 proc: 1  resID: 16
 
-./oss: [REQUEST] pid: 27003 proc: resID: 7
-	-> [REQUEST] pid: 27003 request unfulfilled...
+./oss: [REQUEST] [QUEUE] pid: 6359 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
 
-./oss: [RELEASE] pid: 27005 proc: 9  resID: 13
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
 
-./oss: [REQUEST] pid: 27005 proc: resID: 9
-	-> [REQUEST] pid: 27005 request fulfilled...
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 1
 
-./oss: [RELEASE] pid: 27005 proc: 9  resID: 17
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
 
-./oss: [TERMINATE] pid: 27005 proc: 9
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27020
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
 
-./oss: [REQUEST] pid: 27020 proc: resID: 9
-	-> [REQUEST] pid: 27020 request fulfilled...
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
 
-./oss: [TERMINATE] pid: 27020 proc: 9
+./oss: [RELEASE] pid: 6354 proc: 9  resID: 9
 
-./oss: [PROC CREATE] pid: 27021
+./oss: [REQUEST] pid: 6359 proc: resID: 1
+	-> [REQUEST] pid: 6359 request fulfilled...
 
-./oss: [REQUEST] pid: 27021 proc: resID: 9
-	-> [REQUEST] pid: 27021 request fulfilled...
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 1
 
-./oss: [REQUEST] pid: 27021 proc: resID: 9
-	-> [REQUEST] pid: 27021 request fulfilled...
+./oss: [RELEASE] pid: 6359 proc: 1  resID: 3
 
-./oss: [RELEASE] pid: 27021 proc: 9  resID: 13
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 8
 
-./oss: [REQUEST] pid: 27021 proc: resID: 9
-	-> [REQUEST] pid: 27021 request unfulfilled...
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [TERMINATE] pid: 6359 proc: 1
+
+./oss: [PROC CREATE] pid: 6364
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 18
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [RELEASE] pid: 6354 proc: 9  resID: 15
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request unfulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request unfulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 3
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 5
+
+./oss: [REQUEST] [QUEUE] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 9
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 5
+
+./oss: [REQUEST] [QUEUE] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6354 proc: 9  resID: 11
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 5
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 12
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 13
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 14
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 16
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 8
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 8
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 17
+
+./oss: [RELEASE] pid: 6354 proc: 9  resID: 11
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6354 proc: 9  resID: 14
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6354 proc: resID: 9
+	-> [REQUEST] pid: 6354 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request unfulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 1
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [TERMINATE] pid: 6354 proc: 9
+
+./oss: [PROC CREATE] pid: 6366
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 4
+
+./oss: [REQUEST] [QUEUE] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 11
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 13
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 4
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request unfulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 8
+
+./oss: [REQUEST] [QUEUE] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 8
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 12
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request unfulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 9
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request unfulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 1
+
+./oss: [REQUEST] [QUEUE] pid: 6355 request fulfilled...
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 12
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 0
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request unfulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 1
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 10
+
+./oss: [REQUEST] [QUEUE] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 8
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 10
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 9
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 1
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 10
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request unfulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request unfulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 0
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 1
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 11
+
+./oss: [REQUEST] [QUEUE] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 10
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 11
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request unfulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 7
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 12
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 13
+
+./oss: [REQUEST] [QUEUE] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 14
+
+./oss: [REQUEST] [QUEUE] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 15
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 13
+
+./oss: [REQUEST] [QUEUE] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 13
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 14
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 11
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 18
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 14
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 2
+
+./oss: [RELEASE] pid: 6361 proc: 12  resID: 4
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 3
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6355 proc: 10  resID: 4
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 13
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 17
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6361 proc: resID: 12
+	-> [REQUEST] pid: 6361 request unfulfilled...
+
+./oss: [REQUEST] pid: 6355 proc: resID: 10
+	-> [REQUEST] pid: 6355 request unfulfilled...
+
+./oss: [TERMINATE] [DEADLOCKER] pid: 6355 proc: 10
+
+./oss: [TERMINATE] [DEADLOCKER] pid: 6361 proc: 12
+
+./oss: [REQUEST] [QUEUE] pid: 6355 request fulfilled...
+
+./oss: [REQUEST] [QUEUE] pid: 6361 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 1
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 7
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 12
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 13
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 16
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 0
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 5
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 9
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 13
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 16
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 1
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 17
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 6
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 7
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 18
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 13
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 8
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 11
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 13
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 1
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 3
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 10
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 16
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 12
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request unfulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 12
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 15
+
+./oss: [REQUEST] [QUEUE] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 16
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 17
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 15
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 15
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 7
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 13
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 9
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 4
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 9
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 8
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 2
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 9
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request unfulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 0
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 15
+
+./oss: [REQUEST] [QUEUE] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 6
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 15
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 5
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 4
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 10
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 14
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 15
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 9
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 14
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 0
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 5
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 8
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 9
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 18
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 3
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 11
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 17
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 7
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 9
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 18
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 8
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 12
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 0
+
+./oss: [RELEASE] pid: 6366 proc: 1  resID: 11
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6366 proc: resID: 1
+	-> [REQUEST] pid: 6366 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [TERMINATE] pid: 6366 proc: 1
+
+./oss: [PROC CREATE] pid: 6368
+
+./oss: [TERMINATE] pid: 6368 proc: 1
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [PROC CREATE] pid: 6369
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6369 proc: 1  resID: 8
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 8
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6369 proc: 1  resID: 9
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 13
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 15
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 13
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [RELEASE] pid: 6369 proc: 1  resID: 8
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6369 proc: 1  resID: 10
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 9
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [RELEASE] pid: 6369 proc: 1  resID: 17
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [RELEASE] pid: 6369 proc: 1  resID: 17
+
+./oss: [REQUEST] pid: 6369 proc: resID: 1
+	-> [REQUEST] pid: 6369 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [TERMINATE] pid: 6369 proc: 1
+
+./oss: [PROC CREATE] pid: 6370
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 8
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 14
+
+./oss: [REQUEST] pid: 6370 proc: resID: 1
+	-> [REQUEST] pid: 6370 request fulfilled...
+
+./oss: [RELEASE] pid: 6370 proc: 1  resID: 15
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6370 proc: resID: 1
+	-> [REQUEST] pid: 6370 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [REQUEST] pid: 6364 proc: resID: 0
+	-> [REQUEST] pid: 6364 request fulfilled...
+
+./oss: [RELEASE] pid: 6370 proc: 1  resID: 17
+
+./oss: [REQUEST] pid: 6370 proc: resID: 1
+	-> [REQUEST] pid: 6370 request fulfilled...
+
+./oss: [RELEASE] pid: 6364 proc: 0  resID: 10
+
+./oss: [REQUEST] pid: 6370 proc: resID: 1
+	-> [REQUEST] pid: 6370 request fulfilled...
+
+./oss: [REQUEST] pid: 6370 proc: resID: 1
+	-> [REQUEST] pid: 6370 request fulfilled...
+
+./oss: [RELEASE] pid: 6370 proc: 1  resID: 1
+
+./oss: [REQUEST] pid: 6370 proc: resID: 1
+	-> [REQUEST] pid: 6370 request fulfilled...
+
+./oss: [REQUEST] pid: 6370 proc: resID: 1
+	-> [REQUEST] pid: 6370 request fulfilled...
+
+./oss: [RELEASE] pid: 6370 proc: 1  resID: 0
+
+./oss: [REQUEST] pid: 6370 proc: resID: 1
+	-> [REQUEST] pid: 6370 request fulfilled...
+
+./oss: [RELEASE] pid: 6370 proc: 1  resID: 4
+
+./oss: [RELEASE] pid: 6370 proc: 1  resID: 6
 

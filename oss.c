@@ -374,9 +374,9 @@ int CompareArrayAgainstReq(int *array1, int procpos)
 	int i;
 	for (i = 0; i < 20; i++)
 	{
+		//printf("\nComparing proc: %i res: %i result: %i", procpos, i, array1[i] - data->req[i][procpos]);
 		if ((array1[i] - data->req[i][procpos]) < 0)
 		{
-			printf("Returning -1\n");
 			return -1;
 		}
 	}
@@ -490,7 +490,7 @@ void DoSharedWork()
 					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n", msgbuf.mtype);
 				}
 
-				printf("\nIn queue: %i", getSize(resQueue));
+			//	printf("\nIn queue: %i", getSize(resQueue));
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0)
 			{
@@ -565,10 +565,12 @@ void DoSharedWork()
 
 			AddTimeLong(&deadlockExec, abs((long)(rand() % 101) * (long)1000000)); //set new exec time to 0 - 500ms after now
 
-			int tempVec[20];
-			int procFlags[19];
+			int* tempVec = calloc(20, sizeof(int));
+			int* procFlags = calloc(19, sizeof(int));
 			int i, j;
 			int isMatch = 0;
+
+			//DisplayResources();
 
 			for (i = 0; i < 20; i++)
 				tempVec[i] = data->allocVec[i];
@@ -589,7 +591,7 @@ void DoSharedWork()
 						procFlags[i] = 1;
 
 						for (j = 0; j < 20; j++)
-							tempVec[j] += data->alloc[j][i];
+						    tempVec[j] += data->alloc[j][i];
 					}
 					else
 					{
@@ -660,6 +662,10 @@ void DoSharedWork()
 					enqueue(resQueue, cpid);
 				}
 			}
+
+		free(procFlags);
+		free(tempVec);
+
 		}
 
 		fflush(stdout);
