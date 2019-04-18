@@ -374,8 +374,11 @@ int CompareArrayAgainstReq(int *array1, int procpos)
 	int i;
 	for (i = 0; i < 20; i++)
 	{
-		if (array1[i] < data->req[i][procpos])
+		if ((array1[i] - data->req[i][procpos]) < 0)
+		{
+			printf("Returning -1\n");
 			return -1;
+		}
 	}
 	
 	return 1;
