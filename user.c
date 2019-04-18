@@ -228,6 +228,7 @@ int main(int argc, int argv)
 				int resToRequest;
 				do
 				{
+					srand(time(NULL));
 					resToRequest = (rand() % 20) + 1;
 				} while (data->alloc[FindPID(pid)][resToRequest] > 0);
 
