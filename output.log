@@ -1,566 +1,998 @@
-./oss: [PROC CREATE] pid: 12064
+./oss: [PROC CREATE] pid: 18736
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 1
+./oss: [PROC CREATE] pid: 18737
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18737 proc: resID: 1
+	-> [REQUEST] pid: 18737 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12065
+./oss: [RELEASE] pid: 18737 proc: 1  resID: 13
 
-./oss: [REQUEST] pid: 12065 proc: resID: 1
-	-> [REQUEST] pid: 12065 request fulfilled...
+./oss: [PROC CREATE] pid: 18738
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [REQUEST] pid: 12065 proc: resID: 1
-	-> [REQUEST] pid: 12065 request fulfilled...
+./oss: [REQUEST] pid: 18737 proc: resID: 1
+	-> [REQUEST] pid: 18737 request fulfilled...
 
-./oss: [TERMINATE] pid: 12065 proc: 1
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [RELEASE] pid: 18737 proc: 1  resID: 15
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [PROC CREATE] pid: 18739
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 4
+./oss: [PROC CREATE] pid: 18740
 
-./oss: [PROC CREATE] pid: 12066
+./oss: [RELEASE] pid: 18736 proc: 0  resID: 10
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18737 proc: resID: 1
+	-> [REQUEST] pid: 18737 request fulfilled...
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [PROC CREATE] pid: 18741
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 5
+./oss: [RELEASE] pid: 18737 proc: 1  resID: 18
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 9
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 18
+./oss: [REQUEST] pid: 18741 proc: resID: 5
+	-> [REQUEST] pid: 18741 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [RELEASE] pid: 12066 proc: 1  resID: 16
+./oss: [PROC CREATE] pid: 18742
 
-./oss: [PROC CREATE] pid: 12067
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [RELEASE] pid: 18736 proc: 0  resID: 5
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18737 proc: resID: 1
+	-> [REQUEST] pid: 18737 request fulfilled...
 
-./oss: [REQUEST] pid: 12067 proc: resID: 2
-	-> [REQUEST] pid: 12067 request fulfilled...
+./oss: [REQUEST] pid: 18741 proc: resID: 5
+	-> [REQUEST] pid: 18741 request fulfilled...
 
-./oss: [RELEASE] pid: 12066 proc: 1  resID: 10
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 7
+./oss: [REQUEST] pid: 18739 proc: resID: 3
+	-> [REQUEST] pid: 18739 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18738 proc: resID: 2
+	-> [REQUEST] pid: 18738 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12068
+./oss: [TERMINATE] pid: 18742 proc: -1
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12069
+./oss: [REQUEST] pid: 18741 proc: resID: 5
+	-> [REQUEST] pid: 18741 request fulfilled...
 
-./oss: [REQUEST] pid: 12067 proc: resID: 2
-	-> [REQUEST] pid: 12067 request fulfilled...
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12070
+./oss: [RELEASE] pid: 18736 proc: 0  resID: 13
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18739 proc: resID: 3
+	-> [REQUEST] pid: 18739 request unfulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18737 proc: resID: 1
+	-> [REQUEST] pid: 18737 request fulfilled...
 
-./oss: [RELEASE] pid: 12067 proc: 2  resID: 15
+./oss: [PROC CREATE] pid: 18743
 
-./oss: [REQUEST] pid: 12069 proc: resID: 4
-	-> [REQUEST] pid: 12069 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18739 proc: 3
 
-./oss: [REQUEST] pid: 12067 proc: resID: 2
-	-> [REQUEST] pid: 12067 request unfulfilled...
+./oss: [REQUEST] pid: 18737 proc: resID: 1
+	-> [REQUEST] pid: 18737 request fulfilled...
 
-./oss: [REQUEST] pid: 12069 proc: resID: 4
-	-> [REQUEST] pid: 12069 request fulfilled...
+./oss: [RELEASE] pid: 18741 proc: 5  resID: 0
 
-./oss: [REQUEST] pid: 12068 proc: resID: 3
-	-> [REQUEST] pid: 12068 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 18741 request fulfilled...
 
-./oss: [REQUEST] pid: 12069 proc: resID: 4
-	-> [REQUEST] pid: 12069 request fulfilled...
+./oss: [RELEASE] pid: 18741 proc: 5  resID: 15
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 8
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12071
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [RELEASE] pid: 18740 proc: 4  resID: 7
 
-./oss: [REQUEST] pid: 12068 proc: resID: 3
-	-> [REQUEST] pid: 12068 request fulfilled...
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request fulfilled...
 
-./oss: [REQUEST] pid: 12069 proc: resID: 4
-	-> [REQUEST] pid: 12069 request fulfilled...
+./oss: [REQUEST] pid: 18738 proc: resID: 2
+	-> [REQUEST] pid: 18738 request fulfilled...
 
-./oss: [REQUEST] pid: 12071 proc: resID: 6
-	-> [REQUEST] pid: 12071 request fulfilled...
+./oss: [REQUEST] pid: 18737 proc: resID: 1
+	-> [REQUEST] pid: 18737 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12072
+./oss: [RELEASE] pid: 18736 proc: 0  resID: 1
 
-./oss: [RELEASE] pid: 12069 proc: 4  resID: 4
+./oss: [REQUEST] pid: 18736 proc: resID: 0
+	-> [REQUEST] pid: 18736 request unfulfilled...
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18741 proc: resID: 5
+	-> [REQUEST] pid: 18741 request fulfilled...
 
-./oss: [REQUEST] pid: 12069 proc: resID: 4
-	-> [REQUEST] pid: 12069 request fulfilled...
+./oss: [RELEASE] pid: 18738 proc: 2  resID: 18
 
-./oss: [RELEASE] pid: 12066 proc: 1  resID: 7
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [RELEASE] pid: 12068 proc: 3  resID: 12
+./oss: [PROC CREATE] pid: 18744
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18736 proc: 0
 
-./oss: [PROC CREATE] pid: 12073
+./oss: [TERMINATE] [DEADLOCKER] pid: 18744 proc: 3
 
-./oss: [REQUEST] pid: 12070 proc: resID: 5
-	-> [REQUEST] pid: 12070 request fulfilled...
+./oss: [REQUEST] pid: 18737 proc: resID: 1
+	-> [REQUEST] pid: 18737 request unfulfilled...
 
-./oss: [REQUEST] pid: 12068 proc: resID: 3
-	-> [REQUEST] pid: 12068 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18737 proc: 1
 
-./oss: [REQUEST] pid: 12073 proc: resID: 8
-	-> [REQUEST] pid: 12073 request fulfilled...
+./oss: [REQUEST] pid: 18738 proc: resID: 2
+	-> [REQUEST] pid: 18738 request fulfilled...
 
-./oss: [RELEASE] pid: 12066 proc: 1  resID: 9
+./oss: [RELEASE] pid: 18741 proc: 5  resID: 17
 
-./oss: [REQUEST] pid: 12071 proc: resID: 6
-	-> [REQUEST] pid: 12071 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 18741 request fulfilled...
 
-./oss: [REQUEST] pid: 12068 proc: resID: 3
-	-> [REQUEST] pid: 12068 request fulfilled...
+./oss: [RELEASE] pid: 18740 proc: 4  resID: 13
 
-./oss: [REQUEST] pid: 12069 proc: resID: 4
-	-> [REQUEST] pid: 12069 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 18740 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18743 proc: resID: 6
+	-> [REQUEST] pid: 18743 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [RELEASE] pid: 18743 proc: 6  resID: 0
 
-./oss: [PROC CREATE] pid: 12074
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [REQUEST] pid: 12070 proc: resID: 5
-	-> [REQUEST] pid: 12070 request fulfilled...
+./oss: [RELEASE] pid: 18738 proc: 2  resID: 9
 
-./oss: [RELEASE] pid: 12069 proc: 4  resID: 11
+./oss: [RELEASE] pid: 18740 proc: 4  resID: 14
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [REQUEST] pid: 12073 proc: resID: 8
-	-> [REQUEST] pid: 12073 request fulfilled...
+./oss: [REQUEST] pid: 18741 proc: resID: 5
+	-> [REQUEST] pid: 18741 request fulfilled...
 
-./oss: [REQUEST] pid: 12071 proc: resID: 6
-	-> [REQUEST] pid: 12071 request unfulfilled...
+./oss: [PROC CREATE] pid: 18745
 
-./oss: [RELEASE] pid: 12069 proc: 4  resID: 12
+./oss: [PROC CREATE] pid: 18746
 
-./oss: [RELEASE] pid: 12069 proc: 4  resID: 17
+./oss: [REQUEST] pid: 18738 proc: resID: 2
+	-> [REQUEST] pid: 18738 request fulfilled...
 
-./oss: [RELEASE] pid: 12068 proc: 3  resID: 2
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 12068 request fulfilled...
+./oss: [REQUEST] pid: 18743 proc: resID: 6
+	-> [REQUEST] pid: 18743 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [REQUEST] pid: 12073 proc: resID: 8
-	-> [REQUEST] pid: 12073 request unfulfilled...
+./oss: [RELEASE] pid: 18738 proc: 2  resID: 6
 
-./oss: [REQUEST] pid: 12070 proc: resID: 5
-	-> [REQUEST] pid: 12070 request unfulfilled...
+./oss: [TERMINATE] pid: 18741 proc: 5
 
-./oss: [RELEASE] pid: 12066 proc: 1  resID: 11
+./oss: [RELEASE] pid: 18743 proc: 6  resID: 7
 
-./oss: [REQUEST] pid: 12074 proc: resID: 9
-	-> [REQUEST] pid: 12074 request fulfilled...
+./oss: [PROC CREATE] pid: 18747
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 4
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request unfulfilled...
+./oss: [RELEASE] pid: 18740 proc: 4  resID: 11
 
-./oss: [RELEASE] pid: 12068 proc: 3  resID: 16
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [REQUEST] pid: 12069 proc: resID: 4
-	-> [REQUEST] pid: 12069 request fulfilled...
+./oss: [REQUEST] pid: 18743 proc: resID: 6
+	-> [REQUEST] pid: 18743 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12075
+./oss: [REQUEST] pid: 18738 proc: resID: 2
+	-> [REQUEST] pid: 18738 request unfulfilled...
 
-./oss: [RELEASE] pid: 12072 proc: 7  resID: 3
+./oss: [REQUEST] pid: 18745 proc: resID: 0
+	-> [REQUEST] pid: 18745 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18738 proc: 2
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 5
+./oss: [RELEASE] pid: 18743 proc: 6  resID: 11
 
-./oss: [PROC CREATE] pid: 12076
+./oss: [REQUEST] [QUEUE] pid: 18743 request fulfilled...
 
-./oss: [TERMINATE] pid: 12069 proc: 4
+./oss: [PROC CREATE] pid: 18748
 
-./oss: [RELEASE] pid: 12071 proc: 6  resID: 2
+./oss: [RELEASE] pid: 18745 proc: 0  resID: 3
 
-./oss: [RELEASE] pid: 12074 proc: 9  resID: 9
+./oss: [RELEASE] pid: 18747 proc: 3  resID: 13
 
-./oss: [REQUEST] pid: 12071 proc: resID: 6
-	-> [REQUEST] pid: 12071 request fulfilled...
+./oss: [PROC CREATE] pid: 18749
 
-./oss: [REQUEST] pid: 12074 proc: resID: 9
-	-> [REQUEST] pid: 12074 request fulfilled...
+./oss: [REQUEST] pid: 18745 proc: resID: 0
+	-> [REQUEST] pid: 18745 request fulfilled...
 
-./oss: [RELEASE] pid: 12064 proc: 0  resID: 7
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 12064 request fulfilled...
+./oss: [REQUEST] pid: 18743 proc: resID: 6
+	-> [REQUEST] pid: 18743 request unfulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 12073 request fulfilled...
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [PROC CREATE] pid: 18750
 
-./oss: [REQUEST] pid: 12064 proc: resID: 0
-	-> [REQUEST] pid: 12064 request unfulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18743 proc: 6
 
-./oss: [REQUEST] pid: 12076 proc: resID: 11
-	-> [REQUEST] pid: 12076 request fulfilled...
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [RELEASE] pid: 12070 proc: 5  resID: 0
+./oss: [RELEASE] pid: 18745 proc: 0  resID: 11
 
-./oss: [RELEASE] pid: 12073 proc: 8  resID: 7
+./oss: [REQUEST] [QUEUE] pid: 18745 request fulfilled...
 
-./oss: [REQUEST] pid: 12075 proc: resID: 10
-	-> [REQUEST] pid: 12075 request fulfilled...
+./oss: [RELEASE] pid: 18746 proc: 1  resID: 2
 
-./oss: [REQUEST] pid: 12076 proc: resID: 11
-	-> [REQUEST] pid: 12076 request fulfilled...
+./oss: [REQUEST] pid: 18750 proc: resID: 7
+	-> [REQUEST] pid: 18750 request fulfilled...
 
-./oss: [REQUEST] pid: 12071 proc: resID: 6
-	-> [REQUEST] pid: 12071 request fulfilled...
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [RELEASE] pid: 12072 proc: 7  resID: 6
+./oss: [REQUEST] pid: 18745 proc: resID: 0
+	-> [REQUEST] pid: 18745 request unfulfilled...
 
-./oss: [RELEASE] pid: 12071 proc: 6  resID: 8
+./oss: [PROC CREATE] pid: 18751
 
-./oss: [REQUEST] pid: 12073 proc: resID: 8
-	-> [REQUEST] pid: 12073 request fulfilled...
+./oss: [PROC CREATE] pid: 18752
 
-./oss: [REQUEST] pid: 12074 proc: resID: 9
-	-> [REQUEST] pid: 12074 request unfulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18745 proc: 0
 
-./oss: [PROC CREATE] pid: 12077
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] pid: 12075 proc: resID: 10
-	-> [REQUEST] pid: 12075 request unfulfilled...
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request fulfilled...
 
-./oss: [REQUEST] pid: 12068 proc: resID: 3
-	-> [REQUEST] pid: 12068 request unfulfilled...
+./oss: [TERMINATE] pid: 18748 proc: -1
 
-./oss: [REQUEST] pid: 12070 proc: resID: 5
-	-> [REQUEST] pid: 12070 request unfulfilled...
+./oss: [REQUEST] pid: 18751 proc: resID: 6
+	-> [REQUEST] pid: 18751 request fulfilled...
 
-./oss: [REQUEST] pid: 12077 proc: resID: 4
-	-> [REQUEST] pid: 12077 request fulfilled...
+./oss: [PROC CREATE] pid: 18753
 
-./oss: [RELEASE] pid: 12072 proc: 7  resID: 10
+./oss: [PROC CREATE] pid: 18754
 
-./oss: [REQUEST] pid: 12071 proc: resID: 6
-	-> [REQUEST] pid: 12071 request unfulfilled...
+./oss: [REQUEST] pid: 18749 proc: resID: 5
+	-> [REQUEST] pid: 18749 request fulfilled...
 
-./oss: [REQUEST] pid: 12076 proc: resID: 11
-	-> [REQUEST] pid: 12076 request unfulfilled...
+./oss: [REQUEST] pid: 18754 proc: resID: 2
+	-> [REQUEST] pid: 18754 request fulfilled...
 
-./oss: [REQUEST] pid: 12077 proc: resID: 4
-	-> [REQUEST] pid: 12077 request fulfilled...
+./oss: [RELEASE] pid: 18746 proc: 1  resID: 11
 
-./oss: [PROC CREATE] pid: 12078
+./oss: [REQUEST] [QUEUE] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] pid: 12078 proc: resID: 12
-	-> [REQUEST] pid: 12078 request fulfilled...
+./oss: [REQUEST] pid: 18740 proc: resID: 4
+	-> [REQUEST] pid: 18740 request unfulfilled...
 
-./oss: [RELEASE] pid: 12073 proc: 8  resID: 19
+./oss: [TERMINATE] [DEADLOCKER] pid: 18740 proc: 4
 
-./oss: [REQUEST] [QUEUE] pid: 12073 request fulfilled...
+./oss: [PROC CREATE] pid: 18755
 
-./oss: [REQUEST] pid: 12077 proc: resID: 4
-	-> [REQUEST] pid: 12077 request fulfilled...
+./oss: [RELEASE] pid: 18746 proc: 1  resID: 17
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 18746 request fulfilled...
 
-./oss: [TERMINATE] pid: 12073 proc: 8
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18750 proc: resID: 7
+	-> [REQUEST] pid: 18750 request fulfilled...
 
-./oss: [RELEASE] pid: 12077 proc: 4  resID: 12
+./oss: [PROC CREATE] pid: 18756
 
-./oss: [REQUEST] pid: 12078 proc: resID: 12
-	-> [REQUEST] pid: 12078 request fulfilled...
+./oss: [REQUEST] pid: 18753 proc: resID: 0
+	-> [REQUEST] pid: 18753 request fulfilled...
 
-./oss: [RELEASE] pid: 12072 proc: 7  resID: 11
+./oss: [RELEASE] pid: 18749 proc: 5  resID: 16
 
-./oss: [REQUEST] [QUEUE] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12079
+./oss: [REQUEST] pid: 18754 proc: resID: 2
+	-> [REQUEST] pid: 18754 request fulfilled...
 
-./oss: [RELEASE] pid: 12066 proc: 1  resID: 13
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18751 proc: resID: 6
+	-> [REQUEST] pid: 18751 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18751 proc: 6
 
-./oss: [REQUEST] pid: 12079 proc: resID: 8
-	-> [REQUEST] pid: 12079 request unfulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12067 proc: resID: 2
-	-> [REQUEST] pid: 12067 request fulfilled...
+./oss: [REQUEST] pid: 18754 proc: resID: 2
+	-> [REQUEST] pid: 18754 request fulfilled...
 
-./oss: [RELEASE] pid: 12066 proc: 1  resID: 5
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 12066 request fulfilled...
+./oss: [RELEASE] pid: 18754 proc: 2  resID: 0
 
-./oss: [REQUEST] pid: 12078 proc: resID: 12
-	-> [REQUEST] pid: 12078 request fulfilled...
+./oss: [REQUEST] pid: 18754 proc: resID: 2
+	-> [REQUEST] pid: 18754 request fulfilled...
 
-./oss: [RELEASE] pid: 12079 proc: 8  resID: 5
+./oss: [REQUEST] pid: 18756 proc: resID: 9
+	-> [REQUEST] pid: 18756 request fulfilled...
 
-./oss: [REQUEST] pid: 12074 proc: resID: 9
-	-> [REQUEST] pid: 12074 request fulfilled...
+./oss: [PROC CREATE] pid: 18757
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12080
+./oss: [REQUEST] pid: 18750 proc: resID: 7
+	-> [REQUEST] pid: 18750 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12081
+./oss: [REQUEST] pid: 18753 proc: resID: 0
+	-> [REQUEST] pid: 18753 request unfulfilled...
 
-./oss: [REQUEST] pid: 12067 proc: resID: 2
-	-> [REQUEST] pid: 12067 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18753 proc: 0
 
-./oss: [RELEASE] pid: 12066 proc: 1  resID: 19
+./oss: [TERMINATE] [DEADLOCKER] pid: 18757 proc: 6
 
-./oss: [REQUEST] [QUEUE] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [RELEASE] pid: 12074 proc: 9  resID: 0
+./oss: [REQUEST] pid: 18749 proc: resID: 5
+	-> [REQUEST] pid: 18749 request fulfilled...
 
-./oss: [REQUEST] pid: 12074 proc: resID: 9
-	-> [REQUEST] pid: 12074 request fulfilled...
+./oss: [REQUEST] pid: 18754 proc: resID: 2
+	-> [REQUEST] pid: 18754 request fulfilled...
 
-./oss: [REQUEST] pid: 12079 proc: resID: 8
-	-> [REQUEST] pid: 12079 request fulfilled...
+./oss: [RELEASE] pid: 18746 proc: 1  resID: 1
 
-./oss: [REQUEST] pid: 12081 proc: resID: 14
-	-> [REQUEST] pid: 12081 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] pid: 12078 proc: resID: 12
-	-> [REQUEST] pid: 12078 request fulfilled...
+./oss: [RELEASE] pid: 18756 proc: 9  resID: 5
 
-./oss: [REQUEST] pid: 12080 proc: resID: 13
-	-> [REQUEST] pid: 12080 request unfulfilled...
+./oss: [RELEASE] pid: 18746 proc: 1  resID: 9
 
-./oss: [REQUEST] pid: 12075 proc: resID: 10
-	-> [REQUEST] pid: 12075 request fulfilled...
+./oss: [RELEASE] pid: 18754 proc: 2  resID: 16
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18749 proc: resID: 5
+	-> [REQUEST] pid: 18749 request fulfilled...
 
-./oss: [RELEASE] pid: 12079 proc: 8  resID: 16
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 12079 request fulfilled...
+./oss: [REQUEST] pid: 18756 proc: resID: 9
+	-> [REQUEST] pid: 18756 request fulfilled...
 
-./oss: [REQUEST] pid: 12077 proc: resID: 4
-	-> [REQUEST] pid: 12077 request fulfilled...
+./oss: [RELEASE] pid: 18747 proc: 3  resID: 14
 
-./oss: [RELEASE] pid: 12067 proc: 2  resID: 1
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [RELEASE] pid: 12077 proc: 4  resID: 8
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12082
+./oss: [REQUEST] pid: 18750 proc: resID: 7
+	-> [REQUEST] pid: 18750 request unfulfilled...
 
-./oss: [REQUEST] pid: 12079 proc: resID: 8
-	-> [REQUEST] pid: 12079 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18750 proc: 7
 
-./oss: [REQUEST] pid: 12075 proc: resID: 10
-	-> [REQUEST] pid: 12075 request unfulfilled...
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [REQUEST] pid: 12067 proc: resID: 2
-	-> [REQUEST] pid: 12067 request unfulfilled...
+./oss: [RELEASE] pid: 18749 proc: 5  resID: 1
 
-./oss: [REQUEST] pid: 12074 proc: resID: 9
-	-> [REQUEST] pid: 12074 request unfulfilled...
+./oss: [REQUEST] [QUEUE] pid: 18749 request fulfilled...
 
-./oss: [REQUEST] pid: 12079 proc: resID: 8
-	-> [REQUEST] pid: 12079 request fulfilled...
+./oss: [REQUEST] pid: 18754 proc: resID: 2
+	-> [REQUEST] pid: 18754 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12083
+./oss: [REQUEST] pid: 18756 proc: resID: 9
+	-> [REQUEST] pid: 18756 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12084
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
 
-./oss: [REQUEST] pid: 12077 proc: resID: 4
-	-> [REQUEST] pid: 12077 request unfulfilled...
+./oss: [RELEASE] pid: 18752 proc: 8  resID: 1
 
-./oss: [PROC CREATE] pid: 12085
+./oss: [RELEASE] pid: 18747 proc: 3  resID: 12
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12080 proc: resID: 13
-	-> [REQUEST] pid: 12080 request fulfilled...
+./oss: [REQUEST] pid: 18749 proc: resID: 5
+	-> [REQUEST] pid: 18749 request fulfilled...
 
-./oss: [TERMINATE] pid: 12082 proc: 15
+./oss: [TERMINATE] pid: 18754 proc: 2
 
-./oss: [RELEASE] pid: 12079 proc: 8  resID: 0
+./oss: [PROC CREATE] pid: 18758
 
-./oss: [RELEASE] pid: 12080 proc: 13  resID: 15
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] pid: 12083 proc: resID: 16
-	-> [REQUEST] pid: 12083 request unfulfilled...
+./oss: [REQUEST] pid: 18758 proc: resID: 0
+	-> [REQUEST] pid: 18758 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12086
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [REQUEST] pid: 12078 proc: resID: 12
-	-> [REQUEST] pid: 12078 request fulfilled...
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] pid: 12079 proc: resID: 8
-	-> [REQUEST] pid: 12079 request fulfilled...
+./oss: [RELEASE] pid: 18749 proc: 5  resID: 12
 
-./oss: [REQUEST] pid: 12084 proc: resID: 17
-	-> [REQUEST] pid: 12084 request unfulfilled...
+./oss: [RELEASE] pid: 18752 proc: 8  resID: 2
 
-./oss: [RELEASE] pid: 12080 proc: 13  resID: 16
+./oss: [RELEASE] pid: 18747 proc: 3  resID: 13
 
-./oss: [REQUEST] [QUEUE] pid: 12080 request fulfilled...
+./oss: [REQUEST] pid: 18746 proc: resID: 1
+	-> [REQUEST] pid: 18746 request fulfilled...
 
-./oss: [REQUEST] pid: 12081 proc: resID: 14
-	-> [REQUEST] pid: 12081 request fulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12079 proc: resID: 8
-	-> [REQUEST] pid: 12079 request fulfilled...
+./oss: [REQUEST] pid: 18758 proc: resID: 0
+	-> [REQUEST] pid: 18758 request fulfilled...
 
-./oss: [RELEASE] pid: 12072 proc: 7  resID: 1
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
 
-./oss: [REQUEST] pid: 12067 proc: resID: 2
-	-> [REQUEST] pid: 12067 request unfulfilled...
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [REQUEST] pid: 12081 proc: resID: 14
-	-> [REQUEST] pid: 12081 request fulfilled...
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
 
-./oss: [REQUEST] pid: 12085 proc: resID: 18
-	-> [REQUEST] pid: 12085 request fulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [RELEASE] pid: 12081 proc: 14  resID: 8
+./oss: [PROC CREATE] pid: 18759
 
-./oss: [REQUEST] pid: 12086 proc: resID: 15
-	-> [REQUEST] pid: 12086 request fulfilled...
+./oss: [RELEASE] pid: 18758 proc: 0  resID: 0
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [TERMINATE] pid: 18746 proc: -1
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18756 proc: resID: 9
+	-> [REQUEST] pid: 18756 request fulfilled...
 
-./oss: [REQUEST] pid: 12079 proc: resID: 8
-	-> [REQUEST] pid: 12079 request unfulfilled...
+./oss: [REQUEST] pid: 18749 proc: resID: 5
+	-> [REQUEST] pid: 18749 request fulfilled...
 
-./oss: [REQUEST] pid: 12086 proc: resID: 15
-	-> [REQUEST] pid: 12086 request fulfilled...
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12078 proc: resID: 12
-	-> [REQUEST] pid: 12078 request fulfilled...
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18749 proc: resID: 5
+	-> [REQUEST] pid: 18749 request unfulfilled...
 
-./oss: [REQUEST] pid: 12086 proc: resID: 15
-	-> [REQUEST] pid: 12086 request fulfilled...
+./oss: [REQUEST] pid: 18756 proc: resID: 9
+	-> [REQUEST] pid: 18756 request fulfilled...
 
-./oss: [REQUEST] pid: 12080 proc: resID: 13
-	-> [REQUEST] pid: 12080 request fulfilled...
+./oss: [REQUEST] pid: 18759 proc: resID: 1
+	-> [REQUEST] pid: 18759 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [TERMINATE] [DEADLOCKER] pid: 18749 proc: 5
 
-./oss: [RELEASE] pid: 12085 proc: 18  resID: 8
+./oss: [REQUEST] pid: 18747 proc: resID: 3
+	-> [REQUEST] pid: 18747 request unfulfilled...
 
-./oss: [TERMINATE] pid: 12085 proc: 18
+./oss: [REQUEST] pid: 18758 proc: resID: 0
+	-> [REQUEST] pid: 18758 request fulfilled...
 
-./oss: [PROC CREATE] pid: 12087
+./oss: [TERMINATE] [DEADLOCKER] pid: 18747 proc: 3
 
-./oss: [REQUEST] pid: 12081 proc: resID: 14
-	-> [REQUEST] pid: 12081 request fulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12087 proc: resID: 18
-	-> [REQUEST] pid: 12087 request unfulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12078 proc: resID: 12
-	-> [REQUEST] pid: 12078 request unfulfilled...
+./oss: [RELEASE] pid: 18755 proc: 4  resID: 17
 
-./oss: [REQUEST] pid: 12086 proc: resID: 15
-	-> [REQUEST] pid: 12086 request fulfilled...
+./oss: [REQUEST] [QUEUE] pid: 18755 request fulfilled...
 
-./oss: [RELEASE] pid: 12080 proc: 13  resID: 17
+./oss: [TERMINATE] [DEADLOCKER] pid: 18758 proc: 0
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18759 proc: resID: 1
+	-> [REQUEST] pid: 18759 request fulfilled...
 
-./oss: [REQUEST] pid: 12081 proc: resID: 14
-	-> [REQUEST] pid: 12081 request unfulfilled...
+./oss: [REQUEST] pid: 18759 proc: resID: 1
+	-> [REQUEST] pid: 18759 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18756 proc: resID: 9
+	-> [REQUEST] pid: 18756 request fulfilled...
 
-./oss: [REQUEST] pid: 12086 proc: resID: 15
-	-> [REQUEST] pid: 12086 request unfulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request fulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12080 proc: resID: 13
-	-> [REQUEST] pid: 12080 request unfulfilled...
+./oss: [REQUEST] pid: 18759 proc: resID: 1
+	-> [REQUEST] pid: 18759 request fulfilled...
 
-./oss: [REQUEST] pid: 12072 proc: resID: 7
-	-> [REQUEST] pid: 12072 request unfulfilled...
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18759 proc: resID: 1
+	-> [REQUEST] pid: 18759 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request fulfilled...
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
 
-./oss: [REQUEST] pid: 12066 proc: resID: 1
-	-> [REQUEST] pid: 12066 request unfulfilled...
+./oss: [REQUEST] pid: 18756 proc: resID: 9
+	-> [REQUEST] pid: 18756 request fulfilled...
+
+./oss: [REQUEST] pid: 18759 proc: resID: 1
+	-> [REQUEST] pid: 18759 request fulfilled...
+
+./oss: [REQUEST] pid: 18756 proc: resID: 9
+	-> [REQUEST] pid: 18756 request unfulfilled...
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
+
+./oss: [TERMINATE] [DEADLOCKER] pid: 18756 proc: 9
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
+
+./oss: [REQUEST] pid: 18759 proc: resID: 1
+	-> [REQUEST] pid: 18759 request fulfilled...
+
+./oss: [REQUEST] pid: 18759 proc: resID: 1
+	-> [REQUEST] pid: 18759 request unfulfilled...
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
+
+./oss: [RELEASE] pid: 18752 proc: 8  resID: 4
+
+./oss: [REQUEST] [QUEUE] pid: 18752 request fulfilled...
+
+./oss: [REQUEST] [QUEUE] pid: 18747 request fulfilled...
+
+./oss: [TERMINATE] [DEADLOCKER] pid: 18759 proc: 1
+
+./oss: [RELEASE] pid: 18752 proc: 8  resID: 7
+
+./oss: [REQUEST] [QUEUE] pid: 18752 request fulfilled...
+
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
+
+./oss: [REQUEST] pid: 18752 proc: resID: 8
+	-> [REQUEST] pid: 18752 request fulfilled...
+
+./oss: [RELEASE] pid: 18752 proc: 8  resID: 3
+
+./oss: [TERMINATE] pid: 18752 proc: 8
+
+./oss: [PROC CREATE] pid: 18760
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
+
+./oss: [RELEASE] pid: 18755 proc: 4  resID: 10
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [RELEASE] pid: 18760 proc: 0  resID: 2
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request fulfilled...
+
+./oss: [RELEASE] pid: 18755 proc: 4  resID: 3
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [REQUEST] pid: 18755 proc: resID: 4
+	-> [REQUEST] pid: 18755 request unfulfilled...
+
+./oss: [TERMINATE] [DEADLOCKER] pid: 18755 proc: 4
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [RELEASE] pid: 18760 proc: 0  resID: 11
+
+./oss: [REQUEST] [QUEUE] pid: 18760 request fulfilled...
+
+./oss: [RELEASE] pid: 18760 proc: 0  resID: 17
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [RELEASE] pid: 18760 proc: 0  resID: 2
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [RELEASE] pid: 18760 proc: 0  resID: 3
+
+./oss: [RELEASE] pid: 18760 proc: 0  resID: 10
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [REQUEST] pid: 18760 proc: resID: 0
+	-> [REQUEST] pid: 18760 request fulfilled...
+
+./oss: [TERMINATE] pid: 18760 proc: 0
+
+./oss: [PROC CREATE] pid: 18762
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 1
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 13
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 14
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 17
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 9
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 12
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 14
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 8
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 17
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [REQUEST] pid: 18762 proc: resID: 0
+	-> [REQUEST] pid: 18762 request fulfilled...
+
+./oss: [RELEASE] pid: 18762 proc: 0  resID: 2
+
+./oss: [TERMINATE] pid: 18762 proc: 0
+
+./oss: [PROC CREATE] pid: 18763
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 0
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 12
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 13
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 16
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 17
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 8
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 10
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 18
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 4
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 2
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 6
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 8
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 15
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 16
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 11
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 11
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 16
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 1
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 2
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 4
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 9
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 15
+
+./oss: [RELEASE] pid: 18763 proc: 0  resID: 18
+
+./oss: [REQUEST] pid: 18763 proc: resID: 0
+	-> [REQUEST] pid: 18763 request fulfilled...
+
+./oss: [TERMINATE] pid: 18763 proc: 0
+
+./oss: [PROC CREATE] pid: 18764
+
+./oss: [REQUEST] pid: 18764 proc: resID: 0
+	-> [REQUEST] pid: 18764 request fulfilled...
+
+./oss: [RELEASE] pid: 18764 proc: 0  resID: 9
+
+./oss: [REQUEST] pid: 18764 proc: resID: 0
+	-> [REQUEST] pid: 18764 request fulfilled...
+
+./oss: [REQUEST] pid: 18764 proc: resID: 0
+	-> [REQUEST] pid: 18764 request fulfilled...
+
+./oss: [REQUEST] pid: 18764 proc: resID: 0
+	-> [REQUEST] pid: 18764 request fulfilled...
+
+./oss: [RELEASE] pid: 18764 proc: 0  resID: 2
+
+./oss: [REQUEST] pid: 18764 proc: resID: 0
+	-> [REQUEST] pid: 18764 request fulfilled...
+
+./oss: [REQUEST] pid: 18764 proc: resID: 0
+	-> [REQUEST] pid: 18764 request fulfilled...
+
+./oss: [RELEASE] pid: 18764 proc: 0  resID: 5
+
+./oss: [REQUEST] pid: 18764 proc: resID: 0
+	-> [REQUEST] pid: 18764 request fulfilled...
+
+./oss: [REQUEST] pid: 18764 proc: resID: 0
+	-> [REQUEST] pid: 18764 request fulfilled...
+
+./oss: [RELEASE] pid: 18764 proc: 0  resID: 7
+
+./oss: [TERMINATE] pid: 18764 proc: 0
+
+./oss: [PROC CREATE] pid: 18766
+
+./oss: [REQUEST] pid: 18766 proc: resID: 0
+	-> [REQUEST] pid: 18766 request fulfilled...
+
+./oss: [REQUEST] pid: 18766 proc: resID: 0
+	-> [REQUEST] pid: 18766 request fulfilled...
+
+./oss: [REQUEST] pid: 18766 proc: resID: 0
+	-> [REQUEST] pid: 18766 request fulfilled...
+
+./oss: [REQUEST] pid: 18766 proc: resID: 0
+	-> [REQUEST] pid: 18766 request fulfilled...
+
+./oss: [REQUEST] pid: 18766 proc: resID: 0
+	-> [REQUEST] pid: 18766 request fulfilled...
 

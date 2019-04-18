@@ -515,6 +515,7 @@ void DoSharedWork()
 
 				fprintf(o, "%s: [TERMINATE] pid: %i proc: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype));
 			}
+
 			if (requestCounter == 19)
 			{
 				DisplayResources();
@@ -556,26 +557,37 @@ void DoSharedWork()
 			for (i = 0; i < 20; i++)
 				tempVec[i] = data->allocVec[i];
 
+			int updated;
+			do {
+			updated = 0;
+			
 			for (i = 0; i < 19; i++)
 			{
 				isMatch = 1;
 				for (j = 0; j < 20; j++)
 				{
-					if (data->alloc[j][i] != tempVec[j])
+					if (data->req[j][i] > tempVec[j])
+					{
 						isMatch = 0;
+					}
 				}
 				procFlags[i] = isMatch;
 
-				if (isMatch == 1)
+				if (isMatch == 1 && procFlags[i] == 0)
 				{
+					updated = 1;
 					for (j = 0; j < 20; j++)
 						tempVec[j] += data->alloc[j][i];
 				}
 			}
+			}
+			while(updated == 1);
 
 			for (i = 0; i < 19; i++)
 			{
-				if (procFlags[i] == 0)
+
+				printf("\n%i :: %i, PID: %i", i, procFlags[i], data->proc[i].pid);
+				if (procFlags[i] == 0 && data->proc[i].pid > 0) 
 				{
 					kill(data->proc[i].pid, SIGTERM);
 
@@ -589,6 +601,7 @@ void DoSharedWork()
 					data->proc[i].pid = -1;
 				}
 			}
+
 		}
 
 		fflush(stdout);
