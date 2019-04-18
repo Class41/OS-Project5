@@ -242,7 +242,7 @@ int main(int argc, int argv)
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES POS");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
-				int resCount = (rand() % (data->resVec[resToRequest] + 1));
+				int resCount = (rand() % ((data->resVec[resToRequest] - data->alloc[resToRequest][FindPID(pid)]) + 1));
 				sprintf(convert, "%i", resCount);
 
 				msgbuf.mtype = pid;
