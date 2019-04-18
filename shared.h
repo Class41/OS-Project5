@@ -4,6 +4,7 @@
 
 typedef struct {
 	int pid; //process pid
+	char status[50];
 } Process;
 
 /* Time structure */
