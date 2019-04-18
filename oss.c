@@ -372,7 +372,7 @@ int FindPID(int pid)
 int CompareArrayAgainstReq(int *array1, int procpos)
 {
 	int i;
-	for (i = 0; i < size; i++)
+	for (i = 0; i < 20; i++)
 		if (array1[i] < data->req[i][procpos])
 			return -1;
 	return 1;
