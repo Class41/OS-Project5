@@ -335,22 +335,22 @@ int CalcResourceTotal(int resID)
 
 int AllocResource(int procRow, int resID)
 {
-	CalcResourceTotal(resID);
+//	CalcResourceTotal(resID);
 //	printf("request of %i", data->req[resID][procRow]);
-	if((data->allocVec[resID] - (data->req[resID][procRow] + data->alloc[resID][procRow])) > 0)
-	{
 		//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-		data->allocVec[resID] -= data->req[resID][procRow];
-		data->alloc[resID][procRow] += data->req[resID][procRow];
-		data->req[resID][procRow] = 0;
-		CalcResourceTotal(resID);
+		while(data->allocVec[resID] > 0 && data->req[resID][procRow] > 0)
+		{
+			(data->allocVec[resID])--;
+			(data->alloc[resID][procRow])++;
+			(data->req[resID][procRow])--;
+		}
+
+		if(data->req[resID][procRow] > 0)
+			return -1;
+
+//		CalcResourceTotal(resID);
 
 		return 1;
-	}
-	else
-	{
-		return -1;
-	}
 }
 
 int DellocResource(int procRow, int resID)
