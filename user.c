@@ -225,7 +225,7 @@ int main(int argc, int argv)
 			if ((rand() % 100) < CHANCE_TO_REQUEST)
 			{
 				strcpy(data->proc[FindPID(pid)].status, "EN REQ BLOK");
-				int resToRequest = (rand() % 21);
+				int resToRequest = (rand() % 20);
 
 				//data->req[resToRequest][FindPID(pid)]
 
@@ -241,8 +241,12 @@ int main(int argc, int argv)
 				strcpy(msgbuf.mtext, convert);
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES POS");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
+			
 
-				int resCount = (rand() % ((data->resVec[resToRequest] - data->alloc[resToRequest][FindPID(pid)]) + 1));
+				int resCount = abs((rand() % ((data->resVec[resToRequest] - (data->alloc[resToRequest][FindPID(pid)]) + 1))));
+				if(resCount > data->resVec[resToRequest])
+					printf("Requested #: %i of %i\n", resCount, resToRequest);
+
 				sprintf(convert, "%i", resCount);
 
 				msgbuf.mtype = pid;

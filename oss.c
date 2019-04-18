@@ -318,24 +318,33 @@ int FindAllocationRequest(int procRow)
 {
 	int i;
 	for (i = 0; i < 20; i++)
-	{
 		if (data->req[i][procRow] > 0)
 			return i;
-	}
+}
+
+int CalcResourceTotal(int resID)
+{
+	int i;
+	int total = 0;
+	for(i = 0; i < 19; i++)
+		total += data->alloc[resID][i];
+
+	if(total > 0)
+	printf("\nTotal of resID: %i is %i", resID, total);
 }
 
 int AllocResource(int procRow, int resID)
 {
-	if (data->allocVec[resID] - data->req[resID][procRow] >= 0)
+	CalcResourceTotal(resID);
+	printf("request of %i", data->req[resID][procRow]);
+	if((data->allocVec[resID] - (data->req[resID][procRow] + data->alloc[resID][procRow])) > 0)
 	{
-		(data->alloc[resID][procRow]) += (data->req[resID][procRow]);
+		//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+		data->allocVec[resID] -= data->req[resID][procRow];
+		data->alloc[resID][procRow] += data->req[resID][procRow];
+		data->req[resID][procRow] = 0;
+		CalcResourceTotal(resID);
 
-		if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-		{
-			(data->allocVec[resID]) -= (data->req[resID][procRow]);
-		}
-
-		(data->req[resID][procRow]) = 0;
 		return 1;
 	}
 	else
@@ -469,7 +478,7 @@ void DoSharedWork()
 
 				data->req[resID][procpos] = count;
 
-				printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
+				//printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
 
 				fprintf(o, "%s: [REQUEST] pid: %i proc: resID: %i\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), resID);
 
@@ -509,7 +518,7 @@ void DoSharedWork()
 			}
 			if (requestCounter == 19)
 			{
-				DisplayResources();
+				//DisplayResources();
 				requestCounter = 0;
 			}
 		}
