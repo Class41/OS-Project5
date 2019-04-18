@@ -101,13 +101,14 @@ void Handler(int signal)
 	fflush(stdout); //make sure that messages are output correctly before we start terminating things
 
 	int i;
+
+	DisplayResources();
+
 	printf("\n\n\n** STATUSES **\n");
 	for (i = 0; i < 19; i++)
 	{
 		printf("%i: %s\n", i, data->proc[i].status);
 	}
-
-	DisplayResources();
 
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
 		if (data->proc[i].pid != -1)
