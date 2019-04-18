@@ -558,36 +558,38 @@ void DoSharedWork()
 				tempVec[i] = data->allocVec[i];
 
 			int updated;
-			do {
-			updated = 0;
-			
-			for (i = 0; i < 19; i++)
+			do
 			{
-				isMatch = 1;
-				for (j = 0; j < 20; j++)
+				updated = 0;
+				for (i = 0; i < 19; i++)
 				{
-					if (data->req[j][i] > tempVec[j])
+					if(procFlags[i] == 1)
+						continue;
+
+					isMatch = 1;
+					for (j = 0; j < 20; j++)
 					{
-						isMatch = 0;
+						if (data->req[j][i] > tempVec[j])
+						{
+							isMatch = 0;
+						}
+					}
+					procFlags[i] = isMatch;
+
+					if (isMatch == 1)
+					{
+						updated = 1;
+						for (j = 0; j < 20; j++)
+							tempVec[j] += data->alloc[j][i];
 					}
 				}
-				procFlags[i] = isMatch;
-
-				if (isMatch == 1 && procFlags[i] == 0)
-				{
-					updated = 1;
-					for (j = 0; j < 20; j++)
-						tempVec[j] += data->alloc[j][i];
-				}
-			}
-			}
-			while(updated == 1);
+			} while (updated == 1);
 
 			for (i = 0; i < 19; i++)
 			{
 
 				printf("\n%i :: %i, PID: %i", i, procFlags[i], data->proc[i].pid);
-				if (procFlags[i] == 0 && data->proc[i].pid > 0) 
+				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
 					kill(data->proc[i].pid, SIGTERM);
 
@@ -601,7 +603,6 @@ void DoSharedWork()
 					data->proc[i].pid = -1;
 				}
 			}
-
 		}
 
 		fflush(stdout);
