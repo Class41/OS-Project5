@@ -466,7 +466,7 @@ void DoSharedWork()
 
 				data->req[resID][procpos] = count;
 
-				int resID = FindAllocationRequest(procpos);
+				printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
 
 				fprintf(o, "%s: [REQUEST] pid: %i proc: resID: %i\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), resID);
 
