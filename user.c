@@ -241,10 +241,9 @@ int main(int argc, int argv)
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
 				strcpy(data->proc[FindPID(pid)].status, "GOT MASTER REQ RES");
 				strcpy(data->proc[FindPID(pid)].status, "WAIT MASTER GRANT");
-				while (!(strcmp(msgbuf.mtext, "REQ_GRANT") == 0))
-				{
-					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
-				}
+
+				msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
+
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
 				CalcNextActionTime(&nextActionTime);
 			}
