@@ -225,15 +225,13 @@ int main(int argc, int argv)
 			if ((rand() % 100) < CHANCE_TO_REQUEST)
 			{
 				strcpy(data->proc[FindPID(pid)].status, "EN REQ BLOK");
-				srand(time(NULL) ^ (pid << 16));
-				int resToRequest = (rand() % 21);
+				int resToRequest;
 
 				do
 				{
-					resToRequest = (resToRequest + 1) % 21;
+					resToRequest = (rand() % 21);
 				} while (data->alloc[resToRequest][FindPID(pid)] > 0);
 
-				srand(time(NULL) ^ (pid << 16));
 				data->req[resToRequest][FindPID(pid)] = (rand() % (data->resVec[resToRequest] - 1));
 
 				msgbuf.mtype = pid;
