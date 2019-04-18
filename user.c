@@ -172,7 +172,6 @@ void ShmAttatch() //same exact memory attach function from master minus the init
 
 void CalcNextActionTime(Time *t)
 {
-	srand(time(NULL) ^ (pid << 16));
 	t->seconds = data->sysTime.seconds;
 	t->ns = data->sysTime.ns;
 	long mstoadd = (rand() % 251) * 1000000;
