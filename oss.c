@@ -215,7 +215,6 @@ void SweepProcBlocks()
 
 void GenerateResources()
 {
-	srand(time(NULL));
 	int i;
 	for (i = 0; i < 20; i++)
 	{
@@ -223,7 +222,6 @@ void GenerateResources()
 		data->allocVec[i] = data->resVec[i];
 	}
 
-	srand(time(NULL));
 	for (i = 0; i < 5; i++)
 	{
 		while (1)
@@ -396,7 +394,7 @@ void DoSharedWork()
 	/* Create queues */
 	struct Queue *resQueue = createQueue(childCount); //Queue of local PIDS (fake/emulated pids)
 
-	srand(time(0)); //set random seed
+	srand(getpid()); //set random seed
 
 	while (1)
 	{
