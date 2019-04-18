@@ -241,10 +241,9 @@ int main(int argc, int argv)
 				strcpy(msgbuf.mtext, convert);
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES POS");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
-			
 
 				int resCount = abs((rand() % ((data->resVec[resToRequest] - (data->alloc[resToRequest][FindPID(pid)]) + 1))));
-				if(resCount > data->resVec[resToRequest])
+				if (resCount > data->resVec[resToRequest])
 					printf("Requested #: %i of %i\n", resCount, resToRequest);
 
 				sprintf(convert, "%i", resCount);
@@ -256,14 +255,15 @@ int main(int argc, int argv)
 
 				strcpy(data->proc[FindPID(pid)].status, "WAIT MASTER GRANT");
 
-				do {
-				msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
+				do
+				{
+					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
 
-				if(strcmp(msgbuf.mtext, "REQ_GRANT") == 0)
-					break;
+					if (strcmp(msgbuf.mtext, "REQ_GRANT") == 0)
+						break;
 
-				} while(1);
-					
+				} while (1);
+
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
 
 				CalcNextActionTime(&nextActionTime);

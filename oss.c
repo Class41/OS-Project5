@@ -262,7 +262,7 @@ void DisplayResources()
 	int j;
 	for (i = 0; i < 19; i++)
 	{
-		printf("\n %3i|", i);	
+		printf("\n %3i|", i);
 		for (j = 0; j < 20; j++)
 			printf("%4i", data->alloc[j][i]);
 	}
@@ -324,37 +324,37 @@ int CalcResourceTotal(int resID)
 {
 	int i;
 	int total = 0;
-	for(i = 0; i < 19; i++)
+	for (i = 0; i < 19; i++)
 		total += data->alloc[resID][i];
 
-	if(total > 0)
-	printf("\nTotal of resID: %i is %i", resID, total);
+	if (total > 0)
+		printf("\nTotal of resID: %i is %i", resID, total);
 }
 
 int AllocResource(int procRow, int resID)
 {
-//	CalcResourceTotal(resID);
-//	printf("request of %i", data->req[resID][procRow]);
-		//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-		while(data->allocVec[resID] > 0 && data->req[resID][procRow] > 0)
-		{
-			(data->allocVec[resID])--;
-			(data->alloc[resID][procRow])++;
-			(data->req[resID][procRow])--;
-		}
+	//	CalcResourceTotal(resID);
+	//	printf("request of %i", data->req[resID][procRow]);
+	//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+	while (data->allocVec[resID] > 0 && data->req[resID][procRow] > 0)
+	{
+		(data->allocVec[resID])--;
+		(data->alloc[resID][procRow])++;
+		(data->req[resID][procRow])--;
+	}
 
-		if(data->req[resID][procRow] > 0)
-			return -1;
+	if (data->req[resID][procRow] > 0)
+		return -1;
 
-//		CalcResourceTotal(resID);
+	//		CalcResourceTotal(resID);
 
-		return 1;
+	return 1;
 }
 
 int DellocResource(int procRow, int resID)
 {
 	//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-		(data->allocVec[resID]) += (data->alloc[resID][procRow]);
+	(data->allocVec[resID]) += (data->alloc[resID][procRow]);
 	data->alloc[resID][procRow] = 0;
 }
 
@@ -485,28 +485,24 @@ void DoSharedWork()
 				DellocResource(procpos, atoi(msgbuf.mtext));
 				fprintf(o, "%s: [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 
-		for (iterator = 0; iterator < getSize(resQueue); iterator++)
-		{
-			int cpid = dequeue(resQueue);
-			int procpos = FindPID(cpid);
-			int resID = FindAllocationRequest(procpos);
+				for (iterator = 0; iterator < getSize(resQueue); iterator++)
+				{
+					int cpid = dequeue(resQueue);
+					int procpos = FindPID(cpid);
+					int resID = FindAllocationRequest(procpos);
 
-			if (AllocResource(procpos, resID) == 1)
-			{
-				fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
-				strcpy(msgbuf.mtext, "REQ_GRANT");
-				msgbuf.mtype = cpid;
-				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-
-			
-			}
-			else
-			{
-				enqueue(resQueue, cpid);		
-	}
-		}
-
-
+					if (AllocResource(procpos, resID) == 1)
+					{
+						fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
+						strcpy(msgbuf.mtext, "REQ_GRANT");
+						msgbuf.mtype = cpid;
+						msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+					}
+					else
+					{
+						enqueue(resQueue, cpid);
+					}
+				}
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0)
 			{
@@ -545,19 +541,55 @@ void DoSharedWork()
 			}
 		}
 
-		if(CompareTime(&(data->sysTime), &deadlockExec))
+		if (CompareTime(&(data->sysTime), &deadlockExec))
 		{
 			deadlockExec.seconds = data->sysTime.seconds; //capture current time
 			deadlockExec.ns = data->sysTime.ns;
 
 			AddTimeLong(&deadlockExec, abs((long)(rand() % 101) * (long)1000000)); //set new exec time to 0 - 500ms after now
-			printf("Antideadlock running currently!\n");
-		}
 
-		/*if (remainingExecs <= 0 && exitCount >= 100) //only get out of loop if we run out of execs or we have maxed out child count
-		{
-			break;
-		}*/
+			int tempVec[20];
+			int procFlags[19];
+			int i, j;
+			int isMatch = 0;
+
+			for (i = 0; i < 20; i++)
+				tempvec[i] = data->allocVec[i];
+
+			for (i = 0; i < 19; i++)
+			{
+				isMatch = 1;
+				for (j = 0; j < 20; j++)
+				{
+					if (data->alloc[j][i] != tempVec[j])
+						isMatch = 0;
+				}
+				procFlags[i] = isMatch;
+
+				if (isMatch == 1)
+				{
+					for (j = 0; j < 20; j++)
+						tempvec[j] += data->alloc[j][i];
+				}
+			}
+
+			for (i = 0; i < 19; i++)
+			{
+				if (procFlags[i] == 0)
+				{
+					kill(data->proc[i].pid, SIGTERM);
+
+					for (j = 0; j < 20; j++)
+					{
+						DellocResource(i, j);
+					}
+
+					fprintf(o, "%s: [TERMINATE] [DEADLOCKER] pid: %i proc: %i\n\n", filen, data->proc[i].pid, i);
+
+					data->proc[i].pid = -1;
+				}
+			}
+		}
 
 		fflush(stdout);
 	}
