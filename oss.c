@@ -482,10 +482,6 @@ void DoSharedWork()
 				}
 
 				fprintf(o, "%s: [TERMINATE] pid: %i proc: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype));
-				int i;
-				for(i = 0; i < 20; i++)
-					if(data->alloc[i][FindPID(msgbuf.mtype)] != 0)
-							fprintf(o, "%s: FAILED TO DEALLOC RESOURCES!!!!!");
 			}
 			if (requestCounter == 19)
 			{
