@@ -240,7 +240,7 @@ int main(int argc, int argv)
 
 				strcpy(msgbuf.mtext, "REQ");
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER REQ");
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 				strcpy(data->proc[FindPID(pid)].status, "GOT MASTER REQ RES");
 				strcpy(data->proc[FindPID(pid)].status, "WAIT MASTER GRANT");
 
