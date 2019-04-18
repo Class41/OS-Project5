@@ -104,7 +104,7 @@ void Handler(int signal)
 	printf("\n\n\n** STATUSES **\n");
 	for (i = 0; i < 19; i++)
 	{
-		printf("%i: %s\n", i, data->proc.status[i]);
+		printf("%i: %s\n", i, data->proc[i].status);
 	}
 
 	DisplayResources();
