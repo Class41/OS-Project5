@@ -172,6 +172,7 @@ void ShmAttatch() //same exact memory attach function from master minus the init
 
 void CalcNextActionTime(Time *t)
 {
+	srand(time(NULL) ^ (pid << 16));
 	t->seconds = data->sysTime.seconds;
 	t->ns = data->sysTime.ns;
 	long mstoadd = (rand() % 251) * 1000000;
@@ -233,6 +234,7 @@ int main(int argc, int argv)
 					resToRequest = (resToRequest + 1) % 21;
 				} while (data->alloc[FindPID(pid)][resToRequest] > 0);
 
+				srand(time(NULL) ^ (pid << 16));
 				data->req[resToRequest][FindPID(pid)] = (rand() % (data->resVec[resToRequest] - 1));
 
 				msgbuf.mtype = pid;
