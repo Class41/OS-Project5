@@ -264,9 +264,9 @@ void DisplayResources()
 	int j;
 	for (i = 0; i < 19; i++)
 	{
-		printf("\n %3i|", i);
+		printf("\n %3i|", i);	
 		for (j = 0; j < 20; j++)
-			printf("%4i", data->alloc[i][j]);
+			printf("%4i", data->alloc[j][i]);
 	}
 
 	printf("\n\n\n** Requested Resources **\nX -> resources, Y -> proccess\n");
@@ -280,7 +280,7 @@ void DisplayResources()
 	{
 		printf("\n %3i|", i);
 		for (j = 0; j < 20; j++)
-			printf("%4i", data->req[i][j]);
+			printf("%4i", data->req[j][i]);
 	}
 
 	printf("\n\n\n** Resource Vector **\n");
@@ -336,7 +336,7 @@ int CalcResourceTotal(int resID)
 int AllocResource(int procRow, int resID)
 {
 	CalcResourceTotal(resID);
-	printf("request of %i", data->req[resID][procRow]);
+//	printf("request of %i", data->req[resID][procRow]);
 	if((data->allocVec[resID] - (data->req[resID][procRow] + data->alloc[resID][procRow])) > 0)
 	{
 		//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)

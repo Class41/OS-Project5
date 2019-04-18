@@ -256,8 +256,10 @@ int main(int argc, int argv)
 
 				strcpy(data->proc[FindPID(pid)].status, "WAIT MASTER GRANT");
 
+				do {
 				msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
-
+				} while(strcmp(msgbuf.mtext, "REQ_GRANT") != 0);
+					
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
 
 				CalcNextActionTime(&nextActionTime);
