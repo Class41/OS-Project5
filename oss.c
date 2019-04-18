@@ -373,8 +373,11 @@ int CompareArrayAgainstReq(int *array1, int procpos)
 {
 	int i;
 	for (i = 0; i < 20; i++)
+	{
 		if (array1[i] < data->req[i][procpos])
 			return -1;
+	}
+	
 	return 1;
 }
 
@@ -577,7 +580,7 @@ void DoSharedWork()
 					if (procFlags[i] == 1)
 						continue;
 
-					if (procFlags[i] == 0 && CompareArrayAgainstReq(tempVec, i) == 1)
+					if (CompareArrayAgainstReq(tempVec, i) == 1)
 					{
 						updated = 1;
 						procFlags[i] = 1;
@@ -614,6 +617,7 @@ void DoSharedWork()
 							tempVec[j] += data->alloc[j][i];
 					}
 				}*/
+
 			} while (updated == 1);
 
 			for (i = 0; i < 19; i++)
