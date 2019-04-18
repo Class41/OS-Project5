@@ -246,7 +246,7 @@ int main(int argc, int argv)
 				sprintf(convert, "%i", resCount);
 
 				msgbuf.mtype = pid;
-				strcpy(msgbuf.mtext, "REQ");
+				strcpy(msgbuf.mtext, convert);
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES CNT");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
