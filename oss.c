@@ -369,11 +369,11 @@ int FindPID(int pid)
 }
 
 /* Check if array1 is greater equalto array2 in all positions */
-int CompareArrays2D(int *array1, int **array2, int size, int procpos)
+int CompareArrayAgainstReq(int *array1, int procpos)
 {
 	int i;
 	for (i = 0; i < size; i++)
-		if (array1[i] < array2[i][procpos])
+		if (array1[i] < data->req[i][procpos])
 			return -1;
 	return 1;
 }
@@ -571,9 +571,10 @@ void DoSharedWork()
 			do
 			{
 				updated = 0;
+
 				for (i = 0; i < 19; i++)
 				{
-					if (procFlags[i] == 0 && CompareArrays2D(tempVec, &(data->req), 20, i) == 1)
+					if (procFlags[i] == 0 && CompareArrayAgainstReq(tempVec, i) == 1)
 					{
 						updated = 1;
 						procFlags[i] = 1;
@@ -584,9 +585,9 @@ void DoSharedWork()
 					else
 					{
 						continue;
-					}	
+					}
 				}
-			
+
 				/*updated = 0;
 				for (i = 0; i < 19; i++)
 				{
