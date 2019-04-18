@@ -574,6 +574,9 @@ void DoSharedWork()
 
 				for (i = 0; i < 19; i++)
 				{
+					if(prcoFlags[i] == 1)
+						continue;
+						
 					if (procFlags[i] == 0 && CompareArrayAgainstReq(tempVec, i) == 1)
 					{
 						updated = 1;
@@ -581,10 +584,6 @@ void DoSharedWork()
 
 						for (j = 0; j < 20; j++)
 							tempVec[j] += data->alloc[j][i];
-					}
-					else
-					{
-						continue;
 					}
 				}
 
