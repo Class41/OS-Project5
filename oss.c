@@ -521,7 +521,7 @@ void DoSharedWork()
 			}
 			if (requestCounter == 19)
 			{
-				//DisplayResources();
+				DisplayResources();
 				requestCounter = 0;
 			}
 		}
@@ -547,7 +547,11 @@ void DoSharedWork()
 
 		if(CompareTime(&(data->sysTime), &deadlockExec))
 		{
-			
+			deadlockExec.seconds = data->sysTime.seconds; //capture current time
+			deadlockExec.ns = data->sysTime.ns;
+
+			AddTimeLong(&deadlockExec, abs((long)(rand() % 101) * (long)1000000)); //set new exec time to 0 - 500ms after now
+			printf("Antideadlock running currently!\n");
 		}
 
 		/*if (remainingExecs <= 0 && exitCount >= 100) //only get out of loop if we run out of execs or we have maxed out child count
