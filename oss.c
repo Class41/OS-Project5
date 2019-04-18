@@ -435,7 +435,7 @@ void DoSharedWork()
 			int procpos = FindPID(cpid);
 			int resID = FindAllocationRequest(procpos);
 
-			if (AllocResource(procpos, resID) == -1)
+			if (AllocResource(procpos, resID) == 1)
 			{
 				enqueue(resQueue, cpid);
 			}
@@ -453,7 +453,19 @@ void DoSharedWork()
 			requestCounter++;
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
 			{
+				int reqpid = msgbuf.mtype;
 				int procpos = FindPID(msgbuf.mtype);
+				int resID = 0;
+				int count = 0;
+
+				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
+				resID = atoi(msgbuf.mtext);
+
+				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
+				count = atoi(msgbuf.mtext);
+
+				data->req[resID][procpos] = count;
+
 				int resID = FindAllocationRequest(procpos);
 
 				fprintf(o, "%s: [REQUEST] pid: %i proc: resID: %i\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), resID);
@@ -474,9 +486,10 @@ void DoSharedWork()
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0)
 			{
+				int reqpid = msgbuf.mtype;
 				int procpos = FindPID(msgbuf.mtype);
 
-				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), msgbuf.mtype, 0);
+				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
 				fprintf(o, "%s: [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}

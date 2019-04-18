@@ -227,19 +227,33 @@ int main(int argc, int argv)
 				strcpy(data->proc[FindPID(pid)].status, "EN REQ BLOK");
 				int resToRequest = (rand() % 21);
 
-				data->req[resToRequest][FindPID(pid)] = (rand() % (data->resVec[resToRequest] + 1));
+				//data->req[resToRequest][FindPID(pid)]
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REQ");
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER REQ");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
-				strcpy(data->proc[FindPID(pid)].status, "GOT MASTER REQ RES");
+
+				char *convert[5];
+				sprintf(convert, "%i", resToRequest);
+
+				msgbuf.mtype = pid;
+				strcpy(msgbuf.mtext, convert);
+				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES POS");
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
+
+				sprintf(convert, "%i", (rand() % (data->resVec[resToRequest] + 1)));
+
+				msgbuf.mtype = pid;
+				strcpy(msgbuf.mtext, "REQ");
+				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES CNT");
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
+
 				strcpy(data->proc[FindPID(pid)].status, "WAIT MASTER GRANT");
 
 				msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
 
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
-				data->req[resToRequest][FindPID(pid)] = 0;
 
 				CalcNextActionTime(&nextActionTime);
 			}
