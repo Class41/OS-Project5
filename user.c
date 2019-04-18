@@ -225,17 +225,11 @@ int main(int argc, int argv)
 			if ((rand() % 100) < CHANCE_TO_REQUEST)
 			{
 				strcpy(data->proc[FindPID(pid)].status, "EN REQ BLOK");
-				int resToRequest;
-				srand(time(NULL) ^ (pid << 16));
-				do
-				{
-					resToRequest = (rand() % 21);
-				} while (data->alloc[resToRequest][FindPID(pid)] > 0);
+				int resToRequest = (rand() % 21);
 
-				data->req[resToRequest][FindPID(pid)] = (rand() % (data->resVec[resToRequest] - 1));
+				data->req[resToRequest][FindPID(pid)] = (rand() % (data->resVec[resToRequest] + 1));
 
 				msgbuf.mtype = pid;
-
 				strcpy(msgbuf.mtext, "REQ");
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER REQ");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
