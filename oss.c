@@ -600,30 +600,6 @@ void DoSharedWork()
 					}
 				}
 
-				/*updated = 0;
-				for (i = 0; i < 19; i++)
-				{
-					if(procFlags[i] == 1)
-						continue;
-
-					isMatch = 1;
-					for (j = 0; j < 20; j++)
-					{
-						if (data->req[j][i] > tempVec[j])
-						{
-							isMatch = 0;
-						}
-					}
-					procFlags[i] = isMatch;
-
-					if (isMatch == 1)
-					{
-						updated = 1;
-						for (j = 0; j < 20; j++)
-							tempVec[j] += data->alloc[j][i];
-					}
-				}*/
-
 			} while (updated == 1);
 
 			for (i = 0; i < 19; i++)
