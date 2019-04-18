@@ -336,9 +336,10 @@ int AllocResource(int procRow, int resID)
 	//	CalcResourceTotal(resID);
 	//	printf("request of %i", data->req[resID][procRow]);
 	//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-	while (data->allocVec[resID] > 0 && data->req[resID][procRow] > 0)
+	while (data->allocVec[resID] > 0 && data->req[resID][procRow] > 0 && (data->resVec[resID] > data->alloc[resID][procRow]))
 	{
-		(data->allocVec[resID])--;
+		if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+			(data->allocVec[resID])--;
 		(data->alloc[resID][procRow])++;
 		(data->req[resID][procRow])--;
 	}
@@ -353,8 +354,8 @@ int AllocResource(int procRow, int resID)
 
 int DellocResource(int procRow, int resID)
 {
-	//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-	(data->allocVec[resID]) += (data->alloc[resID][procRow]);
+	if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+		(data->allocVec[resID]) += (data->alloc[resID][procRow]);
 	data->alloc[resID][procRow] = 0;
 }
 
@@ -630,7 +631,7 @@ void DoSharedWork()
 				//printf("\n%i :: %i, PID: %i", i, procFlags[i], data->proc[i].pid);
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
-					printf("Running\n");
+					//printf("Running\n");
 					kill(data->proc[i].pid, SIGTERM);
 
 					for (j = 0; j < 20; j++)
