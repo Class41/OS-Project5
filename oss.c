@@ -109,7 +109,6 @@ void Handler(int signal)
 
 	DisplayResources();
 
-	int i;
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
 		if (data->proc[i].pid != -1)
 			kill(data->proc[i].pid, SIGTERM);
