@@ -239,6 +239,7 @@ int main(int argc, int argv)
 				msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
 
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
+				data->req[resToRequest][FindPID(pid)] = 0;
 
 				CalcNextActionTime(&nextActionTime);
 			}
