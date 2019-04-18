@@ -2,24 +2,27 @@
 
 #define MAX_PROCS 19
 
-typedef struct {
+typedef struct
+{
 	int pid; //process pid
 	char status[50];
 } Process;
 
 /* Time structure */
-typedef struct {
+typedef struct
+{
 	unsigned int seconds;
 	unsigned int ns;
 } Time;
 
-typedef struct {
+typedef struct
+{
 	Time sysTime;
 	Process proc[MAX_PROCS]; //process table
 	int allocVec[20];
 	int resVec[20];
 	int req[20][19];
-	int alloc[20][19]; 
+	int alloc[20][19];
 	int sharedRes[5];
 } Shared;
 

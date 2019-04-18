@@ -225,11 +225,12 @@ int main(int argc, int argv)
 			if ((rand() % 100) < CHANCE_TO_REQUEST)
 			{
 				strcpy(data->proc[FindPID(pid)].status, "EN REQ BLOK");
-				int resToRequest;
+				srand(time(NULL) ^ (pid << 16));
+				int resToRequest = (rand() % 21);
+
 				do
 				{
-					srand(time(NULL) ^ (pid << 16));
-					resToRequest = (rand() % 20) + 1;
+					resToRequest = (resToRequest + 1) % 21;
 				} while (data->alloc[FindPID(pid)][resToRequest] > 0);
 
 				data->req[resToRequest][FindPID(pid)] = (rand() % (data->resVec[resToRequest] - 1));
@@ -245,6 +246,7 @@ int main(int argc, int argv)
 				msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
 
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
+
 				CalcNextActionTime(&nextActionTime);
 			}
 			else if (resToReleasePos >= 0)
