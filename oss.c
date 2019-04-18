@@ -481,7 +481,11 @@ void DoSharedWork()
 					DellocResource(procpos, iterator);
 				}
 
-				fprintf(o, "%s: [TERMINATE] pid: %i\n\n", filen, msgbuf.mtype);
+				fprintf(o, "%s: [TERMINATE] pid: %i proc: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype));
+				int i;
+				for(i = 0; i < 20; i++)
+					if(data->alloc[i][FindPID(msgbuf.mtype)] != 0)
+							fprintf(o, "%s: FAILED TO DEALLOC RESOURCES!!!!!"));
 			}
 			if (requestCounter == 19)
 			{
@@ -509,10 +513,10 @@ void DoSharedWork()
 			}
 		}
 
-		if (remainingExecs <= 0 && exitCount >= 100) //only get out of loop if we run out of execs or we have maxed out child count
+		/*if (remainingExecs <= 0 && exitCount >= 100) //only get out of loop if we run out of execs or we have maxed out child count
 		{
 			break;
-		}
+		}*/
 
 		fflush(stdout);
 	}

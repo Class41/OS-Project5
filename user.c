@@ -209,7 +209,6 @@ int main(int argc, int argv)
 	{
 		if (CompareTime(&(data->sysTime), &(nextActionTime)) == 1)
 		{
-
 			if ((rand() % 100) <= CHANCE_TO_DIE_PERCENT) //roll for termination
 			{
 				msgbuf.mtype = pid;
@@ -236,7 +235,7 @@ int main(int argc, int argv)
 
 				while (!(strcmp(msgbuf.mtext, "REQ_GRANT") == 0))
 				{
-					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, IPC_NOWAIT);
+					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
 				}
 				CalcNextActionTime(&nextActionTime);
 			}
@@ -250,7 +249,7 @@ int main(int argc, int argv)
 				sprintf(convert, "%i", resToReleasePos);
 
 				strcpy(msgbuf.mtext, convert);
-				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
+				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
 				CalcNextActionTime(&nextActionTime);
 			}
