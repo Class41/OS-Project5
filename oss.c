@@ -441,24 +441,6 @@ void DoSharedWork()
 				kill(pid, SIGTERM); //if child failed to find a proccess block, just kill it off
 			}
 		}
-		for (iterator = 0; iterator < getSize(resQueue); iterator++)
-		{
-			int cpid = dequeue(resQueue);
-			int procpos = FindPID(cpid);
-			int resID = FindAllocationRequest(procpos);
-
-			if (AllocResource(procpos, resID) == 1)
-			{
-				enqueue(resQueue, cpid);
-			}
-			else
-			{
-				fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
-				strcpy(msgbuf.mtext, "REQ_GRANT");
-				msgbuf.mtype = cpid;
-				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-			}
-		}
 
 		if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
 		{
@@ -504,6 +486,29 @@ void DoSharedWork()
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
 				fprintf(o, "%s: [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
+
+		for (iterator = 0; iterator < getSize(resQueue); iterator++)
+		{
+			int cpid = dequeue(resQueue);
+			int procpos = FindPID(cpid);
+			int resID = FindAllocationRequest(procpos);
+
+			if (AllocResource(procpos, resID) == 1)
+			{
+				fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
+				strcpy(msgbuf.mtext, "REQ_GRANT");
+				msgbuf.mtype = cpid;
+				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+
+			
+			}
+			else
+			{
+				enqueue(resQueue, cpid);		
+	}
+		}
+
+
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0)
 			{

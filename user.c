@@ -258,7 +258,11 @@ int main(int argc, int argv)
 
 				do {
 				msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
-				} while(strcmp(msgbuf.mtext, "REQ_GRANT") != 0);
+
+				if(strcmp(msgbuf.mtext, "REQ_GRANT") == 0)
+					break;
+
+				} while(1);
 					
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
 
