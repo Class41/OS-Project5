@@ -573,7 +573,7 @@ void DoSharedWork()
 				updated = 0;
 				for (i = 0; i < 19; i++)
 				{
-					if (procFlags[i] == 0 && CompareArrays2D(tempVec, data->req, 20, i) == 1)
+					if (procFlags[i] == 0 && CompareArrays2D(tempVec, &(data->req), 20, i) == 1)
 					{
 						updated = 1;
 						procFlags[i] = 1;
