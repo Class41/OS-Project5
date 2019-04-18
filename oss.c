@@ -574,9 +574,9 @@ void DoSharedWork()
 
 				for (i = 0; i < 19; i++)
 				{
-					if(prcoFlags[i] == 1)
+					if(procFlags[i] == 1)
 						continue;
-						
+
 					if (procFlags[i] == 0 && CompareArrayAgainstReq(tempVec, i) == 1)
 					{
 						updated = 1;
