@@ -390,7 +390,7 @@ void DoSharedWork()
 
 	/* Setup time for random child spawning */
 	Time nextExec = {0, 0};
-
+	Time deadlockExec = {0, 0};
 	/* Create queues */
 	struct Queue *resQueue = createQueue(childCount); //Queue of local PIDS (fake/emulated pids)
 
@@ -543,6 +543,11 @@ void DoSharedWork()
 						data->proc[position].pid = -1;
 				}
 			}
+		}
+
+		if(CompareTime(&(data->sysTime), &deadlockExec))
+		{
+			
 		}
 
 		/*if (remainingExecs <= 0 && exitCount >= 100) //only get out of loop if we run out of execs or we have maxed out child count
