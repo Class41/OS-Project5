@@ -328,7 +328,7 @@ int AllocResource(int procRow, int resID)
 {
 	if (data->allocVec[resID] - data->req[resID][procRow] >= 0)
 	{
-		(data->alloc[resID][procRow]) += (data->req[resID][procRow]);
+		(data->alloc[resID][procRow]) = (data->req[resID][procRow]);
 		if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
 			(data->allocVec[resID]) -= (data->req[resID][procRow]);
 
