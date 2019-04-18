@@ -618,9 +618,10 @@ void DoSharedWork()
 
 			for (i = 0; i < 19; i++)
 			{
-				printf("\n%i :: %i, PID: %i", i, procFlags[i], data->proc[i].pid);
+				//printf("\n%i :: %i, PID: %i", i, procFlags[i], data->proc[i].pid);
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
+					printf("Running\n");
 					kill(data->proc[i].pid, SIGTERM);
 
 					for (j = 0; j < 20; j++)
