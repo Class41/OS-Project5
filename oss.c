@@ -610,7 +610,7 @@ void DoSharedWork()
 					fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgbuf.mtype = cpid;
-					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
 				}
 				else
 				{
