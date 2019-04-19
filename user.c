@@ -278,7 +278,7 @@ int main(int argc, int argv)
 				{
 					CHANCE_TO_DIE_PERCENT = 100;
 					CalcNextActionTime(&nextActionTime);
-					printf("Forcefully died...");
+					printf("\nForcefully died...");
 					continue;
 				}
 

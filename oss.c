@@ -692,7 +692,7 @@ void DoSharedWork()
 
 			if (procpos < 0)
 			{
-				printf("Removed garbage value from queue...");
+				printf("Removed garbage value from queue...\n");
 			}
 			else if (AllocResource(procpos, resID) == 1)
 			{
