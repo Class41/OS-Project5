@@ -194,7 +194,7 @@ int getResourceToRelease(int pid)
 
 void Handler(int signal)
 {
-	msgbuf.mtype = pid;
+	msgbuf.mtype = getpid();
 	strcpy(msgbuf.mtext, "TER");
 	strcpy(data->proc[FindPID(pid)].status, "SND MSTR TERM");
 	msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
