@@ -590,7 +590,7 @@ void DoSharedWork()
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
 					kill(data->proc[i].pid, SIGINT);
-					fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
+					//fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
 				}
 			}
 
@@ -701,7 +701,7 @@ void DoSharedWork()
 			}
 			else
 			{
-				printf("%i: POS: %i: Attempting to secure %i (%i in queue) There was %i available and %i needed\n", cpid, procpos, resID, getSize(resQueue) + 1, data->allocVec[resID], data->req[resID][procpos]);
+				//printf("%i: POS: %i: Attempting to secure %i (%i in queue) There was %i available and %i needed\n", cpid, procpos, resID, getSize(resQueue) + 1, data->allocVec[resID], data->req[resID][procpos]);
 				enqueue(resQueue, cpid);
 			}
 		}

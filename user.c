@@ -195,6 +195,7 @@ int getResourceToRelease(int pid)
 
 void Handler(int signal)
 {
+	printf("DED XD");
 	msgbuf.mtype = pid;
 	strcpy(msgbuf.mtext, "TER");
 	strcpy(data->proc[FindPID(pid)].status, "SND MSTR TERM");
