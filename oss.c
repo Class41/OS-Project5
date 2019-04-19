@@ -548,7 +548,7 @@ void DoSharedWork()
 
 			for (i = 0; i < 20; i++)
 				tempVec[i] = data->allocVec[i];
-
+			sleep(1);
 			int updated;
 			do
 			{
