@@ -516,25 +516,6 @@ void DoSharedWork()
 			}
 		}
 
-		for (iterator = 0; iterator < getSize(resQueue); iterator++)
-		{
-			int cpid = dequeue(resQueue);
-			int procpos = FindPID(cpid);
-			int resID = FindAllocationRequest(procpos);
-
-			if (AllocResource(procpos, resID) == 1)
-			{
-				fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
-				strcpy(msgbuf.mtext, "REQ_GRANT");
-				msgbuf.mtype = cpid;
-				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-			}
-			else
-			{
-				enqueue(resQueue, cpid);
-			}
-		}
-
 		if ((pid = waitpid((pid_t)-1, &status, WNOHANG)) > 0) //if a PID is returned meaning the child died
 		{
 			if (WIFEXITED(status))
