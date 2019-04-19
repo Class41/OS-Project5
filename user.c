@@ -199,7 +199,6 @@ int main(int argc, int argv)
 	QueueAttatch(); //attach to queues
 
 	pid = getpid(); //shorthand for getpid every time from now
-	signal(SIGINT, Handler);
 	/* Variables to keep tabs on time to be added instead of creating new ints every time */
 	Time nextActionTime = {0, 0};
 
@@ -267,7 +266,7 @@ int main(int argc, int argv)
 				{
 					CHANCE_TO_DIE_PERCENT = 1000;
 					CalcNextActionTime(&nextActionTime);
-					printf("\nBegin force die....");
+					//printf("\nBegin force die....");
 					continue;
 				}
 

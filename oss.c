@@ -348,14 +348,27 @@ int AllocResource(int procRow, int resID)
 	return 1;
 }
 
-void DeleteProc(int procrow)
+void DeleteProc(int procrow, struct Queue* queue)
 {
 	int i;
 	for(i = 0; i < 20; i++)
 	{
-		data->allocVec[i] += data->alloc[i][procrow];
+		if (CheckForExistence(&(data->sharedRes), 5, i) == -1)
+			data->allocVec[i] += data->alloc[i][procrow];
 		data->alloc[i][procrow] = 0;
 		data->req[i][procrow] = 0;
+	}
+
+//	printf("%i", getSize(queue));
+	int temp;
+	for(i = 0; i < getSize(queue); i++)
+	{
+		temp = dequeue(queue);
+
+		if(temp == data->proc[procrow].pid || temp == -1)
+			continue;
+		else
+			enqueue(queue, temp);
 	}
 }
 
@@ -424,7 +437,7 @@ void DoSharedWork()
 	while (1)
 	{
 		AddTime(&(data->sysTime), CLOCK_ADD_INC); //increment clock between tasks to advance the clock a little
-
+		//printf("Wh");
 		pid_t pid; //pid temp
 
 		/* Only executes when there is a proccess ready to be launched, given the time is right for exec, there is room in the proc table, annd there are execs remaining */
@@ -464,7 +477,7 @@ void DoSharedWork()
 				kill(pid, SIGTERM); //if child failed to find a proccess block, just kill it off
 			}
 		}
-
+//printf("did proc create");
 		if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
 		{
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
@@ -476,10 +489,8 @@ void DoSharedWork()
 
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				resID = atoi(msgbuf.mtext);
-
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				count = atoi(msgbuf.mtext);
-
 				data->req[resID][procpos] = count;
 
 				//printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
@@ -488,11 +499,13 @@ void DoSharedWork()
 
 				if (AllocResource(procpos, resID) == -1)
 				{
+					//printf("Alloc failed");
 					enqueue(resQueue, reqpid);
 					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request unfulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
 				else
 				{
+					//printf("Alloc succ");
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request fulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
@@ -502,7 +515,7 @@ void DoSharedWork()
 			{
 				int reqpid = msgbuf.mtype;
 				int procpos = FindPID(msgbuf.mtype);
-
+//printf("Waiting on release resource ID");
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
 				fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
@@ -510,8 +523,9 @@ void DoSharedWork()
 			else if (strcmp(msgbuf.mtext, "TER") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
-
-				DeleteProc[procpos];
+				
+				if(procpos > -1)
+					DeleteProc(procpos, resQueue);
 
 				fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
 			}
@@ -522,13 +536,14 @@ void DoSharedWork()
 				requestCounter = 0;
 			}
 		}
-
+//printf("\nGot to kill block");
 		if ((pid = waitpid((pid_t)-1, &status, WNOHANG)) > 0) //if a PID is returned meaning the child died
 		{
 			if (WIFEXITED(status))
 			{
 				if (WEXITSTATUS(status) == 21) //21 is my custom return val
 				{
+			//		printf("Child dies");
 					exitCount++;
 					activeProcs--;
 
@@ -541,6 +556,7 @@ void DoSharedWork()
 				}
 			}
 		}
+		//printf("\nRight above deadlock");
 
 		if (CompareTime(&(data->sysTime), &deadlockExec))
 		{
@@ -691,7 +707,7 @@ void DoSharedWork()
 			free(procFlags);
 			free(tempVec);
 		}*/
-
+//printf("Got to queue block");
 		for (iterator = 0; iterator < getSize(resQueue); iterator++)
 		{
 			int cpid = dequeue(resQueue);
@@ -700,15 +716,16 @@ void DoSharedWork()
 
 			if (procpos < 0)
 			{
-				printf("Removed garbage value from queue...\n");
+				continue;
 			}
 			else if (AllocResource(procpos, resID) == 1)
 			{
 				fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				strcpy(msgbuf.mtext, "REQ_GRANT");
 				msgbuf.mtype = cpid;
-				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
-				printf("GRANTED %i\n", resID);
+				//printf("Sending queue nowait");
+				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+				//printf("GRANTED %i\n", resID);
 			}
 			else
 			{
@@ -716,6 +733,7 @@ void DoSharedWork()
 				enqueue(resQueue, cpid);
 			}
 		}
+		//printf("\nAfter queue block");
 
 		fflush(stdout);
 	}
