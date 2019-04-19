@@ -340,13 +340,12 @@ int AllocResource(int procRow, int resID)
 		}
 		(data->alloc[resID][procRow])++;
 		(data->req[resID][procRow])--;
-
-	if (data->req[resID][procRow] > 0 && data->allocVec[resID] <= 0)
-		return -1;
-	else if(data->req[resID][procRow] == 0)
-		return 1;
 	}
 
+	if (data->req[resID][procRow] > 0)
+		return -1;
+
+	return 1;
 }
 
 int DellocResource(int procRow, int resID)
@@ -475,7 +474,7 @@ void DoSharedWork()
 
 				//printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
 
-				fprintf(o, "%s: [%i:%i] [REQUEST] pid: %i proc: resID: %i\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), resID);
+				fprintf(o, "%s: [%i:%i] [REQUEST] pid: %i proc: %i resID: %i\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, procpos, resID);
 
 				if (AllocResource(procpos, resID) == -1)
 				{
@@ -488,6 +487,7 @@ void DoSharedWork()
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request fulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
+				printf("Num in queue: %i\n", getSize(resQueue));
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0)
 			{
