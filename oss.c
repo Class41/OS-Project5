@@ -533,7 +533,7 @@ void DoSharedWork()
 				}
 			}
 		}
-
+/*
 		if (CompareTime(&(data->sysTime), &deadlockExec))
 		{
 			deadlockExec.seconds = data->sysTime.seconds; //capture current time
@@ -625,7 +625,7 @@ void DoSharedWork()
 				printf("%i: POS: %i: Attempting to secure %i (%i in queue) There was %i available and %i needed\n", cpid, procpos, resID, getSize(resQueue) + 1, data->allocVec[resID], data->req[resID][procpos]);
 				enqueue(resQueue, cpid);
 			}
-		}
+		}*/
 
 		fflush(stdout);
 	}
