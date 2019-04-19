@@ -348,7 +348,7 @@ int AllocResource(int procRow, int resID)
 	return 1;
 }
 
-int DellocResource(int procRow, int resID)
+void DellocResource(int procRow, int resID)
 {
 	if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
 	{
@@ -543,7 +543,7 @@ void DoSharedWork()
 
 			int *tempVec = calloc(20, sizeof(int));
 			int *procFlags = calloc(19, sizeof(int));
-			int i, j, k;
+			int i, j;
 			int isEnding = 0;
 
 			for (i = 0; i < 20; i++)
