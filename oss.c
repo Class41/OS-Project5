@@ -555,9 +555,9 @@ void DoSharedWork()
 				updated = 0;
 				for (i = 0; i < 19)
 				{
-					if(procFlags[i] == 1)
+					if (procFlags[i] == 1 || data->procs[i].pid < 0)
 						continue;
-						
+
 					isEnding = 1;
 					for (j = 0; j < 20; j++)
 					{
@@ -578,6 +578,32 @@ void DoSharedWork()
 					}
 				}
 			} while (updated == 1);
+
+			if (CheckForExistence(procFlags, 19, 0) == 1 && data->proc[i].pid > 0)
+			{
+				fprintf(o, "********** DEADLOCK DETECTED **********");
+				DisplayResources();
+			}
+
+			for (i = 0; i < 19; i++)
+			{
+				if (procFlags[i] == 0 && data->proc[i].pid > 0)
+				{
+					kill(data->proc[i].pid, SIGTERM);
+
+					for (j = 0; j < 20; j++)
+					{
+						DellocResource(i, j);
+					}
+
+					fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
+
+					data->proc[i].pid = -1;
+				}
+			}
+
+			free(procFlags);
+			free(tempVec);
 		}
 
 		/*		int CompareArrayAgainstReq(int *array1, int procpos)
