@@ -610,7 +610,7 @@ void DoSharedWork()
 
 			printf("%i: POS: %i: Attempting to secure %i (%i in queue)\n", cpid, procpos, resID, getSize(resQueue));
 
-			if (AllocResource(procpos, resID) == 1 && cpid => 0)
+			if (AllocResource(procpos, resID) == 1 && cpid >= 0)
 			{
 				fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				strcpy(msgbuf.mtext, "REQ_GRANT");
