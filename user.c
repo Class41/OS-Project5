@@ -269,14 +269,23 @@ int main(int argc, int argv)
 				{
 					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
 
-					if (strcmp(msgbuf.mtext, "REQ_GRANT") == 0)
+					if (strcmp(msgbuf.mtext, "REQ_GRANT") == 0 || strcmp(msgbuf.mtext, "DIE") == 0)
 						break;
 
 				} while (1);
 
+				if (strcmp(msgbuf.mtext, "DIE") == 0)
+				{
+					CHANCE_TO_DIE_PERCENT = 100;
+					CalcNextActionTime(&nextActionTime);
+					printf("Forcefully died...");
+					continue;
+				}
+
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
 
 				CalcNextActionTime(&nextActionTime);
+
 			}
 			else if (resToReleasePos >= 0)
 			{
