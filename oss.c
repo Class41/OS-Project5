@@ -608,7 +608,7 @@ void DoSharedWork()
 				{
 					kill(data->proc[i].pid, SIGTERM);
 
-					for (j = 0; j < 19; j++)
+					for (j = 0; j < 20; j++)
 					{
 						DellocResource(i, j);
 					}
