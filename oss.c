@@ -474,18 +474,18 @@ void DoSharedWork()
 
 				//printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
 
-				fprintf(o, "%s: [%i:%i] [REQUEST] pid: %i proc: resID: %i\n", filen, data->sysTime.seconds, data->sysTime.ns,  msgbuf.mtype, FindPID(msgbuf.mtype), resID);
+				fprintf(o, "%s: [%i:%i] [REQUEST] pid: %i proc: resID: %i\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), resID);
 
 				if (AllocResource(procpos, resID) == -1)
 				{
 					enqueue(resQueue, msgbuf.mtype);
-					fprintf(o, "\t-> [REQUEST] pid: %i request unfulfilled...\n\n", msgbuf.mtype);
+					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request unfulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
 				else
 				{
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n", msgbuf.mtype);
+					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request fulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0)
@@ -495,26 +495,7 @@ void DoSharedWork()
 
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
-				fprintf(o, "%s: [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
-
-				for (iterator = 0; iterator < getSize(resQueue); iterator++)
-				{
-					int cpid = dequeue(resQueue);
-					int procpos = FindPID(cpid);
-					int resID = FindAllocationRequest(procpos);
-
-					if (AllocResource(procpos, resID) == 1)
-					{
-						fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
-						strcpy(msgbuf.mtext, "REQ_GRANT");
-						msgbuf.mtype = cpid;
-						msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-					}
-					else
-					{
-						enqueue(resQueue, cpid);
-					}
-				}
+				fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0)
 			{
@@ -525,13 +506,32 @@ void DoSharedWork()
 					DellocResource(procpos, iterator);
 				}
 
-				fprintf(o, "%s: [TERMINATE] pid: %i proc: %i\n\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype));
+				fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
 			}
 
 			if (requestCounter == 19)
 			{
 				DisplayResources();
 				requestCounter = 0;
+			}
+		}
+
+		for (iterator = 0; iterator < getSize(resQueue); iterator++)
+		{
+			int cpid = dequeue(resQueue);
+			int procpos = FindPID(cpid);
+			int resID = FindAllocationRequest(procpos);
+
+			if (AllocResource(procpos, resID) == 1)
+			{
+				fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
+				strcpy(msgbuf.mtext, "REQ_GRANT");
+				msgbuf.mtype = cpid;
+				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+			}
+			else
+			{
+				enqueue(resQueue, cpid);
 			}
 		}
 
@@ -612,7 +612,7 @@ void DoSharedWork()
 						DellocResource(i, j);
 					}
 
-					fprintf(o, "%s: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->proc[i].pid, i);
+					fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
 
 					data->proc[i].pid = -1;
 				}
@@ -626,7 +626,7 @@ void DoSharedWork()
 
 				if (AllocResource(procpos, resID) == 1)
 				{
-					fprintf(o, "%s: [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, msgbuf.mtype);
+					fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgbuf.mtype = cpid;
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
