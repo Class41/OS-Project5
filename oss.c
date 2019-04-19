@@ -586,6 +586,14 @@ void DoSharedWork()
 			{
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
+					for (iterator = 0; iterator < getSize(resQueue); iterator++)
+					{
+						int temp = dequeue(resQueue);
+
+						if(data->proc[i].pid != temp)
+							enqueue(resQueue);			
+					}
+
 					kill(data->proc[i].pid, SIGTERM);
 
 					for (j = 0; j < 20; j++)
