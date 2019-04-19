@@ -608,8 +608,6 @@ void DoSharedWork()
 			int procpos = FindPID(cpid);
 			int resID = FindAllocationRequest(procpos);
 
-			printf("%i: POS: %i: Attempting to secure %i (%i in queue)\n", cpid, procpos, resID, getSize(resQueue) + 1);
-
 			if(procpos < 0)
 			{
 				printf("Removed garbage value from queue...");
