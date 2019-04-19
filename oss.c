@@ -540,7 +540,7 @@ void DoSharedWork()
 			deadlockExec.seconds = data->sysTime.seconds; //capture current time
 			deadlockExec.ns = data->sysTime.ns;
 
-			AddTimeLong(&deadlockExec, abs((long)(rand() % 750) * (long)1000000)); //set new exec time to 0 - 500ms after now
+			AddTimeLong(&deadlockExec, abs((long)(rand() % 1000) * (long)1000000)); //set new exec time to 0 - 500ms after now
 
 			int *tempVec = calloc(20, sizeof(int));
 			int *procFlags = calloc(19, sizeof(int));
@@ -617,7 +617,7 @@ void DoSharedWork()
 			int procpos = FindPID(cpid);
 			int resID = FindAllocationRequest(procpos);
 
-			printf("%i: Attempting to secure %i\n", procpos, resID);
+			printf("%i: POS: %i: Attempting to secure %i\n", cpid, procpos, resID);
 
 			if (AllocResource(procpos, resID) == 1)
 			{
