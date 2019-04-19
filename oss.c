@@ -609,7 +609,7 @@ void DoSharedWork()
 			int procpos = FindPID(cpid);
 			int resID = FindAllocationRequest(procpos);
 
-			printf("Attempting to secure %i\n", resID);
+			printf("%i: Attempting to secure %i\n", procpos, resID);
 
 			if (AllocResource(procpos, resID) == 1)
 			{
