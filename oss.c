@@ -30,9 +30,8 @@ int childCount = 19; //Max children concurrent
 
 FILE *o; //output log file pointer
 
-const int CLOCK_ADD_INC = 50000;
+const int CLOCK_ADD_INC = 5000000;
 int VERBOSE_LEVEL = 0;
-int LINE_COUNT = 0;
 
 /* Create prototypes for used functions*/
 void Handler(int signal);
@@ -475,7 +474,7 @@ void DoSharedWork()
 
 				//printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
 
-				fprintf(o, "%s: [REQUEST] pid: %i proc: resID: %i\n", filen, msgbuf.mtype, FindPID(msgbuf.mtype), resID);
+				fprintf(o, "%s: [%i:%i] [REQUEST] pid: %i proc: resID: %i\n", filen, data->sysTime.seconds, data->sysTime.ns,  msgbuf.mtype, FindPID(msgbuf.mtype), resID);
 
 				if (AllocResource(procpos, resID) == -1)
 				{
