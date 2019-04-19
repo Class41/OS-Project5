@@ -31,6 +31,7 @@ int toChildQueue;
 int toMasterQueue;
 int ipcid;
 char *filen;
+int pid;
 
 /* Function prototypes */
 void ShmAttatch();
@@ -194,7 +195,7 @@ int getResourceToRelease(int pid)
 
 void Handler(int signal)
 {
-	msgbuf.mtype = getpid();
+	msgbuf.mtype = pid;
 	strcpy(msgbuf.mtext, "TER");
 	strcpy(data->proc[FindPID(pid)].status, "SND MSTR TERM");
 	msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
@@ -206,10 +207,9 @@ int main(int argc, int argv)
 {
 	ShmAttatch();   //attach to shared mem
 	QueueAttatch(); //attach to queues
+
+	pid = getpid(); //shorthand for getpid every time from now
 	signal(SIGINT, Handler);
-
-	int pid = getpid(); //shorthand for getpid every time from now
-
 	/* Variables to keep tabs on time to be added instead of creating new ints every time */
 	Time nextActionTime = {0, 0};
 
