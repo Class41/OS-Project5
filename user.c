@@ -192,10 +192,21 @@ int getResourceToRelease(int pid)
 	return -1;
 }
 
+void Handler(int signal)
+{
+	msgbuf.mtype = pid;
+	strcpy(msgbuf.mtext, "TER");
+	strcpy(data->proc[FindPID(pid)].status, "SND MSTR TERM");
+	msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
+	strcpy(data->proc[FindPID(pid)].status, "EXT MSTR GOT");
+	exit(21);
+}
+
 int main(int argc, int argv)
 {
 	ShmAttatch();   //attach to shared mem
 	QueueAttatch(); //attach to queues
+	signal(SIGINT, Handler);
 
 	int pid = getpid(); //shorthand for getpid every time from now
 

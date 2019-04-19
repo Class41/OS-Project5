@@ -548,7 +548,7 @@ void DoSharedWork()
 
 			for (i = 0; i < 20; i++)
 				tempVec[i] = data->allocVec[i];
-			sleep(1);
+
 			int updated;
 			do
 			{
@@ -562,9 +562,9 @@ void DoSharedWork()
 					for (j = 0; j < 20; j++)
 					{
 						if ((tempVec[j] - data->req[j][i]) < 0)
-							{
-								isEnding = 0;
-							}
+						{
+							isEnding = 0;
+						}
 					}
 
 					procFlags[i] = isEnding;
@@ -589,16 +589,8 @@ void DoSharedWork()
 			{
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
-					kill(data->proc[i].pid, SIGTERM);
-
-					for (j = 0; j < 20; j++)
-					{
-						DellocResource(i, j);
-					}
-
+					kill(data->proc[i].pid, SIGINT);
 					fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
-
-					data->proc[i].pid = -1;
 				}
 			}
 
