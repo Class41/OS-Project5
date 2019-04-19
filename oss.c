@@ -478,7 +478,7 @@ void DoSharedWork()
 
 				if (AllocResource(procpos, resID) == -1)
 				{
-					enqueue(resQueue, msgbuf.mtype);
+					enqueue(resQueue, reqpid);
 					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request unfulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
 				else
@@ -536,7 +536,7 @@ void DoSharedWork()
 			}
 		}
 
-		/*if (CompareTime(&(data->sysTime), &deadlockExec))
+		if (CompareTime(&(data->sysTime), &deadlockExec))
 		{
 			deadlockExec.seconds = data->sysTime.seconds; //capture current time
 			deadlockExec.ns = data->sysTime.ns;
@@ -602,9 +602,9 @@ void DoSharedWork()
 
 			free(procFlags);
 			free(tempVec);
-		}*/
+		}
 
-		/*for (iterator = 0; iterator < getSize(resQueue); iterator++)
+		for (iterator = 0; iterator < getSize(resQueue); iterator++)
 		{
 			int cpid = dequeue(resQueue);
 			int procpos = FindPID(cpid);
@@ -625,8 +625,8 @@ void DoSharedWork()
 		}
 
 		fflush(stdout);
-	}*/
 	}
+
 	/* Wrap up the output file and detatch from shared memory items */
 	shmctl(ipcid, IPC_RMID, NULL);
 	msgctl(toChildQueue, IPC_RMID, NULL);
