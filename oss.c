@@ -591,7 +591,7 @@ void DoSharedWork()
 						int temp = dequeue(resQueue);
 
 						if(data->proc[i].pid != temp)
-							enqueue(resQueue);			
+							enqueue(resQueue, temp);			
 					}
 
 					kill(data->proc[i].pid, SIGTERM);
