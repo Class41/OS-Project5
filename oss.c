@@ -626,7 +626,7 @@ void DoSharedWork()
 
 		fflush(stdout);
 	}*/
-
+	}
 	/* Wrap up the output file and detatch from shared memory items */
 	shmctl(ipcid, IPC_RMID, NULL);
 	msgctl(toChildQueue, IPC_RMID, NULL);
