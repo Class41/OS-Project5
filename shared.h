@@ -20,8 +20,9 @@ typedef struct
 	Time sysTime;
 	Process proc[MAX_PROCS]; //process table
 	int allocVec[20];
+	int resVecProtectorTop[50];
 	int resVec[20];
-	int resVecBackup[20];
+	int resVecProtectorBottom[50];
 	int req[20][19];
 	int alloc[20][19];
 	int sharedRes[5];

@@ -560,7 +560,7 @@ void DoSharedWork()
 			deadlockExec.seconds = data->sysTime.seconds; //capture current time
 			deadlockExec.ns = data->sysTime.ns;
 
-			AddTimeLong(&deadlockExec, abs((long)(rand() % 101) * (long)1000000)); //set new exec time to 0 - 500ms after now
+			AddTimeLong(&deadlockExec, abs((long)(rand() % 1000) * (long)1000000)); //set new exec time to 0 - 500ms after now
 
 			int* tempVec = calloc(20, sizeof(int));
 			int* procFlags = calloc(19, sizeof(int));
