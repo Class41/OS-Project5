@@ -340,12 +340,13 @@ int AllocResource(int procRow, int resID)
 		}
 		(data->alloc[resID][procRow])++;
 		(data->req[resID][procRow])--;
+
+	if (data->req[resID][procRow] > 0 && data->allocVec[resID] <= 0)
+		return -1;
+	else if(data->req[resID][procRow] == 0)
+		return 1;
 	}
 
-	if (data->req[resID][procRow] > 0)
-		return -1;
-
-	return 1;
 }
 
 int DellocResource(int procRow, int resID)
@@ -540,7 +541,7 @@ void DoSharedWork()
 			deadlockExec.seconds = data->sysTime.seconds; //capture current time
 			deadlockExec.ns = data->sysTime.ns;
 
-			AddTimeLong(&deadlockExec, abs((long)(rand() % 1000) * (long)1000000)); //set new exec time to 0 - 500ms after now
+			AddTimeLong(&deadlockExec, abs((long)(rand() % 750) * (long)1000000)); //set new exec time to 0 - 500ms after now
 
 			int *tempVec = calloc(20, sizeof(int));
 			int *procFlags = calloc(19, sizeof(int));
@@ -599,7 +600,11 @@ void DoSharedWork()
 				}
 			}
 
-			for (iterator = 0; iterator < getSize(resQueue); iterator++)
+			free(procFlags);
+			free(tempVec);
+		}
+
+		for (iterator = 0; iterator < getSize(resQueue); iterator++)
 			{
 				int cpid = dequeue(resQueue);
 				int procpos = FindPID(cpid);
@@ -611,6 +616,7 @@ void DoSharedWork()
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgbuf.mtype = cpid;
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
+					break;
 				}
 				else
 				{
@@ -618,9 +624,7 @@ void DoSharedWork()
 				}
 			}
 
-			free(procFlags);
-			free(tempVec);
-		}
+
 
 		fflush(stdout);
 	}

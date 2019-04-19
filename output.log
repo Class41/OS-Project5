@@ -65,74 +65,79 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [PROC CREATE] pid: 27915
+./oss: [PROC CREATE] pid: 7403
 
-./oss: [PROC CREATE] pid: 27916
+./oss: [PROC CREATE] pid: 7404
 
-./oss: [PROC CREATE] pid: 27917
+./oss: [PROC CREATE] pid: 7405
 
-./oss: [0:970000000] [REQUEST] pid: 27915 proc: resID: 0
-	-> [REQUEST] pid: 27915 request fulfilled...
+./oss: [PROC CREATE] pid: 7406
 
-./oss: [PROC CREATE] pid: 27918
+./oss: [PROC CREATE] pid: 7407
 
-./oss: [PROC CREATE] pid: 27919
+./oss: [0:765000000] [REQUEST] pid: 7403 proc: resID: 0
+	-> [0:765000000] [REQUEST] pid: 7403 request fulfilled...
 
-./oss: [RELEASE] pid: 27915 proc: 0  resID: 11
+./oss: [1:10000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [1:10000000] [REQUEST] pid: 7404 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27920
+./oss: [1:15000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [1:15000000] [REQUEST] pid: 7405 request fulfilled...
 
-./oss: [1:510000000] [REQUEST] pid: 27916 proc: resID: 1
-	-> [REQUEST] pid: 27916 request fulfilled...
+./oss: [1:35000000] [REQUEST] pid: 7403 proc: resID: 0
+	-> [1:35000000] [REQUEST] pid: 7403 request fulfilled...
 
-./oss: [1:605000000] [REQUEST] pid: 27917 proc: resID: 2
-	-> [REQUEST] pid: 27917 request fulfilled...
+./oss: [PROC CREATE] pid: 7408
 
-./oss: [1:625000000] [REQUEST] pid: 27916 proc: resID: 1
-	-> [REQUEST] pid: 27916 request fulfilled...
+./oss: [1:190000000] [REQUEST] pid: 7403 proc: resID: 0
+	-> [1:190000000] [REQUEST] pid: 7403 request fulfilled...
 
-./oss: [1:630000000] [REQUEST] pid: 27920 proc: resID: 5
-	-> [REQUEST] pid: 27920 request fulfilled...
+./oss: [1:245000000] [REQUEST] pid: 7403 proc: resID: 0
+	-> [1:245000000] [REQUEST] pid: 7403 request fulfilled...
 
-./oss: [1:705000000] [REQUEST] pid: 27915 proc: resID: 0
-	-> [REQUEST] pid: 27915 request fulfilled...
+./oss: [1:340000000] [REQUEST] pid: 7403 proc: resID: 0
+	-> [1:340000000] [REQUEST] pid: 7403 request fulfilled...
 
-./oss: [1:710000000] [REQUEST] pid: 27919 proc: resID: 4
-	-> [REQUEST] pid: 27919 request fulfilled...
+./oss: [PROC CREATE] pid: 7409
 
-./oss: [RELEASE] pid: 27917 proc: 2  resID: 6
+./oss: [1:450000000] [REQUEST] pid: 7406 proc: resID: 3
+	-> [1:450000000] [REQUEST] pid: 7406 request fulfilled...
 
-./oss: [1:730000000] [REQUEST] pid: 27918 proc: resID: 3
-	-> [REQUEST] pid: 27918 request fulfilled...
+./oss: [1:480000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [1:480000000] [REQUEST] pid: 7404 request fulfilled...
 
-./oss: [1:780000000] [REQUEST] pid: 27920 proc: resID: 5
-	-> [REQUEST] pid: 27920 request fulfilled...
+./oss: [1:485000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [1:485000000] [REQUEST] pid: 7408 request fulfilled...
 
-./oss: [1:785000000] [REQUEST] pid: 27919 proc: resID: 4
-	-> [REQUEST] pid: 27919 request fulfilled...
+./oss: [1:495000000] [RELEASE] pid: 7403 proc: 0  resID: 0
 
-./oss: [1:900000000] [REQUEST] pid: 27918 proc: resID: 3
-	-> [REQUEST] pid: 27918 request fulfilled...
+./oss: [PROC CREATE] pid: 7410
 
-./oss: [1:920000000] [REQUEST] pid: 27915 proc: resID: 0
-	-> [REQUEST] pid: 27915 request fulfilled...
+./oss: [1:520000000] [REQUEST] pid: 7407 proc: resID: 4
+	-> [1:520000000] [REQUEST] pid: 7407 request fulfilled...
 
-./oss: [RELEASE] pid: 27916 proc: 1  resID: 7
+./oss: [1:530000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [1:530000000] [REQUEST] pid: 7405 request fulfilled...
 
-./oss: [1:975000000] [REQUEST] pid: 27916 proc: resID: 1
-	-> [REQUEST] pid: 27916 request fulfilled...
+./oss: [1:575000000] [TERMINATE] pid: 7403 proc: 0
 
-./oss: [1:980000000] [REQUEST] pid: 27917 proc: resID: 2
-	-> [REQUEST] pid: 27917 request fulfilled...
+./oss: [PROC CREATE] pid: 7411
 
-./oss: [RELEASE] pid: 27919 proc: 4  resID: 2
+./oss: [1:700000000] [REQUEST] pid: 7406 proc: resID: 3
+	-> [1:700000000] [REQUEST] pid: 7406 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27921
+./oss: [1:775000000] [REQUEST] pid: 7407 proc: resID: 4
+	-> [1:775000000] [REQUEST] pid: 7407 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27922
+./oss: [1:845000000] [RELEASE] pid: 7404 proc: 1  resID: 16
 
-./oss: [2:115000000] [REQUEST] pid: 27918 proc: resID: 3
-	-> [REQUEST] pid: 27918 request unfulfilled...
+./oss: [PROC CREATE] pid: 7412
+
+./oss: [2:40000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [2:40000000] [REQUEST] pid: 7404 request fulfilled...
+
+./oss: [2:70000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [2:70000000] [REQUEST] pid: 7408 request fulfilled...
 
 
 
@@ -141,12 +146,12 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Allocated Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4
-   1|   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   3   0   0
-   2|   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   6   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   0   0   0   0   0
-   5|   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4
+   2|   0   3   0   0   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0   0   0
+   4|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
    6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -168,8 +173,8 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
    0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
    5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -193,7 +198,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  4   7   8   2   4   0   5   3  10   2   3   8   1  10   0   7   1   4   2   3 
+  4   1   8   6   4   3   7   3  10   2   3   8   1   5   4   6   1   7   3   3 
 
 
 ** Shared Resource IDs **
@@ -201,59 +206,59 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [RELEASE] pid: 27920 proc: 5  resID: 2
+./oss: [2:75000000] [REQUEST] pid: 7409 proc: resID: 6
+	-> [2:75000000] [REQUEST] pid: 7409 request fulfilled...
 
-./oss: [2:205000000] [REQUEST] pid: 27919 proc: resID: 4
-	-> [REQUEST] pid: 27919 request fulfilled...
+./oss: [2:80000000] [REQUEST] pid: 7410 proc: resID: 7
+	-> [2:80000000] [REQUEST] pid: 7410 request fulfilled...
 
-./oss: [2:210000000] [REQUEST] pid: 27916 proc: resID: 1
-	-> [REQUEST] pid: 27916 request unfulfilled...
+./oss: [2:85000000] [REQUEST] pid: 7412 proc: resID: 0
+	-> [2:85000000] [REQUEST] pid: 7412 request unfulfilled...
 
-./oss: [2:215000000] [REQUEST] pid: 27915 proc: resID: 0
-	-> [REQUEST] pid: 27915 request fulfilled...
+./oss: [2:115000000] [RELEASE] pid: 7406 proc: 3  resID: 13
 
-./oss: [2:220000000] [REQUEST] pid: 27921 proc: resID: 6
-	-> [REQUEST] pid: 27921 request fulfilled...
+./oss: [2:115000000] [REQUEST] [QUEUE] pid: 7406 request fulfilled...
 
-./oss: [2:225000000] [REQUEST] pid: 27922 proc: resID: 7
-	-> [REQUEST] pid: 27922 request fulfilled...
+./oss: [2:140000000] [RELEASE] pid: 7404 proc: 1  resID: 19
 
-./oss: [2:360000000] [REQUEST] pid: 27920 proc: resID: 5
-	-> [REQUEST] pid: 27920 request fulfilled...
+./oss: [2:185000000] [REQUEST] pid: 7407 proc: resID: 4
+	-> [2:185000000] [REQUEST] pid: 7407 request fulfilled...
 
-./oss: [2:415000000] [REQUEST] pid: 27919 proc: resID: 4
-	-> [REQUEST] pid: 27919 request fulfilled...
+./oss: [2:225000000] [REQUEST] pid: 7406 proc: resID: 3
+	-> [2:225000000] [REQUEST] pid: 7406 request fulfilled...
 
-./oss: [2:420000000] [REQUEST] pid: 27917 proc: resID: 2
-	-> [REQUEST] pid: 27917 request fulfilled...
+./oss: [2:230000000] [TERMINATE] pid: 7410 proc: -1
 
-./oss: [RELEASE] pid: 27921 proc: 6  resID: 0
+./oss: [2:235000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [2:235000000] [REQUEST] pid: 7411 request fulfilled...
 
-./oss: [2:535000000] [REQUEST] pid: 27919 proc: resID: 4
-	-> [REQUEST] pid: 27919 request fulfilled...
+./oss: [2:240000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [2:240000000] [REQUEST] pid: 7404 request fulfilled...
 
-./oss: [RELEASE] pid: 27920 proc: 5  resID: 9
+./oss: [2:245000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [2:245000000] [REQUEST] pid: 7408 request fulfilled...
 
-./oss: [RELEASE] pid: 27915 proc: 0  resID: 3
+./oss: [2:290000000] [REQUEST] pid: 7409 proc: resID: 6
+	-> [2:290000000] [REQUEST] pid: 7409 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27923
+./oss: [2:295000000] [RELEASE] pid: 7405 proc: 2  resID: 1
 
-./oss: [2:555000000] [REQUEST] pid: 27917 proc: resID: 2
-	-> [REQUEST] pid: 27917 request unfulfilled...
+./oss: [2:300000000] [REQUEST] pid: 7406 proc: resID: 3
+	-> [2:300000000] [REQUEST] pid: 7406 request fulfilled...
 
-./oss: [2:575000000] [REQUEST] pid: 27921 proc: resID: 6
-	-> [REQUEST] pid: 27921 request fulfilled...
+./oss: [PROC CREATE] pid: 7413
 
-./oss: [2:615000000] [REQUEST] pid: 27919 proc: resID: 4
-	-> [REQUEST] pid: 27919 request fulfilled...
+./oss: [2:335000000] [RELEASE] pid: 7405 proc: 2  resID: 5
 
-./oss: [2:665000000] [REQUEST] pid: 27922 proc: resID: 7
-	-> [REQUEST] pid: 27922 request unfulfilled...
+./oss: [2:405000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [2:405000000] [REQUEST] pid: 7405 request fulfilled...
 
-./oss: [RELEASE] pid: 27915 proc: 0  resID: 19
+./oss: [2:410000000] [RELEASE] pid: 7412 proc: 0  resID: 13
 
-./oss: [2:680000000] [REQUEST] pid: 27920 proc: resID: 5
-	-> [REQUEST] pid: 27920 request unfulfilled...
+./oss: [2:430000000] [RELEASE] pid: 7409 proc: 6  resID: 9
+
+./oss: [2:435000000] [REQUEST] pid: 7407 proc: resID: 4
+	-> [2:435000000] [REQUEST] pid: 7407 request fulfilled...
 
 
 
@@ -263,13 +268,13 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
    0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   3   0   0
-   2|   0   0   0   0   0   0   2   0   0   0   0   0   1   0   0   0   0   0   0   0
-   3|   0   0   6   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   1   4   0   0   0   0   0   1   0   0   0   4   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
-   6|   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   1   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2
+   2|   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   1   3   0   0   0   0   0   0   0   0   0
+   4|   0   3   0   0   0   0   0   3   0   0   0   0   0   0   0   2   0   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   6   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -287,13 +292,13 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
    0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
-   2|   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -314,7 +319,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  4   7   8   4   0   0   5   3  10   2   0   8   0  10   0   7   0   4   2   7 
+  4   4   8   6   4   6   7   3  10   2   0   8   1  10   4   4   1   1   0   5 
 
 
 ** Shared Resource IDs **
@@ -322,32 +327,577 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [PROC CREATE] pid: 27924
+./oss: [PROC CREATE] pid: 7414
 
-./oss: [2:795000000] [REQUEST] pid: 27915 proc: resID: 0
-	-> [REQUEST] pid: 27915 request fulfilled...
+./oss: [2:525000000] [REQUEST] pid: 7412 proc: resID: 0
+	-> [2:525000000] [REQUEST] pid: 7412 request fulfilled...
 
-./oss: [TERMINATE] pid: 27921 proc: 6
+./oss: [2:530000000] [RELEASE] pid: 7408 proc: 5  resID: 15
 
-./oss: [3:30000000] [REQUEST] pid: 27915 proc: resID: 0
-	-> [REQUEST] pid: 27915 request fulfilled...
+./oss: [2:590000000] [TERMINATE] pid: 7409 proc: 6
 
-./oss: [RELEASE] pid: 27919 proc: 4  resID: 3
+./oss: [2:740000000] [RELEASE] pid: 7408 proc: 5  resID: 17
 
-./oss: [3:100000000] [REQUEST] pid: 27923 proc: resID: 8
-	-> [REQUEST] pid: 27923 request fulfilled...
+./oss: [PROC CREATE] pid: 7415
 
-./oss: [PROC CREATE] pid: 27925
+./oss: [2:905000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [2:905000000] [REQUEST] pid: 7408 request fulfilled...
 
-./oss: [3:200000000] [REQUEST] pid: 27915 proc: resID: 0
-	-> [REQUEST] pid: 27915 request unfulfilled...
+./oss: [2:910000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [2:910000000] [REQUEST] pid: 7411 request fulfilled...
 
-./oss: [TERMINATE] pid: 27923 proc: 8
+./oss: [PROC CREATE] pid: 7416
 
-./oss: [3:310000000] [REQUEST] pid: 27919 proc: resID: 4
-	-> [REQUEST] pid: 27919 request unfulfilled...
+./oss: [2:960000000] [REQUEST] pid: 7406 proc: resID: 3
+	-> [2:960000000] [REQUEST] pid: 7406 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27926
+./oss: [3:145000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [3:145000000] [REQUEST] pid: 7404 request fulfilled...
+
+./oss: [PROC CREATE] pid: 7417
+
+./oss: [3:360000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [3:360000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [3:375000000] [REQUEST] pid: 7406 proc: resID: 3
+	-> [3:375000000] [REQUEST] pid: 7406 request fulfilled...
+
+./oss: [3:410000000] [REQUEST] pid: 7406 proc: resID: 3
+	-> [3:410000000] [REQUEST] pid: 7406 request fulfilled...
+
+./oss: [3:435000000] [TERMINATE] pid: 7406 proc: 3
+
+./oss: [PROC CREATE] pid: 7418
+
+./oss: [PROC CREATE] pid: 7419
+
+./oss: [3:620000000] [TERMINATE] pid: 7412 proc: 0
+
+./oss: [PROC CREATE] pid: 7420
+
+./oss: [3:675000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [3:675000000] [REQUEST] pid: 7408 request fulfilled...
+
+./oss: [3:730000000] [REQUEST] pid: 7415 proc: resID: 6
+	-> [3:730000000] [REQUEST] pid: 7415 request fulfilled...
+
+./oss: [3:735000000] [REQUEST] pid: 7407 proc: resID: 4
+	-> [3:735000000] [REQUEST] pid: 7407 request fulfilled...
+
+./oss: [3:740000000] [REQUEST] pid: 7419 proc: resID: 3
+	-> [3:740000000] [REQUEST] pid: 7419 request unfulfilled...
+
+./oss: [3:830000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [3:830000000] [REQUEST] pid: 7404 request fulfilled...
+
+./oss: [3:835000000] [REQUEST] pid: 7414 proc: resID: 9
+	-> [3:835000000] [REQUEST] pid: 7414 request fulfilled...
+
+
+
+##### Beginning print of resource tables #####
+
+** Allocated Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   2
+   2|   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   3   0   0   0   6   0   3   0   0   0   0   0   0   0   2   0   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   3   0   0
+   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Resource Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   7   8   6   4   6   7   3  10   2   3   8   1  10   4   7   1   7   3   7 
+
+
+** Allocation Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   0   8   6   2   0   7   3  10   2   3   8   1   7   4   5   1   4   3   5 
+
+
+** Shared Resource IDs **
+ 11   8   7   9   2 
+
+##### Ending print of resource tables #####
+
+./oss: [3:840000000] [REQUEST] pid: 7413 proc: resID: 7
+	-> [3:840000000] [REQUEST] pid: 7413 request fulfilled...
+
+./oss: [3:845000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [3:845000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [3:940000000] [REQUEST] pid: 7417 proc: resID: 11
+	-> [3:940000000] [REQUEST] pid: 7417 request fulfilled...
+
+./oss: [3:945000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [3:945000000] [REQUEST] pid: 7404 request fulfilled...
+
+./oss: [PROC CREATE] pid: 7421
+
+./oss: [4:160000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [4:160000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [4:250000000] [RELEASE] pid: 7404 proc: 1  resID: 8
+
+./oss: [4:260000000] [REQUEST] pid: 7414 proc: resID: 9
+	-> [4:260000000] [REQUEST] pid: 7414 request unfulfilled...
+
+./oss: [4:265000000] [RELEASE] pid: 7407 proc: 4  resID: 1
+
+./oss: [4:265000000] [REQUEST] [QUEUE] pid: 7407 request fulfilled...
+
+./oss: [4:270000000] [TERMINATE] pid: 7418 proc: -1
+
+./oss: [4:275000000] [RELEASE] pid: 7411 proc: 8  resID: 7
+
+./oss: [PROC CREATE] pid: 7422
+
+./oss: [4:365000000] [RELEASE] pid: 7417 proc: 11  resID: 6
+
+./oss: [4:445000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [4:445000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [4:450000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [4:450000000] [REQUEST] pid: 7408 request fulfilled...
+
+./oss: [PROC CREATE] pid: 7423
+
+./oss: [4:515000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [4:515000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [4:600000000] [REQUEST] pid: 7417 proc: resID: 11
+	-> [4:600000000] [REQUEST] pid: 7417 request fulfilled...
+
+./oss: [4:635000000] [RELEASE] pid: 7408 proc: 5  resID: 9
+
+./oss: [4:755000000] [REQUEST] pid: 7420 proc: resID: 13
+	-> [4:755000000] [REQUEST] pid: 7420 request unfulfilled...
+
+./oss: [4:760000000] [REQUEST] pid: 7416 proc: resID: 10
+	-> [4:760000000] [REQUEST] pid: 7416 request unfulfilled...
+
+./oss: [PROC CREATE] pid: 7424
+
+./oss: [4:860000000] [REQUEST] pid: 7415 proc: resID: 6
+	-> [4:860000000] [REQUEST] pid: 7415 request unfulfilled...
+
+
+
+##### Beginning print of resource tables #####
+
+** Allocated Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   2
+   2|   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   6   0   3   0   0   0   0   0   0   0   2   0   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
+   7|   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   2   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0
+  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Resource Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   7   8   6   4   6   7   3  10   2   3   8   1  10   4   7   1   7   3   7 
+
+
+** Allocation Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   1   8   6   0   0   7   3  10   2   3   8   1   7   4   0   1   3   0   0 
+
+
+** Shared Resource IDs **
+ 11   8   7   9   2 
+
+##### Ending print of resource tables #####
+
+./oss: [4:900000000] [REQUEST] pid: 7417 proc: resID: 11
+	-> [4:900000000] [REQUEST] pid: 7417 request fulfilled...
+
+./oss: [4:905000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [4:905000000] [REQUEST] pid: 7405 request fulfilled...
+
+./oss: [4:910000000] [RELEASE] pid: 7413 proc: 7  resID: 9
+
+./oss: [PROC CREATE] pid: 7425
+
+./oss: [PROC CREATE] pid: 7426
+
+./oss: [4:935000000] [REQUEST] pid: 7413 proc: resID: 7
+	-> [4:935000000] [REQUEST] pid: 7413 request fulfilled...
+
+./oss: [PROC CREATE] pid: 7427
+
+./oss: [5:70000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [5:70000000] [REQUEST] pid: 7408 request unfulfilled...
+
+./oss: [5:150000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [5:150000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [5:155000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [5:155000000] [REQUEST] pid: 7405 request fulfilled...
+
+./oss: [5:160000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [5:160000000] [REQUEST] pid: 7404 request fulfilled...
+
+./oss: [5:165000000] [RELEASE] pid: 7411 proc: 8  resID: 11
+
+./oss: [5:245000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [5:245000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [5:250000000] [REQUEST] pid: 7419 proc: resID: 3
+	-> [5:250000000] [REQUEST] pid: 7419 request fulfilled...
+
+./oss: [5:260000000] [REQUEST] pid: 7424 proc: resID: 15
+	-> [5:260000000] [REQUEST] pid: 7424 request fulfilled...
+
+./oss: [5:285000000] [RELEASE] pid: 7405 proc: 2  resID: 2
+
+./oss: [5:290000000] [REQUEST] pid: 7417 proc: resID: 11
+	-> [5:290000000] [REQUEST] pid: 7417 request fulfilled...
+
+./oss: [5:330000000] [RELEASE] pid: 7405 proc: 2  resID: 11
+
+./oss: [5:400000000] [REQUEST] pid: 7424 proc: resID: 15
+	-> [5:400000000] [REQUEST] pid: 7424 request fulfilled...
+
+./oss: [5:405000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [5:405000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [5:480000000] [REQUEST] pid: 7417 proc: resID: 11
+	-> [5:480000000] [REQUEST] pid: 7417 request fulfilled...
+
+./oss: [5:615000000] [REQUEST] pid: 7424 proc: resID: 15
+	-> [5:615000000] [REQUEST] pid: 7424 request fulfilled...
+
+
+
+##### Beginning print of resource tables #####
+
+** Allocated Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   2
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   6   0   3   0   0   0   0   0   0   0   2   0   0   0   0
+   5|   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
+   7|   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   2   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0
+  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Resource Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   7   8   6   4   6   7   3  10   2   3   8   1  10   4   7   1   7   3   7 
+
+
+** Allocation Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   1   8   0   0   0   7   3  10   2   3   8   1   7   4   0   0   3   0   0 
+
+
+** Shared Resource IDs **
+ 11   8   7   9   2 
+
+##### Ending print of resource tables #####
+
+./oss: [5:740000000] [RELEASE] pid: 7417 proc: 11  resID: 16
+
+./oss: [5:745000000] [RELEASE] pid: 7407 proc: 4  resID: 5
+
+./oss: [5:750000000] [REQUEST] pid: 7423 proc: resID: 14
+	-> [5:750000000] [REQUEST] pid: 7423 request fulfilled...
+
+./oss: [5:830000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [5:830000000] [REQUEST] pid: 7405 request fulfilled...
+
+./oss: [5:835000000] [REQUEST] pid: 7421 proc: resID: 0
+	-> [5:835000000] [REQUEST] pid: 7421 request fulfilled...
+
+./oss: [5:915000000] [REQUEST] pid: 7424 proc: resID: 15
+	-> [5:915000000] [REQUEST] pid: 7424 request fulfilled...
+
+./oss: [5:990000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [5:990000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [5:995000000] [REQUEST] pid: 7422 proc: resID: 12
+	-> [5:995000000] [REQUEST] pid: 7422 request unfulfilled...
+
+./oss: [6:0] [REQUEST] pid: 7407 proc: resID: 4
+	-> [6:0] [REQUEST] pid: 7407 request fulfilled...
+
+./oss: [6:60000000] [REQUEST] pid: 7423 proc: resID: 14
+	-> [6:60000000] [REQUEST] pid: 7423 request fulfilled...
+
+./oss: [6:95000000] [REQUEST] pid: 7421 proc: resID: 0
+	-> [6:95000000] [REQUEST] pid: 7421 request fulfilled...
+
+./oss: [6:100000000] [REQUEST] pid: 7404 proc: resID: 1
+	-> [6:100000000] [REQUEST] pid: 7404 request fulfilled...
+
+./oss: [6:250000000] [RELEASE] pid: 7423 proc: 14  resID: 5
+
+./oss: [6:270000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7404 proc: 1
+
+./oss: [6:270000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7415 proc: 6
+
+./oss: [6:270000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7414 proc: 9
+
+./oss: [6:270000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7417 proc: 11
+
+./oss: [6:270000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7422 proc: 12
+
+./oss: [6:270000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7424 proc: 15
+
+./oss: [6:290000000] [RELEASE] pid: 7421 proc: 0  resID: 10
+
+./oss: [6:390000000] [REQUEST] pid: 7421 proc: resID: 0
+	-> [6:390000000] [REQUEST] pid: 7421 request fulfilled...
+
+./oss: [6:395000000] [RELEASE] pid: 7407 proc: 4  resID: 7
+
+./oss: [6:450000000] [REQUEST] pid: 7423 proc: resID: 14
+	-> [6:450000000] [REQUEST] pid: 7423 request unfulfilled...
+
+./oss: [6:510000000] [REQUEST] pid: 7421 proc: resID: 0
+	-> [6:510000000] [REQUEST] pid: 7421 request fulfilled...
+
+./oss: [6:515000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [6:515000000] [REQUEST] pid: 7425 request fulfilled...
+
+
+
+##### Beginning print of resource tables #####
+
+** Allocated Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   8   0   0   0   0   0   0   0   0
+   3|   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   5|   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   2   0
+   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0
+  14|   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+   1|   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Resource Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   7   8   6   4   6   7   3  10   2   3   8   1  10   4   7   1   7   3   7 
+
+
+** Allocation Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   0   8   0   4   6   2   3  10   2   3   8   1  10   4   0   1   3   0   7 
+
+
+** Shared Resource IDs **
+ 11   8   7   9   2 
+
+##### Ending print of resource tables #####
+
+./oss: [6:540000000] [REQUEST] pid: 7421 proc: resID: 0
+	-> [6:540000000] [REQUEST] pid: 7421 request fulfilled...
+
+./oss: [6:570000000] [RELEASE] pid: 7405 proc: 2  resID: 11
+
+./oss: [6:770000000] [REQUEST] pid: 7411 proc: resID: 8
+	-> [6:770000000] [REQUEST] pid: 7411 request fulfilled...
+
+./oss: [6:820000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [6:820000000] [REQUEST] pid: 7405 request fulfilled...
+
+./oss: [6:830000000] [RELEASE] pid: 7413 proc: 7  resID: 3
+
+./oss: [6:830000000] [REQUEST] [QUEUE] pid: 7413 request fulfilled...
+
+./oss: [6:840000000] [RELEASE] pid: 7421 proc: 0  resID: 11
+
+./oss: [6:995000000] [REQUEST] pid: 7421 proc: resID: 0
+	-> [6:995000000] [REQUEST] pid: 7421 request fulfilled...
+
+./oss: [7:0] [REQUEST] pid: 7413 proc: resID: 7
+	-> [7:0] [REQUEST] pid: 7413 request fulfilled...
+
+./oss: [7:60000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [7:60000000] [REQUEST] pid: 7408 request fulfilled...
+
+./oss: [7:150000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [7:150000000] [REQUEST] pid: 7405 request fulfilled...
+
+./oss: [7:155000000] [REQUEST] pid: 7407 proc: resID: 4
+	-> [7:155000000] [REQUEST] pid: 7407 request fulfilled...
+
+./oss: [7:160000000] [REQUEST] pid: 7426 proc: resID: 17
+	-> [7:160000000] [REQUEST] pid: 7426 request fulfilled...
+
+./oss: [7:255000000] [REQUEST] pid: 7421 proc: resID: 0
+	-> [7:255000000] [REQUEST] pid: 7421 request fulfilled...
+
+./oss: [7:345000000] [REQUEST] pid: 7413 proc: resID: 7
+	-> [7:345000000] [REQUEST] pid: 7413 request unfulfilled...
+
+./oss: [7:405000000] [TERMINATE] pid: 7426 proc: 17
+
+./oss: [7:420000000] [REQUEST] pid: 7408 proc: resID: 5
+	-> [7:420000000] [REQUEST] pid: 7408 request fulfilled...
+
+./oss: [7:435000000] [REQUEST] pid: 7405 proc: resID: 2
+	-> [7:435000000] [REQUEST] pid: 7405 request fulfilled...
+
+./oss: [PROC CREATE] pid: 7428
+
+./oss: [7:515000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [7:515000000] [REQUEST] pid: 7425 request fulfilled...
 
 ********** DEADLOCK DETECTED **********
 
@@ -356,23 +906,23 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Allocated Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   1   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   3   0   0
-   2|   0   0   0   0   0   0   2   0   0   0   0   0   1   0   0   0   0   0   0   0
-   3|   0   0   6   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   4   0   0   0   0   0   1   0   0   0   4   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   1   0   0   0   0   3   0   0   0   0   0   0   0   0
+   3|   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   2   0   0   0   0
+   5|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   1   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   4   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   4   2   0
    9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
   11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0
+  14|   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   3   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
 
@@ -380,22 +930,22 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Requested Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
-   2|   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0|   0   6   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+   1|   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
   16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -408,7 +958,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  4   7   8   6   0   0   5   3  10   2   0   8   0  10   0   7   0   4   2   7 
+  1   0   8   0   3   6   1   3  10   2   2   8   1  10   0   0   1   3   0   7 
 
 
 ** Shared Resource IDs **
@@ -416,67 +966,28 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27915 proc: 0
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7421 proc: 0
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27916 proc: 1
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7405 proc: 2
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27917 proc: 2
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7419 proc: 3
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27918 proc: 3
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7407 proc: 4
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27919 proc: 4
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7408 proc: 5
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27920 proc: 5
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7413 proc: 7
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27922 proc: 7
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7411 proc: 8
 
-./oss: [REQUEST] [QUEUE] pid: 27919 request fulfilled...
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7416 proc: 10
 
-./oss: [REQUEST] [QUEUE] pid: 27918 request fulfilled...
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7420 proc: 13
 
-./oss: [REQUEST] [QUEUE] pid: 27916 request fulfilled...
+./oss: [7:550000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7423 proc: 14
 
-./oss: [REQUEST] [QUEUE] pid: 27917 request fulfilled...
-
-./oss: [3:760000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
-
-./oss: [3:840000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
-
-./oss: [PROC CREATE] pid: 27927
-
-./oss: [4:55000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
-
-./oss: [RELEASE] pid: 27924 proc: 9  resID: 4
-
-./oss: [REQUEST] [QUEUE] pid: 27924 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27920 request fulfilled...
-
-./oss: [4:100000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
-
-./oss: [4:145000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
-
-./oss: [4:160000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
-
-./oss: [4:260000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
-
-./oss: [PROC CREATE] pid: 27928
-
-./oss: [4:290000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
-
-./oss: [4:405000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
-
-./oss: [4:425000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [7:740000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [7:740000000] [REQUEST] pid: 7425 request fulfilled...
 
 
 
@@ -491,32 +1002,8 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
    3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   8|   0   7   0   0   0   0   0   0   0   0   0   0   0   1   0   0   1   0   0   0
-   9|   2   0   0   0   0   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-
-
-** Requested Resources **
-X -> resources, Y -> proccess
-Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
-   2|   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0
    6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -525,6 +1012,30 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
   13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   3   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   6   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+   1|   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
   16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -537,7 +1048,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  2   0   8   6   0   6   4   3  10   2   3   8   1   9   4   7   0   7   3   7 
+  1   7   8   6   4   6   1   3  10   2   3   8   1  10   4   7   1   7   3   7 
 
 
 ** Shared Resource IDs **
@@ -545,67 +1056,57 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [RELEASE] pid: 27926 proc: 8  resID: 1
+./oss: [7:955000000] [RELEASE] pid: 7425 proc: 16  resID: 0
 
-./oss: [REQUEST] [QUEUE] pid: 27926 request fulfilled...
+./oss: [8:40000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [8:40000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [RELEASE] pid: 27924 proc: 9  resID: 0
+./oss: [8:225000000] [TERMINATE] pid: 7427 proc: 18
 
-./oss: [4:525000000] [REQUEST] pid: 27927 proc: resID: 0
-	-> [REQUEST] pid: 27927 request fulfilled...
+./oss: [PROC CREATE] pid: 7429
 
-./oss: [4:530000000] [REQUEST] pid: 27928 proc: resID: 1
-	-> [REQUEST] pid: 27928 request fulfilled...
+./oss: [8:315000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [8:315000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27929
+./oss: [8:360000000] [REQUEST] pid: 7428 proc: resID: 1
+	-> [8:360000000] [REQUEST] pid: 7428 request fulfilled...
 
-./oss: [4:565000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [8:530000000] [RELEASE] pid: 7428 proc: 1  resID: 5
 
-./oss: [RELEASE] pid: 27925 proc: 6  resID: 4
+./oss: [8:560000000] [RELEASE] pid: 7425 proc: 16  resID: 6
 
-./oss: [4:700000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
+./oss: [8:745000000] [RELEASE] pid: 7425 proc: 16  resID: 7
 
-./oss: [4:705000000] [REQUEST] pid: 27929 proc: resID: 2
-	-> [REQUEST] pid: 27929 request unfulfilled...
+./oss: [8:755000000] [REQUEST] pid: 7428 proc: resID: 1
+	-> [8:755000000] [REQUEST] pid: 7428 request fulfilled...
 
-./oss: [RELEASE] pid: 27928 proc: 1  resID: 1
+./oss: [8:820000000] [REQUEST] pid: 7428 proc: resID: 1
+	-> [8:820000000] [REQUEST] pid: 7428 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 27928 request fulfilled...
+./oss: [8:825000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [8:825000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [4:760000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
+./oss: [8:840000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [8:840000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [4:775000000] [REQUEST] pid: 27928 proc: resID: 1
-	-> [REQUEST] pid: 27928 request fulfilled...
+./oss: [8:970000000] [RELEASE] pid: 7428 proc: 1  resID: 18
 
-./oss: [PROC CREATE] pid: 27930
+./oss: [8:995000000] [REQUEST] pid: 7428 proc: resID: 1
+	-> [8:995000000] [REQUEST] pid: 7428 request fulfilled...
 
-./oss: [4:790000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [9:0] [REQUEST] pid: 7425 proc: resID: 16
+	-> [9:0] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [RELEASE] pid: 27927 proc: 0  resID: 9
+./oss: [9:5000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [9:5000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [4:870000000] [REQUEST] pid: 27930 proc: resID: 3
-	-> [REQUEST] pid: 27930 request fulfilled...
+./oss: [9:35000000] [RELEASE] pid: 7425 proc: 16  resID: 2
 
-./oss: [4:885000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [9:75000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [9:75000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27931
-
-./oss: [4:965000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
-
-./oss: [4:970000000] [REQUEST] pid: 27929 proc: resID: 2
-	-> [REQUEST] pid: 27929 request fulfilled...
-
-./oss: [5:25000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
-
-./oss: [5:30000000] [REQUEST] pid: 27928 proc: resID: 1
-	-> [REQUEST] pid: 27928 request fulfilled...
+./oss: [9:195000000] [REQUEST] pid: 7428 proc: resID: 1
+	-> [9:195000000] [REQUEST] pid: 7428 request fulfilled...
 
 
 
@@ -615,37 +1116,13 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
    0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   2|   0   0   0   0   3   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   3   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   5
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   0   0   0   3   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   3   1   1   0   0   1   0   0   0
-   9|   0   0   0   0   0   0   3   0   0   0   0   0   0   7   0   0   0   0   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-
-
-** Requested Resources **
-X -> resources, Y -> proccess
-Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
-   2|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0
    8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -654,6 +1131,30 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
   13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0   5   0   0   0   0   0   3   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   6   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+   1|   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
   16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -666,7 +1167,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  4   7   8   6   1   0   4   3  10   2   3   8   0   2   4   7   0   7   3   7 
+  4   7   8   6   4   6   7   3  10   2   3   8   1  10   1   7   1   7   3   2 
 
 
 ** Shared Resource IDs **
@@ -674,69 +1175,59 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [5:75000000] [REQUEST] pid: 27927 proc: resID: 0
-	-> [REQUEST] pid: 27927 request fulfilled...
+./oss: [9:205000000] [TERMINATE] pid: 7428 proc: 1
 
-./oss: [RELEASE] pid: 27924 proc: 9  resID: 6
+./oss: [9:230000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [9:230000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [5:210000000] [REQUEST] pid: 27930 proc: resID: 3
-	-> [REQUEST] pid: 27930 request fulfilled...
+./oss: [PROC CREATE] pid: 7430
 
-./oss: [5:370000000] [REQUEST] pid: 27929 proc: resID: 2
-	-> [REQUEST] pid: 27929 request unfulfilled...
+./oss: [9:270000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [9:270000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [RELEASE] pid: 27924 proc: 9  resID: 13
+./oss: [9:370000000] [RELEASE] pid: 7429 proc: 0  resID: 9
 
-./oss: [PROC CREATE] pid: 27932
+./oss: [9:525000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [9:525000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [5:385000000] [REQUEST] pid: 27927 proc: resID: 0
-	-> [REQUEST] pid: 27927 request unfulfilled...
+./oss: [9:620000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [9:620000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [5:390000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
+./oss: [9:705000000] [RELEASE] pid: 7425 proc: 16  resID: 8
 
-./oss: [PROC CREATE] pid: 27933
+./oss: [9:880000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [9:880000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [5:460000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [9:945000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [9:945000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27934
+./oss: [9:960000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [9:960000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [TERMINATE] pid: 27930 proc: 3
+./oss: [10:100000000] [RELEASE] pid: 7429 proc: 0  resID: 2
 
-./oss: [5:640000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request unfulfilled...
+./oss: [10:150000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [10:150000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [5:805000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
+./oss: [10:185000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [10:185000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [5:810000000] [REQUEST] pid: 27928 proc: resID: 1
-	-> [REQUEST] pid: 27928 request fulfilled...
+./oss: [10:220000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [10:220000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27935
+./oss: [10:225000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [10:225000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [PROC CREATE] pid: 27936
+./oss: [10:265000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [10:265000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [5:940000000] [REQUEST] pid: 27933 proc: resID: 7
-	-> [REQUEST] pid: 27933 request fulfilled...
+./oss: [10:290000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [10:290000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [5:945000000] [REQUEST] pid: 27931 proc: resID: 4
-	-> [REQUEST] pid: 27931 request fulfilled...
+./oss: [10:305000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [10:305000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [5:950000000] [REQUEST] pid: 27932 proc: resID: 5
-	-> [REQUEST] pid: 27932 request fulfilled...
-
-./oss: [6:55000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
-
-./oss: [6:160000000] [REQUEST] pid: 27933 proc: resID: 7
-	-> [REQUEST] pid: 27933 request fulfilled...
-
-./oss: [6:165000000] [REQUEST] pid: 27928 proc: resID: 1
-	-> [REQUEST] pid: 27928 request fulfilled...
-
-./oss: [6:170000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [10:410000000] [RELEASE] pid: 7429 proc: 0  resID: 2
 
 
 
@@ -745,171 +1236,46 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Allocated Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   0   0   0
-   1|   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   2|   0   0   0   0   3   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   6   0   0   0   0   0   6   0   0   4   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   0
-   6|   0   0   0   0   0   0   3   3   0   0   0   5   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   0
-   8|   4   0   0   0   0   0   0   0   0   0   0   3   1   1   0   2   1   0   0   0
-   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-
-
-** Requested Resources **
-X -> resources, Y -> proccess
-Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
-   2|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   9|   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-
-
-** Resource Vector **
-  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  4   7   8   6   4   6   7   3  10   2   3   8   1  10   4   7   1   7   3   7 
-
-
-** Allocation Vector **
-  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  0   7   8   6   1   0   4   3  10   2   3   8   0   3   4   5   0   7   3   7 
-
-
-** Shared Resource IDs **
- 11   8   7   9   2 
-
-##### Ending print of resource tables #####
-
-./oss: [6:175000000] [REQUEST] pid: 27934 proc: resID: 10
-	-> [REQUEST] pid: 27934 request fulfilled...
-
-./oss: [6:265000000] [REQUEST] pid: 27931 proc: resID: 4
-	-> [REQUEST] pid: 27931 request unfulfilled...
-
-./oss: [6:285000000] [REQUEST] pid: 27933 proc: resID: 7
-	-> [REQUEST] pid: 27933 request fulfilled...
-
-./oss: [RELEASE] pid: 27932 proc: 5  resID: 13
-
-./oss: [6:370000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
-
-./oss: [PROC CREATE] pid: 27937
-
-./oss: [TERMINATE] pid: 27928 proc: -1
-
-./oss: [6:380000000] [REQUEST] pid: 27933 proc: resID: 7
-	-> [REQUEST] pid: 27933 request unfulfilled...
-
-./oss: [6:385000000] [REQUEST] pid: 27934 proc: resID: 10
-	-> [REQUEST] pid: 27934 request fulfilled...
-
-./oss: [RELEASE] pid: 27925 proc: 6  resID: 6
-
-./oss: [REQUEST] [QUEUE] pid: 27925 request fulfilled...
-
-./oss: [RELEASE] pid: 27926 proc: 8  resID: 0
-
-./oss: [REQUEST] [QUEUE] pid: 27926 request fulfilled...
-
-./oss: [RELEASE] pid: 27925 proc: 6  resID: 7
-
-./oss: [6:730000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
-
-./oss: [6:780000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
-
-./oss: [6:800000000] [REQUEST] pid: 27933 proc: resID: 7
-	-> [REQUEST] pid: 27933 request fulfilled...
-
-./oss: [6:805000000] [REQUEST] pid: 27935 proc: resID: 3
-	-> [REQUEST] pid: 27935 request fulfilled...
-
-./oss: [6:810000000] [REQUEST] pid: 27937 proc: resID: 1
-	-> [REQUEST] pid: 27937 request unfulfilled...
-
-./oss: [6:815000000] [REQUEST] pid: 27936 proc: resID: 11
-	-> [REQUEST] pid: 27936 request unfulfilled...
-
-./oss: [RELEASE] pid: 27934 proc: 10  resID: 2
-
-./oss: [REQUEST] [QUEUE] pid: 27934 request fulfilled...
-
-./oss: [RELEASE] pid: 27933 proc: 7  resID: 1
-
-
-
-##### Beginning print of resource tables #####
-
-** Allocated Resources **
-X -> resources, Y -> proccess
-Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   0   0   0
-   1|   0   0   4   0   0   0   0   0   0   0   0   0   0   0   1   5   0   0   0   0
-   2|   0   0   0   0   3   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0   0   0   3   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   7   0   3   0   0   0   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   3   1   1   0   2   1   0   0   0
-   9|   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-
-
-** Requested Resources **
-X -> resources, Y -> proccess
-Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
-   2|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   4|   2   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0
    6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0  10   2   0   0   0   0   3   0   0   0   1   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   6   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+   1|   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
   16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -922,7 +1288,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  0   7   8   6   1   0   7   3  10   2   2   8   0   5   3   0   0   7   0   7 
+  4   7   8   6   4   6   7   3  10   2   3   8   1  10   1   7   1   7   2   7 
 
 
 ** Shared Resource IDs **
@@ -930,59 +1296,60 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [PROC CREATE] pid: 27938
+./oss: [10:480000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [10:480000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [6:925000000] [REQUEST] pid: 27935 proc: resID: 3
-	-> [REQUEST] pid: 27935 request unfulfilled...
+./oss: [10:545000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [10:545000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [TERMINATE] pid: 27932 proc: -1
+./oss: [10:690000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [10:690000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [6:935000000] [REQUEST] pid: 27934 proc: resID: 10
-	-> [REQUEST] pid: 27934 request unfulfilled...
+./oss: [10:700000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [10:700000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [6:940000000] [REQUEST] pid: 27933 proc: resID: 7
-	-> [REQUEST] pid: 27933 request fulfilled...
+./oss: [10:765000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [10:765000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [RELEASE] pid: 27937 proc: 1  resID: 2
+./oss: [10:805000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [10:805000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [6:990000000] [REQUEST] pid: 27937 proc: resID: 1
-	-> [REQUEST] pid: 27937 request fulfilled...
+./oss: [10:900000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [10:900000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [RELEASE] pid: 27925 proc: 6  resID: 11
+./oss: [10:935000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [10:935000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [7:35000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
+./oss: [10:980000000] [RELEASE] pid: 7430 proc: 1  resID: 2
 
-./oss: [7:180000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
+./oss: [10:985000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [10:985000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [7:190000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [11:110000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [11:110000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [7:195000000] [REQUEST] pid: 27938 proc: resID: 5
-	-> [REQUEST] pid: 27938 request fulfilled...
+./oss: [11:135000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [11:135000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [RELEASE] pid: 27933 proc: 7  resID: 1
+./oss: [11:160000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [11:160000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [7:285000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request fulfilled...
+./oss: [11:185000000] [RELEASE] pid: 7429 proc: 0  resID: 2
 
-./oss: [7:385000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
+./oss: [11:305000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [11:305000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [7:440000000] [REQUEST] pid: 27925 proc: resID: 6
-	-> [REQUEST] pid: 27925 request unfulfilled...
+./oss: [11:355000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [11:355000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [RELEASE] pid: 27938 proc: 5  resID: 2
+./oss: [11:395000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [11:395000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [7:450000000] [REQUEST] pid: 27933 proc: resID: 7
-	-> [REQUEST] pid: 27933 request unfulfilled...
+./oss: [11:465000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [11:465000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [7:480000000] [REQUEST] pid: 27937 proc: resID: 1
-	-> [REQUEST] pid: 27937 request unfulfilled...
-
-./oss: [7:500000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [11:525000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [11:525000000] [REQUEST] pid: 7430 request unfulfilled...
 
 
 
@@ -991,46 +1358,46 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Allocated Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   5   0   0   0   0
-   2|   0   0   0   0   3   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0
+   0|   0   0   0   0   0   6   0   0   8   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   2   0   4   0   0   0   0   6   2   0   4   0   0   0   2   0   7   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   7   0   3   0   0   0   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   3   1   4   0   2   1   0   0   0
-   9|   4   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-
-
-** Requested Resources **
-X -> resources, Y -> proccess
-Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   1   0   0   0   0
-   2|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   5   0   0   0   0
-   4|   2   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   1   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  10|   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   5   0   0   0   0   0   2  10   2   0   0   0   8   3   4   0   0   1   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   6   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+   1|   2   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
   16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -1043,7 +1410,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  0   7   8   6   1   0   7   3  10   2   2   8   0   2   3   0   0   0   0   7 
+  4   0   8   2   4   0   7   3  10   2   3   8   1   2   1   1   1   0   2   7 
 
 
 ** Shared Resource IDs **
@@ -1051,59 +1418,58 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [7:570000000] [REQUEST] pid: 27938 proc: resID: 5
-	-> [REQUEST] pid: 27938 request unfulfilled...
+./oss: [11:525000000] [REQUEST] [QUEUE] pid: 7430 request fulfilled...
 
-./oss: [REQUEST] [QUEUE] pid: 27938 request fulfilled...
+./oss: [11:530000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [11:530000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [7:630000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request fulfilled...
+./oss: [11:545000000] [RELEASE] pid: 7429 proc: 0  resID: 5
 
-./oss: [7:730000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [11:550000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [11:550000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [7:795000000] [REQUEST] pid: 27938 proc: resID: 5
-	-> [REQUEST] pid: 27938 request fulfilled...
+./oss: [11:575000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [11:575000000] [REQUEST] pid: 7429 request unfulfilled...
 
-./oss: [RELEASE] pid: 27924 proc: 9  resID: 0
+./oss: [11:615000000] [RELEASE] pid: 7425 proc: 16  resID: 1
 
-./oss: [REQUEST] [QUEUE] pid: 27924 request fulfilled...
+./oss: [11:625000000] [RELEASE] pid: 7430 proc: 1  resID: 0
 
-./oss: [RELEASE] pid: 27924 proc: 9  resID: 6
+./oss: [11:715000000] [RELEASE] pid: 7425 proc: 16  resID: 7
 
-./oss: [7:975000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [11:825000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [11:825000000] [REQUEST] pid: 7425 request unfulfilled...
 
-./oss: [RELEASE] pid: 27938 proc: 5  resID: 10
+./oss: [11:855000000] [RELEASE] pid: 7430 proc: 1  resID: 1
 
-./oss: [8:105000000] [REQUEST] pid: 27938 proc: resID: 5
-	-> [REQUEST] pid: 27938 request fulfilled...
+./oss: [11:855000000] [REQUEST] [QUEUE] pid: 7430 request fulfilled...
 
-./oss: [8:175000000] [REQUEST] pid: 27924 proc: resID: 9
-	-> [REQUEST] pid: 27924 request unfulfilled...
+./oss: [11:895000000] [RELEASE] pid: 7429 proc: 0  resID: 1
 
-./oss: [RELEASE] pid: 27931 proc: 4  resID: 0
+./oss: [12:20000000] [RELEASE] pid: 7430 proc: 1  resID: 3
 
-./oss: [8:215000000] [REQUEST] pid: 27931 proc: resID: 4
-	-> [REQUEST] pid: 27931 request unfulfilled...
+./oss: [12:20000000] [REQUEST] [QUEUE] pid: 7430 request fulfilled...
 
-./oss: [RELEASE] pid: 27926 proc: 8  resID: 1
+./oss: [12:55000000] [RELEASE] pid: 7429 proc: 0  resID: 8
 
-./oss: [RELEASE] pid: 27926 proc: 8  resID: 3
+./oss: [12:60000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [12:60000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [8:285000000] [REQUEST] pid: 27938 proc: resID: 5
-	-> [REQUEST] pid: 27938 request fulfilled...
+./oss: [12:160000000] [RELEASE] pid: 7425 proc: 16  resID: 3
 
-./oss: [8:435000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [12:170000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [12:170000000] [REQUEST] pid: 7430 request fulfilled...
 
-./oss: [8:580000000] [REQUEST] pid: 27938 proc: resID: 5
-	-> [REQUEST] pid: 27938 request fulfilled...
+./oss: [12:215000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [12:215000000] [REQUEST] pid: 7429 request fulfilled...
 
-./oss: [RELEASE] pid: 27926 proc: 8  resID: 9
+./oss: [12:225000000] [RELEASE] pid: 7430 proc: 1  resID: 8
 
-./oss: [8:705000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request fulfilled...
+./oss: [12:370000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [12:370000000] [REQUEST] pid: 7425 request fulfilled...
+
+./oss: [12:385000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [12:385000000] [REQUEST] pid: 7429 request fulfilled...
 
 
 
@@ -1112,23 +1478,23 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Allocated Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   5   0   0   0   0
-   2|   0   0   0   0   3   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0   0   0   0   0
-   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   7   0   3   0   0   0   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   3   1   4   2   2   1   0   0   0
-   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0
+   0|   0   0   6   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0
+   1|   0   0   0   0   0   0   0   0   0   2   0   4   0   2   0   2   0   7   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0  10   2   2   0   0   8   3   4   1   0   1   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
 
@@ -1136,22 +1502,22 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Requested Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   1   0   0   0   0
-   2|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   5   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
-   6|   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   1   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0
-  10|   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0|   0   0   0   5   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
+   1|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
   16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
@@ -1164,7 +1530,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  4   7   8   6   1   0   7   3  10   2   1   8   0   2   0   0   0   0   0   7 
+  4   7   8   6   4   6   7   3  10   2   1   8   1   0   0   1   0   0   1   7 
 
 
 ** Shared Resource IDs **
@@ -1172,12 +1538,155 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [RELEASE] pid: 27938 proc: 5  resID: 10
+./oss: [12:455000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [12:455000000] [REQUEST] pid: 7425 request fulfilled...
 
-./oss: [8:960000000] [REQUEST] pid: 27926 proc: resID: 8
-	-> [REQUEST] pid: 27926 request unfulfilled...
+./oss: [12:460000000] [RELEASE] pid: 7430 proc: 1  resID: 9
 
-./oss: [RELEASE] pid: 27938 proc: 5  resID: 14
+./oss: [12:475000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [12:475000000] [REQUEST] pid: 7430 request fulfilled...
+
+./oss: [12:485000000] [RELEASE] pid: 7430 proc: 1  resID: 11
+
+./oss: [12:545000000] [RELEASE] pid: 7429 proc: 0  resID: 2
+
+./oss: [12:555000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [12:555000000] [REQUEST] pid: 7425 request fulfilled...
+
+./oss: [12:575000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [12:575000000] [REQUEST] pid: 7429 request unfulfilled...
+
+./oss: [12:575000000] [REQUEST] [QUEUE] pid: 7429 request fulfilled...
+
+./oss: [12:665000000] [RELEASE] pid: 7430 proc: 1  resID: 13
+
+./oss: [12:765000000] [RELEASE] pid: 7425 proc: 16  resID: 7
+
+./oss: [12:840000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [12:840000000] [REQUEST] pid: 7429 request fulfilled...
+
+./oss: [12:880000000] [RELEASE] pid: 7425 proc: 16  resID: 8
+
+./oss: [12:885000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [12:885000000] [REQUEST] pid: 7429 request fulfilled...
+
+./oss: [12:900000000] [RELEASE] pid: 7430 proc: 1  resID: 15
+
+./oss: [12:920000000] [RELEASE] pid: 7430 proc: 1  resID: 17
+
+./oss: [12:955000000] [RELEASE] pid: 7429 proc: 0  resID: 3
+
+./oss: [12:985000000] [RELEASE] pid: 7429 proc: 0  resID: 14
+
+./oss: [13:20000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [13:20000000] [REQUEST] pid: 7425 request fulfilled...
+
+./oss: [13:50000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [13:50000000] [REQUEST] pid: 7425 request fulfilled...
+
+./oss: [13:190000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [13:190000000] [REQUEST] pid: 7429 request fulfilled...
+
+
+
+##### Beginning print of resource tables #####
+
+** Allocated Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   3
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0   0   2   2   0   0   9   3   6   1   0   1   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Requested Resources **
+X -> resources, Y -> proccess
+Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   1   1   0
+   1|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
+  17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+** Resource Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   7   8   6   4   6   7   3  10   2   3   8   1  10   4   7   1   7   3   7 
+
+
+** Allocation Vector **
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+  4   7   8   6   4   6   7   3  10   2   1   8   1   1   1   1   0   7   0   4 
+
+
+** Shared Resource IDs **
+ 11   8   7   9   2 
+
+##### Ending print of resource tables #####
+
+./oss: [13:195000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [13:195000000] [REQUEST] pid: 7425 request fulfilled...
+
+./oss: [13:390000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [13:390000000] [REQUEST] pid: 7425 request fulfilled...
+
+./oss: [13:420000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [13:420000000] [REQUEST] pid: 7430 request unfulfilled...
+
+./oss: [13:420000000] [REQUEST] [QUEUE] pid: 7430 request fulfilled...
+
+./oss: [13:430000000] [RELEASE] pid: 7429 proc: 0  resID: 18
+
+./oss: [13:515000000] [RELEASE] pid: 7429 proc: 0  resID: 19
+
+./oss: [13:540000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [13:540000000] [REQUEST] pid: 7430 request fulfilled...
+
+./oss: [13:610000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [13:610000000] [REQUEST] pid: 7425 request fulfilled...
+
+./oss: [13:620000000] [REQUEST] pid: 7430 proc: resID: 1
+	-> [13:620000000] [REQUEST] pid: 7430 request fulfilled...
+
+./oss: [13:835000000] [RELEASE] pid: 7430 proc: 1  resID: 1
+
+./oss: [13:865000000] [REQUEST] pid: 7429 proc: resID: 0
+	-> [13:865000000] [REQUEST] pid: 7429 request fulfilled...
+
+./oss: [13:870000000] [RELEASE] pid: 7425 proc: 16  resID: 0
+
+./oss: [13:975000000] [REQUEST] pid: 7425 proc: resID: 16
+	-> [13:975000000] [REQUEST] pid: 7425 request fulfilled...
 
 ********** DEADLOCK DETECTED **********
 
@@ -1186,23 +1695,23 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Allocated Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   0   0   0   0   0   0   3   0   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   5   0   0   0   0
-   2|   0   0   0   0   3   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   1|   0   0   0   0   0   0   0   0   0   1   0   0   0   0   1   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   4|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
    5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0
-   7|   0   0   0   0   0   0   0   0   0   0   1   7   0   3   0   0   0   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   3   1   4   2   2   1   0   0   0
-   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0
-  10|   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   11|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  16|   0   0   0   0   0   0   0   0   0   2   2   0   0   9   3   6   1   0   1   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
 
@@ -1210,23 +1719,23 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Requested Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   1   0   0   0   0
-   2|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   5   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
-   6|   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   1   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0   0
-   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0
-  10|   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   1   1   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
 
@@ -1238,7 +1747,7 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ** Allocation Vector **
   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-  4   7   8   6   1   0   7   3  10   2   2   8   0   2   1   0   0   0   0   7 
+  4   7   8   6   4   6   7   3  10   2   1   8   1   1   0   1   0   7   2   7 
 
 
 ** Shared Resource IDs **
@@ -1246,51 +1755,11 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 
 ##### Ending print of resource tables #####
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27927 proc: 0
+./oss: [13:990000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7429 proc: 0
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27937 proc: 1
+./oss: [13:990000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7430 proc: 1
 
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27929 proc: 2
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27935 proc: 3
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27931 proc: 4
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27938 proc: 5
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27925 proc: 6
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27933 proc: 7
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27926 proc: 8
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27924 proc: 9
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27934 proc: 10
-
-./oss: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 27936 proc: 11
-
-./oss: [REQUEST] [QUEUE] pid: 27938 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27937 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27936 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27929 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27927 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27935 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27934 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27925 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27933 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27924 request fulfilled...
-
-./oss: [REQUEST] [QUEUE] pid: 27931 request fulfilled...
+./oss: [13:990000000] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: 7425 proc: 16
 
 
 
@@ -1323,23 +1792,23 @@ Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
 ** Requested Resources **
 X -> resources, Y -> proccess
 Proc   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
-   0|   0   0   0   0   0   1   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   1|   0   0   0   0   0   2   0   0   0   0   0   0   0   0   0   1   0   0   0   0
-   2|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   1   0   0   0
-   3|   0   0   0   0   0   4   0   0   0   0   0   0   0   0   0   5   0   0   0   0
-   4|   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
-   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
-   6|   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-   7|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   4   1   0   0   0
-   8|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   3   0   0
-   9|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5   0   0   0   0
-  10|   0   0   0   0   0   5   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  11|   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  12|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  14|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
-  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   1   1   0
+   1|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0
+   2|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   7   0   0   0   0
+   3|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   2   0   0   0   0
+   4|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0
+   5|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+   6|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1
+   7|   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   8|   0   0   0   6   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   9|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  10|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+  11|   0   0   0   0   2   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  12|   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  13|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+  14|   0   3   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  15|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   5
+  16|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0
   17|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
   18|   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
 

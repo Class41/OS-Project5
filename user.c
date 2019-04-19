@@ -202,7 +202,7 @@ int main(int argc, int argv)
 	/* Variables to keep tabs on time to be added instead of creating new ints every time */
 	Time nextActionTime = {0, 0};
 
-	srand(time(NULL) + pid); //ensure randomness by bitshifting and ORing the time based on the pid
+	srand(pid); //ensure randomness by bitshifting and ORing the time based on the pid
 	int resToReleasePos;
 
 	while (1)
