@@ -553,15 +553,15 @@ void DoSharedWork()
 			do
 			{
 				updated = 0;
-				for (i = 0; i < 19)
+				for (i = 0; i < 19; i++)
 				{
-					if (procFlags[i] == 1 || data->procs[i].pid < 0)
+					if ((procFlags[i] == 1) || (data->proc[i].pid < 0))
 						continue;
 
 					isEnding = 1;
 					for (j = 0; j < 20; j++)
 					{
-						if (tempVec[j] - data->req[j][i]) < 0)
+						if ((tempVec[j] - data->req[j][i]) < 0)
 							{
 								isEnding = 0;
 							}
