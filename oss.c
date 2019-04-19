@@ -218,7 +218,7 @@ void GenerateResources()
 	int i;
 	for (i = 0; i < 20; i++)
 	{
-		data->resVec[i] = (rand() % 10) + 1;	
+		data->resVec[i] = (rand() % 10) + 1;
 		data->allocVec[i] = data->resVec[i];
 	}
 
@@ -250,66 +250,66 @@ int CheckForExistence(int *values, int size, int value)
 
 void DisplayResources()
 {
-	printf("\n\n##### Beginning print of resource tables #####\n\n");
-	printf("** Allocated Resources **\nX -> resources, Y -> proccess\n");
-	printf("Proc ");
+	fprintf(o, "\n\n##### Beginning print of resource tables #####\n\n");
+	fprintf(o, "** Allocated Resources **\nX -> resources, Y -> proccess\n");
+	fprintf(o, "Proc ");
 	int i;
 	for (i = 0; i < 20; i++)
 	{
-		printf("%3i ", i);
+		fprintf(o, "%3i ", i);
 	}
 
 	int j;
 	for (i = 0; i < 19; i++)
 	{
-		printf("\n %3i|", i);
+		fprintf(o, "\n %3i|", i);
 		for (j = 0; j < 20; j++)
-			printf("%4i", data->alloc[j][i]);
+			fprintf(o, "%4i", data->alloc[j][i]);
 	}
 
-	printf("\n\n\n** Requested Resources **\nX -> resources, Y -> proccess\n");
-	printf("Proc ");
+	fprintf(o, "\n\n\n** Requested Resources **\nX -> resources, Y -> proccess\n");
+	fprintf(o, "Proc ");
 	for (i = 0; i < 20; i++)
 	{
-		printf("%3i ", i);
+		fprintf(o, "%3i ", i);
 	}
 
 	for (i = 0; i < 19; i++)
 	{
-		printf("\n %3i|", i);
+		fprintf(o, "\n %3i|", i);
 		for (j = 0; j < 20; j++)
-			printf("%4i", data->req[j][i]);
+			fprintf(o, "%4i", data->req[j][i]);
 	}
 
-	printf("\n\n\n** Resource Vector **\n");
+	fprintf(o, "\n\n\n** Resource Vector **\n");
 	for (i = 0; i < 20; i++)
 	{
-		printf("%3i ", i);
+		fprintf(o, "%3i ", i);
 	}
-	printf("\n");
+	fprintf(o, "\n");
 	for (i = 0; i < 20; i++)
 	{
-		printf("%3i ", data->resVec[i]);
-	}
-
-	printf("\n\n\n** Allocation Vector **\n");
-	for (i = 0; i < 20; i++)
-	{
-		printf("%3i ", i);
-	}
-	printf("\n");
-	for (i = 0; i < 20; i++)
-	{
-		printf("%3i ", data->allocVec[i]);
+		fprintf(o, "%3i ", data->resVec[i]);
 	}
 
-	printf("\n\n\n** Shared Resource IDs **\n");
+	fprintf(o, "\n\n\n** Allocation Vector **\n");
+	for (i = 0; i < 20; i++)
+	{
+		fprintf(o, "%3i ", i);
+	}
+	fprintf(o, "\n");
+	for (i = 0; i < 20; i++)
+	{
+		fprintf(o, "%3i ", data->allocVec[i]);
+	}
+
+	fprintf(o, "\n\n\n** Shared Resource IDs **\n");
 	for (i = 0; i < 5; i++)
 	{
-		printf("%3i ", data->sharedRes[i]);
+		fprintf(o, "%3i ", data->sharedRes[i]);
 	}
 
-	printf("\n\n##### Ending print of resource tables #####\n\n");
+	fprintf(o, "\n\n##### Ending print of resource tables #####\n\n");
 }
 
 int FindAllocationRequest(int procRow)
@@ -336,8 +336,9 @@ int AllocResource(int procRow, int resID)
 	while (data->allocVec[resID] > 0 && data->req[resID][procRow] > 0)
 	{
 		if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-{
-			(data->allocVec[resID])--;}
+		{
+			(data->allocVec[resID])--;
+		}
 		(data->alloc[resID][procRow])++;
 		(data->req[resID][procRow])--;
 	}
@@ -351,9 +352,9 @@ int AllocResource(int procRow, int resID)
 int DellocResource(int procRow, int resID)
 {
 	if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-{
+	{
 		(data->allocVec[resID]) += (data->alloc[resID][procRow]);
-}
+	}
 	data->alloc[resID][procRow] = 0;
 }
 
@@ -378,7 +379,7 @@ int CompareArrayAgainstReq(int *array1, int procpos)
 			return -1;
 		}
 	}
-	
+
 	return 1;
 }
 
@@ -487,7 +488,6 @@ void DoSharedWork()
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n", msgbuf.mtype);
 				}
-	
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0)
 			{
@@ -562,11 +562,11 @@ void DoSharedWork()
 
 			AddTimeLong(&deadlockExec, abs((long)(rand() % 1000) * (long)1000000)); //set new exec time to 0 - 500ms after now
 
-			int* tempVec = calloc(20, sizeof(int));
-			int* procFlags = calloc(19, sizeof(int));
+			int *tempVec = calloc(20, sizeof(int));
+			int *procFlags = calloc(19, sizeof(int));
 			int i, j;
 			int isMatch = 0;
-	
+
 			for (i = 0; i < 20; i++)
 				tempVec[i] = data->allocVec[i];
 
@@ -586,7 +586,7 @@ void DoSharedWork()
 						procFlags[i] = 1;
 
 						for (j = 0; j < 20; j++)
-						    tempVec[j] += data->alloc[j][i];
+							tempVec[j] += data->alloc[j][i];
 					}
 					else
 					{
@@ -595,23 +595,22 @@ void DoSharedWork()
 				}
 
 			} while (updated == 1);
-			
-			if(CheckForExistence(procFlags, 19, 0) == 1 && data->proc[i].pid > 0)
+
+			if (CheckForExistence(procFlags, 19, 0) == 1 && data->proc[i].pid > 0)
 			{
 				printf("********** DEADLOCK DETECTED **********");
 				DisplayResources();
 			}
 
-
 			for (i = 0; i < 19; i++)
-			{				
+			{
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
 					kill(data->proc[i].pid, SIGTERM);
 
 					for (j = 0; j < 19; j++)
 					{
-						DellocResource(i, j);						
+						DellocResource(i, j);
 					}
 
 					fprintf(o, "%s: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->proc[i].pid, i);
@@ -619,7 +618,6 @@ void DoSharedWork()
 					data->proc[i].pid = -1;
 				}
 			}
-			
 
 			for (iterator = 0; iterator < getSize(resQueue); iterator++)
 			{
@@ -640,9 +638,8 @@ void DoSharedWork()
 				}
 			}
 
-		free(procFlags);
-		free(tempVec);
-
+			free(procFlags);
+			free(tempVec);
 		}
 
 		fflush(stdout);
