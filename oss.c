@@ -536,7 +536,7 @@ void DoSharedWork()
 			}
 		}
 
-		if (CompareTime(&(data->sysTime), &deadlockExec))
+		/*if (CompareTime(&(data->sysTime), &deadlockExec))
 		{
 			deadlockExec.seconds = data->sysTime.seconds; //capture current time
 			deadlockExec.ns = data->sysTime.ns;
@@ -602,32 +602,30 @@ void DoSharedWork()
 
 			free(procFlags);
 			free(tempVec);
+		}*/
+
+		/*for (iterator = 0; iterator < getSize(resQueue); iterator++)
+		{
+			int cpid = dequeue(resQueue);
+			int procpos = FindPID(cpid);
+			int resID = FindAllocationRequest(procpos);
+
+			if (AllocResource(procpos, resID) == 1)
+			{
+				fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
+				strcpy(msgbuf.mtext, "REQ_GRANT");
+				msgbuf.mtype = cpid;
+				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
+				break;
+			}
+			else
+			{
+				enqueue(resQueue, cpid);
+			}
 		}
 
-		for (iterator = 0; iterator < getSize(resQueue); iterator++)
-			{
-				int cpid = dequeue(resQueue);
-				int procpos = FindPID(cpid);
-				int resID = FindAllocationRequest(procpos);
-
-				if (AllocResource(procpos, resID) == 1)
-				{
-					fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
-					strcpy(msgbuf.mtext, "REQ_GRANT");
-					msgbuf.mtype = cpid;
-					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
-					break;
-				}
-				else
-				{
-					enqueue(resQueue, cpid);
-				}
-			}
-
-
-
 		fflush(stdout);
-	}
+	}*/
 
 	/* Wrap up the output file and detatch from shared memory items */
 	shmctl(ipcid, IPC_RMID, NULL);
