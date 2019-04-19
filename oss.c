@@ -533,7 +533,68 @@ void DoSharedWork()
 				}
 			}
 		}
-/*
+
+		if (CompareTime(&(data->sysTime), &deadlockExec))
+		{
+			deadlockExec.seconds = data->sysTime.seconds; //capture current time
+			deadlockExec.ns = data->sysTime.ns;
+
+			AddTimeLong(&deadlockExec, abs((long)(rand() % 1000) * (long)1000000)); //set new exec time to 0 - 500ms after now
+
+			int *tempVec = calloc(20, sizeof(int));
+			int *procFlags = calloc(19, sizeof(int));
+			int i, j, k;
+			int isEnding = 0;
+
+			for (i = 0; i < 20; i++)
+				tempVec[i] = data->allocVec[i];
+
+			int updated;
+			do
+			{
+				updated = 0;
+				for (i = 0; i < 19)
+				{
+					if(procFlags[i] == 1)
+						continue;
+						
+					isEnding = 1;
+					for (j = 0; j < 20; j++)
+					{
+						if (tempVec[j] - data->req[j][i]) < 0)
+							{
+								isEnding = 0;
+							}
+					}
+
+					procFlags[i] = isEnding;
+
+					if (isEnding == 1)
+					{
+						updated = 1;
+
+						for (j = 0; j < 20; j++)
+							tempVec[j] += data->alloc[j][i];
+					}
+				}
+			} while (updated == 1);
+		}
+
+		/*		int CompareArrayAgainstReq(int *array1, int procpos)
+{
+	int i;
+	for (i = 0; i < 20; i++)
+	{
+		if ((array1[i] - data->req[i][procpos]) < 0)
+		{
+			return -1;
+		}
+	}
+
+	return 1;
+}*/
+
+		/*
 		if (CompareTime(&(data->sysTime), &deadlockExec))
 		{
 			deadlockExec.seconds = data->sysTime.seconds; //capture current time
@@ -608,7 +669,7 @@ void DoSharedWork()
 			int procpos = FindPID(cpid);
 			int resID = FindAllocationRequest(procpos);
 
-			if(procpos < 0)
+			if (procpos < 0)
 			{
 				printf("Removed garbage value from queue...");
 			}
