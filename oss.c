@@ -610,7 +610,7 @@ void DoSharedWork()
 			free(tempVec);
 		}
 
-		for (iterator = 0; iterator < getSize(resQueue); iterator++)
+		/*for (iterator = 0; iterator < getSize(resQueue); iterator++)
 		{
 			int cpid = dequeue(resQueue);
 			int procpos = FindPID(cpid);
@@ -630,7 +630,7 @@ void DoSharedWork()
 			{
 				enqueue(resQueue, cpid);
 			}
-		}
+		}*/
 
 		fflush(stdout);
 	}
