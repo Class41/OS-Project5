@@ -195,12 +195,12 @@ int getResourceToRelease(int pid)
 
 void Handler(int signal)
 {
-	printf("DED XD");
 	msgbuf.mtype = pid;
 	strcpy(msgbuf.mtext, "TER");
 	strcpy(data->proc[FindPID(pid)].status, "SND MSTR TERM");
 	msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
 	strcpy(data->proc[FindPID(pid)].status, "EXT MSTR GOT");
+	printf("DEAD XD\n");
 	exit(21);
 }
 

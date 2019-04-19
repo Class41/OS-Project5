@@ -590,7 +590,13 @@ void DoSharedWork()
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
 					kill(data->proc[i].pid, SIGINT);
-					//fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
+
+					for (j = 0; j < 20; j++)
+					{
+						DellocResource(i, j);
+					}
+
+					fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
 				}
 			}
 
