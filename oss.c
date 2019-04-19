@@ -617,7 +617,7 @@ void DoSharedWork()
 				strcpy(msgbuf.mtext, "REQ_GRANT");
 				msgbuf.mtype = cpid;
 				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
-				break;
+				printf("GRANTED %i\n", resID);
 			}
 			else
 			{
