@@ -333,13 +333,11 @@ int CalcResourceTotal(int resID)
 
 int AllocResource(int procRow, int resID)
 {
-	//	CalcResourceTotal(resID);
-	//	printf("request of %i", data->req[resID][procRow]);
-	//if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-	while (data->allocVec[resID] > 0 && data->req[resID][procRow] > 0 && (data->resVec[resID] > data->alloc[resID][procRow]))
+	while (data->allocVec[resID] > 0 && data->req[resID][procRow] > 0)
 	{
 		if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
-			(data->allocVec[resID])--;
+{
+			(data->allocVec[resID])--;}
 		(data->alloc[resID][procRow])++;
 		(data->req[resID][procRow])--;
 	}
@@ -347,15 +345,15 @@ int AllocResource(int procRow, int resID)
 	if (data->req[resID][procRow] > 0)
 		return -1;
 
-	//		CalcResourceTotal(resID);
-
 	return 1;
 }
 
 int DellocResource(int procRow, int resID)
 {
 	if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+{
 		(data->allocVec[resID]) += (data->alloc[resID][procRow]);
+}
 	data->alloc[resID][procRow] = 0;
 }
 
@@ -375,7 +373,6 @@ int CompareArrayAgainstReq(int *array1, int procpos)
 	int i;
 	for (i = 0; i < 20; i++)
 	{
-		//printf("\nComparing proc: %i res: %i result: %i", procpos, i, array1[i] - data->req[i][procpos]);
 		if ((array1[i] - data->req[i][procpos]) < 0)
 		{
 			return -1;
@@ -411,7 +408,7 @@ void DoSharedWork()
 	/* Create queues */
 	struct Queue *resQueue = createQueue(childCount); //Queue of local PIDS (fake/emulated pids)
 
-	srand(getpid()); //set random seed
+	srand(time(NULL) ^ (getpid() << 16)); //set random seed
 
 	while (1)
 	{
@@ -490,8 +487,7 @@ void DoSharedWork()
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 					fprintf(o, "\t-> [REQUEST] pid: %i request fulfilled...\n\n", msgbuf.mtype);
 				}
-
-			//	printf("\nIn queue: %i", getSize(resQueue));
+	
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0)
 			{
@@ -570,9 +566,7 @@ void DoSharedWork()
 			int* procFlags = calloc(19, sizeof(int));
 			int i, j;
 			int isMatch = 0;
-
-			//DisplayResources();
-
+	
 			for (i = 0; i < 20; i++)
 				tempVec[i] = data->allocVec[i];
 
@@ -601,13 +595,19 @@ void DoSharedWork()
 				}
 
 			} while (updated == 1);
+			
+			if(CheckForExistence(procFlags, 19, 0) == 1 && data->proc[i].pid > 0)
+			{
+				printf("********** DEADLOCK DETECTED **********");
+				DisplayResources();
+				getc(stdin);
+			}
+
 
 			for (i = 0; i < 19; i++)
-			{
-				//printf("\n%i :: %i, PID: %i", i, procFlags[i], data->proc[i].pid);
+			{				
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
-					//printf("Running\n");
 					kill(data->proc[i].pid, SIGTERM);
 
 					for (j = 0; j < 20; j++)
@@ -620,6 +620,7 @@ void DoSharedWork()
 					data->proc[i].pid = -1;
 				}
 			}
+			
 
 			for (iterator = 0; iterator < getSize(resQueue); iterator++)
 			{
