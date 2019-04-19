@@ -585,14 +585,6 @@ void DoSharedWork()
 			{
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
-					for (iterator = 0; iterator < getSize(resQueue); iterator++)
-					{
-						int temp = dequeue(resQueue);
-
-						if(data->proc[i].pid != temp)
-							enqueue(resQueue, temp);			
-					}
-
 					kill(data->proc[i].pid, SIGTERM);
 
 					for (j = 0; j < 20; j++)
@@ -610,7 +602,7 @@ void DoSharedWork()
 			free(tempVec);
 		}
 
-		/*for (iterator = 0; iterator < getSize(resQueue); iterator++)
+		for (iterator = 0; iterator < getSize(resQueue); iterator++)
 		{
 			int cpid = dequeue(resQueue);
 			int procpos = FindPID(cpid);
@@ -618,7 +610,7 @@ void DoSharedWork()
 
 			printf("%i: POS: %i: Attempting to secure %i (%i in queue)\n", cpid, procpos, resID, getSize(resQueue));
 
-			if (AllocResource(procpos, resID) == 1)
+			if (AllocResource(procpos, resID) == 1 && cpid => 0)
 			{
 				fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				strcpy(msgbuf.mtext, "REQ_GRANT");
@@ -626,11 +618,15 @@ void DoSharedWork()
 				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
 				printf("GRANTED %i\n", resID);
 			}
+			else if(cpid < 0)
+			{
+				printf("Removed garbage value from queue...");
+			}
 			else
 			{
 				enqueue(resQueue, cpid);
 			}
-		}*/
+		}
 
 		fflush(stdout);
 	}
