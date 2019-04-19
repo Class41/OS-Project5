@@ -598,7 +598,7 @@ void DoSharedWork()
 
 			if (CheckForExistence(procFlags, 19, 0) == 1 && data->proc[i].pid > 0)
 			{
-				printf("********** DEADLOCK DETECTED **********");
+				fprintf(o, "********** DEADLOCK DETECTED **********");
 				DisplayResources();
 			}
 
