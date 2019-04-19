@@ -600,7 +600,7 @@ void DoSharedWork()
 
 			free(procFlags);
 			free(tempVec);
-		}
+		}*/
 
 		for (iterator = 0; iterator < getSize(resQueue); iterator++)
 		{
@@ -625,7 +625,7 @@ void DoSharedWork()
 				printf("%i: POS: %i: Attempting to secure %i (%i in queue) There was %i available and %i needed\n", cpid, procpos, resID, getSize(resQueue) + 1, data->allocVec[resID], data->req[resID][procpos]);
 				enqueue(resQueue, cpid);
 			}
-		}*/
+		}
 
 		fflush(stdout);
 	}
