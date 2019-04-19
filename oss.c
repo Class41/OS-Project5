@@ -218,8 +218,7 @@ void GenerateResources()
 	int i;
 	for (i = 0; i < 20; i++)
 	{
-		data->resVec[i] = (rand() % 5) + 1;
-		data->resVecBackup[i] = data->resVec[i];
+		data->resVec[i] = (rand() % 10) + 1;	
 		data->allocVec[i] = data->resVec[i];
 	}
 
@@ -615,7 +614,7 @@ void DoSharedWork()
 						DellocResource(i, j);						
 					}
 
-					fprintf(o, "%s: [TERMINATE] [DEADLOCKER] pid: %i proc: %i\n\n", filen, data->proc[i].pid, i);
+					fprintf(o, "%s: [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->proc[i].pid, i);
 
 					data->proc[i].pid = -1;
 				}
@@ -639,11 +638,6 @@ void DoSharedWork()
 				{
 					enqueue(resQueue, cpid);
 				}
-			}
-
-		if(CheckForExistence(procFlags, 19, 0) == 1 && data->proc[i].pid > 0)
-			{
-			//	getc(stdin);
 			}
 
 		free(procFlags);
