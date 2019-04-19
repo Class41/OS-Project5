@@ -219,6 +219,7 @@ void GenerateResources()
 	for (i = 0; i < 20; i++)
 	{
 		data->resVec[i] = (rand() % 5) + 1;
+		data->resVecBackup[i] = data->resVec[i];
 		data->allocVec[i] = data->resVec[i];
 	}
 
@@ -600,7 +601,6 @@ void DoSharedWork()
 			{
 				printf("********** DEADLOCK DETECTED **********");
 				DisplayResources();
-				getc(stdin);
 			}
 
 
@@ -610,9 +610,9 @@ void DoSharedWork()
 				{
 					kill(data->proc[i].pid, SIGTERM);
 
-					for (j = 0; j < 20; j++)
+					for (j = 0; j < 19; j++)
 					{
-						DellocResource(i, j);
+						DellocResource(i, j);						
 					}
 
 					fprintf(o, "%s: [TERMINATE] [DEADLOCKER] pid: %i proc: %i\n\n", filen, data->proc[i].pid, i);
@@ -639,6 +639,11 @@ void DoSharedWork()
 				{
 					enqueue(resQueue, cpid);
 				}
+			}
+
+		if(CheckForExistence(procFlags, 19, 0) == 1 && data->proc[i].pid > 0)
+			{
+			//	getc(stdin);
 			}
 
 		free(procFlags);

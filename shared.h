@@ -21,6 +21,7 @@ typedef struct
 	Process proc[MAX_PROCS]; //process table
 	int allocVec[20];
 	int resVec[20];
+	int resVecBackup[20];
 	int req[20][19];
 	int alloc[20][19];
 	int sharedRes[5];

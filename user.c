@@ -243,8 +243,6 @@ int main(int argc, int argv)
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
 				int resCount = abs((rand() % ((data->resVec[resToRequest] - (data->alloc[resToRequest][FindPID(pid)]) + 1))));
-				if (resCount > data->resVec[resToRequest])
-					printf("Requested #: %i of %i\n", resCount, resToRequest);
 
 				sprintf(convert, "%i", resCount);
 
