@@ -193,17 +193,6 @@ int getResourceToRelease(int pid)
 	return -1;
 }
 
-void Handler(int signal)
-{
-	msgbuf.mtype = pid;
-	strcpy(msgbuf.mtext, "TER");
-	strcpy(data->proc[FindPID(pid)].status, "SND MSTR TERM");
-	msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0); //send parent termination signal
-	strcpy(data->proc[FindPID(pid)].status, "EXT MSTR GOT");
-	printf("DEAD XD\n");
-	exit(21);
-}
-
 int main(int argc, int argv)
 {
 	ShmAttatch();   //attach to shared mem
@@ -276,9 +265,9 @@ int main(int argc, int argv)
 
 				if (strcmp(msgbuf.mtext, "DIE") == 0)
 				{
-					CHANCE_TO_DIE_PERCENT = 100;
+					CHANCE_TO_DIE_PERCENT = 1000;
 					CalcNextActionTime(&nextActionTime);
-					printf("\nForcefully died...");
+					printf("\nBegin force die....");
 					continue;
 				}
 
