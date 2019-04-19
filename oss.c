@@ -456,7 +456,6 @@ void DoSharedWork()
 
 		if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
 		{
-			requestCounter++;
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
 			{
 				int reqpid = msgbuf.mtype;
@@ -487,7 +486,7 @@ void DoSharedWork()
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request fulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
-				printf("Num in queue: %i\n", getSize(resQueue));
+				//printf("Num in queue: %i\n", getSize(resQueue));
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0)
 			{
@@ -510,7 +509,7 @@ void DoSharedWork()
 				fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
 			}
 
-			if (requestCounter == 19)
+			if ((requestCounter++) == 19)
 			{
 				DisplayResources();
 				requestCounter = 0;
@@ -609,6 +608,8 @@ void DoSharedWork()
 			int cpid = dequeue(resQueue);
 			int procpos = FindPID(cpid);
 			int resID = FindAllocationRequest(procpos);
+
+			printf("Attempting to secure %i\n", resID);
 
 			if (AllocResource(procpos, resID) == 1)
 			{
