@@ -348,6 +348,17 @@ int AllocResource(int procRow, int resID)
 	return 1;
 }
 
+void DeleteProc(int procrow)
+{
+	int i;
+	for(i = 0; i < 20; i++)
+	{
+		data->allocVec[i] += data->alloc[i][procrow];
+		data->alloc[i][procrow] = 0;
+		data->req[i][procrow] = 0;
+	}
+}
+
 void DellocResource(int procRow, int resID)
 {
 	if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
@@ -500,10 +511,7 @@ void DoSharedWork()
 			{
 				int procpos = FindPID(msgbuf.mtype);
 
-				for (iterator = 0; iterator < 20; iterator++)
-				{
-					DellocResource(procpos, iterator);
-				}
+				DeleteProc[procpos];
 
 				fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
 			}
