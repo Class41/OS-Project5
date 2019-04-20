@@ -638,7 +638,7 @@ void DoSharedWork()
 						msgbuf.mtype = data->proc[i].pid;
 						strcpy(msgbuf.mtext, "DIE");
 						msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-						DeleteProc(i);
+						DeleteProc(i, resQueue);
 						fprintf(o, "%s: [%i:%i] [KILL SENT] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
 					}
 				}
