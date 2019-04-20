@@ -105,12 +105,16 @@ void Handler(int signal)
 
 	int i;
 
-	DisplayResources();
+	if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+		DisplayResources();
 
-	printf("\n\n\n** STATUSES **\n");
-	for (i = 0; i < 19; i++)
+	if (VERBOSE_LEVEL == 1)
 	{
-		printf("%i: %s\n", i, data->proc[i].status);
+		printf("\n\n\n** STATUSES **\n");
+		for (i = 0; i < 19; i++)
+		{
+			printf("%i: %s\n", i, data->proc[i].status);
+		}
 	}
 
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
@@ -238,8 +242,8 @@ void GenerateResources()
 			}
 		}
 	}
-
-	DisplayResources();
+	if(VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+		DisplayResources();
 }
 
 int CheckForExistence(int *values, int size, int value)
@@ -585,7 +589,8 @@ void DoSharedWork()
 
 			if ((requestCounter++) == 19)
 			{
-				DisplayResources();
+				if(VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+					DisplayResources();
 				requestCounter = 0;
 			}
 		}
@@ -760,8 +765,8 @@ void DoSharedWork()
 			}
 			else if (AllocResource(procpos, resID) == 1)
 			{
-				if(VERBOSE_LEVEL == 1 && lineCount++ < 100000)
-				fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
+				if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+					fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				strcpy(msgbuf.mtext, "REQ_GRANT");
 				msgbuf.mtype = cpid;
 				//printf("Sending queue nowait");
