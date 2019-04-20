@@ -500,15 +500,12 @@ void DoSharedWork()
 {
 	/* General sched data */
 	int activeProcs = 0;
-	int remainingExecs = 100;
 	int exitCount = 0;
 	int status;
 	int iterator;
 	int requestCounter = 0; //not used
 
 	/* Proc toChildQueue and message toChildQueue data */
-	int activeProcIndex = -1;
-	int procRunning = 0;
 	int msgsize;
 
 	/* Set shared memory clock value */
