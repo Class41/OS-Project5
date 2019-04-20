@@ -117,7 +117,7 @@ void Handler(int signal)
 	if (VERBOSE_LEVEL == 1)
 	{
 		printf("\n\n\n** STATUSES **\n");
-		for (i = 0; i < 19; i++)
+		for (i = 0; i < childCount; i++)
 		{
 			printf("%i: %s\n", i, data->proc[i].status);
 		}
@@ -284,7 +284,7 @@ void DisplayResources()
 	}
 
 	int j;
-	for (i = 0; i < 19; i++)
+	for (i = 0; i < childCount; i++)
 	{
 		fprintf(o, "\n %3i|", i);
 		for (j = 0; j < 20; j++)
@@ -298,7 +298,7 @@ void DisplayResources()
 		fprintf(o, "%3i ", i);
 	}
 
-	for (i = 0; i < 19; i++)
+	for (i = 0; i < childCount; i++)
 	{
 		fprintf(o, "\n %3i|", i);
 		for (j = 0; j < 20; j++)
@@ -348,7 +348,7 @@ int CalcResourceTotal(int resID)
 {
 	int i;
 	int total = 0;
-	for (i = 0; i < 19; i++)
+	for (i = 0; i < childCount; i++)
 		total += data->alloc[resID][i];
 
 	if (total > 0)
@@ -444,7 +444,7 @@ void DeadLockDetector(int *procFlags)
 	do
 	{
 		updated = 0;
-		for (i = 0; i < 19; i++)
+		for (i = 0; i < childCount; i++)
 		{
 			if ((procFlags[i] == 1) || (data->proc[i].pid < 0))
 				continue;
@@ -651,11 +651,11 @@ void DoSharedWork()
 			do
 			{
 				terminated = 0;
-				procFlags = calloc(19, sizeof(int));
+				procFlags = calloc(childCount, sizeof(int));
 
 				DeadLockDetector(procFlags);
 
-				for (i = 0; i < 19; i++)
+				for (i = 0; i < childCount; i++)
 				{
 
 					if (procFlags[i] == 0 && data->proc[i].pid > 0)
@@ -729,7 +729,7 @@ void DoSharedWork()
 			{
 				updated = 0;
 
-				for (i = 0; i < 19; i++)
+				for (i = 0; i < childCount; i++)
 				{
 					if (procFlags[i] == 1)
 						continue;
@@ -756,7 +756,7 @@ void DoSharedWork()
 				DisplayResources();
 			}
 
-			for (i = 0; i < 19; i++)
+			for (i = 0; i < childCount; i++)
 			{
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
