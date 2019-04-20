@@ -30,7 +30,7 @@ int childCount = 19; //Max children concurrent
 
 FILE *o; //output log file pointer
 
-#define MAX_LINES 100
+#define MAX_LINES 20000
 const int CLOCK_ADD_INC = 5000000;
 int VERBOSE_LEVEL = 0;
 long lineCount = 0;
