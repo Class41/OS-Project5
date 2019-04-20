@@ -136,7 +136,7 @@ void Handler(int signal)
 	Process Terminations: %i\n\
 	Process Deadlock Proc Kills %i\n\
 	Process Deadlock Count: %i\n\
-	Process Deadlock to Normal Death Ratio: %d\n\n", pidallocs, pidreleases, pidprocterms, deadLockProcs, deadLockCount, deadLockProcs/pidprocterms);
+	Process Deadlock to Normal Death Ratio: %d\n\n", pidallocs, pidreleases, pidprocterms, deadlockProcs, deadlockCount, deadlockProcs/pidprocterms);
 
 
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
