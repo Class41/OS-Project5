@@ -452,7 +452,7 @@ void DeadLockDetector(int *procFlags)
 			isEnding = 1;
 			for (j = 0; j < 20; j++)
 			{
-				if ((tempVec[j] - data->req[j][i]) < 0)
+				if ((data->req[j][i]) > 0 && (tempVec[j] - data->req[j][i]) < 0)
 				{
 					isEnding = 0;
 				}
