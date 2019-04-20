@@ -22,8 +22,8 @@
 */
 
 /* Constants for termination and using all time--the reason termination is not const is because it changes depending if it is a realtime proccess or not */
-int CHANCE_TO_DIE_PERCENT = 1;
-const int CHANCE_TO_REQUEST = 55;
+int CHANCE_TO_DIE_PERCENT = 1; //chance to die
+const int CHANCE_TO_REQUEST = 55; //chance to make a request
 
 /* Housekeeping holders for shared memory and file name alias */
 Shared *data;
@@ -171,15 +171,16 @@ void ShmAttatch() //same exact memory attach function from master minus the init
 	}
 }
 
+/* Calculates next time for next action */
 void CalcNextActionTime(Time *t)
 {
-	t->seconds = data->sysTime.seconds;
+	t->seconds = data->sysTime.seconds; //save current system time
 	t->ns = data->sysTime.ns;
-	long mstoadd = (rand() % 251) * 1000000;
+	long mstoadd = (rand() % 251) * 1000000; //add time to it as offset 
 	AddTimeLong(t, mstoadd);
 }
 
-int getResourceToRelease(int pid)
+int getResourceToRelease(int pid) //find a resource that is allocated and return its position to be released. -1 if no resources available...
 {
 	int myPos = FindPID(pid);
 	int i;
@@ -199,16 +200,16 @@ int main(int argc, int argv)
 	QueueAttatch(); //attach to queues
 
 	pid = getpid(); //shorthand for getpid every time from now
-	/* Variables to keep tabs on time to be added instead of creating new ints every time */
-	Time nextActionTime = {0, 0};
+
+	Time nextActionTime = {0, 0}; //time we should ask for next resources. 0 initially to get the ball rolling.
 
 	srand(pid); //ensure randomness by bitshifting and ORing the time based on the pid
-	int resToReleasePos;
+	int resToReleasePos; //will keep track of resource release position in the future
 
 	while (1)
 	{
-		strcpy(data->proc[FindPID(pid)].status, "ST NEW LOOP");
-		if (CompareTime(&(data->sysTime), &(nextActionTime)) == 1)
+		strcpy(data->proc[FindPID(pid)].status, "ST NEW LOOP"); //from now on, when you see these, these keep track of program state
+		if (CompareTime(&(data->sysTime), &(nextActionTime)) == 1) //if it is time to rumble
 		{
 			strcpy(data->proc[FindPID(pid)].status, "EN TIME START");
 			if ((rand() % 100) <= CHANCE_TO_DIE_PERCENT) //roll for termination
@@ -221,71 +222,72 @@ int main(int argc, int argv)
 				exit(21);
 			}
 
-			resToReleasePos = getResourceToRelease(pid);
+			resToReleasePos = getResourceToRelease(pid); //check if releaseable resource exists
 			if ((rand() % 100) < CHANCE_TO_REQUEST)
 			{
 				strcpy(data->proc[FindPID(pid)].status, "EN REQ BLOK");
-				int resToRequest = (rand() % 20);
+				int resToRequest = (rand() % 20); //generate random resource to request
 
 				//data->req[resToRequest][FindPID(pid)]
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, "REQ");
-				strcpy(data->proc[FindPID(pid)].status, "SND MASTER REQ");
+				strcpy(data->proc[FindPID(pid)].status, "SND MASTER REQ"); //send master request to reserve resource
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
 				char *convert[5];
-				sprintf(convert, "%i", resToRequest);
+				sprintf(convert, "%i", resToRequest); //integer to string conversion magic
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, convert);
-				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES POS");
+				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES POS"); //send maser position of requested resource
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
+				//a bit of complicated calculation math here. The max number we should request is the system available - what we curently have allocated + 1 since a modulo 3 for example only produces 0 1 2, we and 1 2 3 instead.
+				
 				int resCount = abs((rand() % ((data->resVec[resToRequest] - (data->alloc[resToRequest][FindPID(pid)]) + 1))));
 
-				sprintf(convert, "%i", resCount);
+				sprintf(convert, "%i", resCount); //converstion magic
 
 				msgbuf.mtype = pid;
 				strcpy(msgbuf.mtext, convert);
-				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES CNT");
+				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RES CNT"); //send master number to request of previously sent resource id
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
 				strcpy(data->proc[FindPID(pid)].status, "WAIT MASTER GRANT");
 
 				do
 				{
-					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0);
+					msgrcv(toChildQueue, &msgbuf, sizeof(msgbuf), pid, 0); //wait and check for word from master
 
-					if (strcmp(msgbuf.mtext, "REQ_GRANT") == 0 || strcmp(msgbuf.mtext, "DIE") == 0)
+					if (strcmp(msgbuf.mtext, "REQ_GRANT") == 0 || strcmp(msgbuf.mtext, "DIE") == 0) //if got die signal or resource granted
 						break;
 
 				} while (1);
 
-				if (strcmp(msgbuf.mtext, "DIE") == 0)
+				if (strcmp(msgbuf.mtext, "DIE") == 0) //if dying by 360 noscope deadlock ripper 3000, restart loop with 100% chance to die an send term to parent.
 				{
 					CHANCE_TO_DIE_PERCENT = 1000;
 					CalcNextActionTime(&nextActionTime);
-					//printf("\nBegin force die....");
 					continue;
 				}
 
-				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
+				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT"); //otherwise, yay we got the resource!
 
 				CalcNextActionTime(&nextActionTime);
 			}
-			else if (resToReleasePos >= 0)
+			else if (resToReleasePos >= 0) //assuming we have a resource to deallocate
 			{
 				strcpy(data->proc[FindPID(pid)].status, "START RELEASE");
 				msgbuf.mtype = pid;
-				strcpy(msgbuf.mtext, "REL");
+				strcpy(msgbuf.mtext, "REL"); //release the resource. Send request to release first
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER REL REQ");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
 
-				char *convert[5];
+				char *convert[5]; //conver value to string
 				sprintf(convert, "%i", resToReleasePos);
 
-				strcpy(msgbuf.mtext, convert);
+				strcpy(msgbuf.mtext, convert); //send master id of resource to release
 				strcpy(data->proc[FindPID(pid)].status, "SND MASTER RELEASE ID");
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 				strcpy(data->proc[FindPID(pid)].status, "MASTER ACCEPT RELEASE ID");
@@ -293,7 +295,7 @@ int main(int argc, int argv)
 			}
 			else
 			{
-				CalcNextActionTime(&nextActionTime);
+				CalcNextActionTime(&nextActionTime); //no resources to release were found but release was rolled.
 			}
 		}
 	}
