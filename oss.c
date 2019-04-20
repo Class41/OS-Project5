@@ -33,6 +33,10 @@ FILE *o; //output log file pointer
 const int CLOCK_ADD_INC = 5000000;
 int VERBOSE_LEVEL = 0;
 
+int deadlockCount = 0;
+int deadlockProcs = 0;
+
+
 /* Create prototypes for used functions*/
 void Handler(int signal);
 void DoFork(int value);
@@ -406,6 +410,49 @@ int CompareArrayAgainstReq(int *array1, int procpos)
 	return 1;
 }
 
+void DeadLockDetector(int *procFlags)
+{
+			int *tempVec = calloc(20, sizeof(int));
+			int i, j;
+			int isEnding = 0;
+
+			for (i = 0; i < 20; i++)
+				tempVec[i] = data->allocVec[i];
+
+			int updated;
+			do
+			{
+				updated = 0;
+				for (i = 0; i < 19; i++)
+				{
+					if ((procFlags[i] == 1) || (data->proc[i].pid < 0))
+						continue;
+
+					isEnding = 1;
+					for (j = 0; j < 20; j++)
+					{
+						if ((tempVec[j] - data->req[j][i]) < 0)
+						{
+							isEnding = 0;
+						}
+					}
+
+					procFlags[i] = isEnding;
+
+					if (isEnding == 1)
+					{
+						updated = 1;
+
+						for (j = 0; j < 20; j++)
+							tempVec[j] += data->alloc[j][i];
+					}
+				}
+			} while (updated == 1);
+
+			free(tempVec);
+	
+}
+
 /* The biggest and fattest function west of the missisipi */
 void DoSharedWork()
 {
@@ -564,55 +611,31 @@ void DoSharedWork()
 			deadlockExec.ns = data->sysTime.ns;
 
 			AddTimeLong(&deadlockExec, abs((long)(rand() % 1000) * (long)1000000)); //set new exec time to 0 - 500ms after now
+			
+			int *procFlags;
+			int i;
+		
+			int deadlockDisplayed = 0;
+			int terminated;	
+			do {
+			terminated = 0;
+			procFlags = calloc(19, sizeof(int));
 
-			int *tempVec = calloc(20, sizeof(int));
-			int *procFlags = calloc(19, sizeof(int));
-			int i, j;
-			int isEnding = 0;
-
-			for (i = 0; i < 20; i++)
-				tempVec[i] = data->allocVec[i];
-
-			int updated;
-			do
-			{
-				updated = 0;
-				for (i = 0; i < 19; i++)
-				{
-					if ((procFlags[i] == 1) || (data->proc[i].pid < 0))
-						continue;
-
-					isEnding = 1;
-					for (j = 0; j < 20; j++)
-					{
-						if ((tempVec[j] - data->req[j][i]) < 0)
-						{
-							isEnding = 0;
-						}
-					}
-
-					procFlags[i] = isEnding;
-
-					if (isEnding == 1)
-					{
-						updated = 1;
-
-						for (j = 0; j < 20; j++)
-							tempVec[j] += data->alloc[j][i];
-					}
-				}
-			} while (updated == 1);
-
-			if (CheckForExistence(procFlags, 19, 0) == 1 && data->proc[i].pid > 0)
-			{
-				fprintf(o, "********** DEADLOCK DETECTED **********");
-				DisplayResources();
-			}
-
+			DeadLockDetector(procFlags);
+	
 			for (i = 0; i < 19; i++)
 			{
+
 				if (procFlags[i] == 0 && data->proc[i].pid > 0)
 				{
+
+				if (deadlockDisplayed == 0)
+				{
+					deadlockDisplayed = 1;
+					fprintf(o, "********** DEADLOCK DETECTED **********");
+					DisplayResources();
+				}
+					terminated = 1;
 					msgbuf.mtype = data->proc[i].pid;
 					strcpy(msgbuf.mtext, "DIE");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
@@ -620,9 +643,8 @@ void DoSharedWork()
 					fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
 				}
 			}
-
 			free(procFlags);
-			free(tempVec);
+			}while(terminated == 1);
 		}
 
 		/*		int CompareArrayAgainstReq(int *array1, int procpos)
