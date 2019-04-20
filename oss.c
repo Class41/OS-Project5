@@ -35,8 +35,13 @@ const int CLOCK_ADD_INC = 5000000;
 int VERBOSE_LEVEL = 0;
 long lineCount = 0;
 
+/* Statistics */
 int deadlockCount = 0;
 int deadlockProcs = 0;
+
+int pidreleases = 0;
+int pidallocs = 0;
+int pidprocterms = 0;
 
 /* Create prototypes for used functions*/
 void Handler(int signal);
@@ -117,6 +122,22 @@ void Handler(int signal)
 			printf("%i: %s\n", i, data->proc[i].status);
 		}
 	}
+
+	/*int deadlockCount = 0;
+	int deadlockProcs = 0;
+
+	int pidreleases = 0;
+	int pidallocs = 0;
+	int pidprocterms = 0;*/
+
+	printf("\n\n*** Statistics ***\n\n\
+	Resource Allocs: %i\n\
+	Resource Releases %i\n\n\
+	Process Terminations: %i\n\
+	Process Deadlock Proc Kills %i\n\
+	Process Deadlock Count: %i\n\
+	Process Deadlock to Normal Death Ratio: %d\n\n", pidallocs, pidreleases, pidprocterms, deadLockProcs, deadLockCount, deadLockProcs/pidprocterms);
+
 
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
 		if (data->proc[i].pid != -1)
@@ -559,7 +580,7 @@ void DoSharedWork()
 				}
 				else
 				{
-					//printf("Alloc succ");
+					pidallocs++;
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 					if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
@@ -573,6 +594,7 @@ void DoSharedWork()
 				//printf("Waiting on release resource ID");
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
+				pidreleases++;
 				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}
@@ -585,6 +607,8 @@ void DoSharedWork()
 					DeleteProc(procpos, resQueue);
 					if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 						fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
+					pidreleases++;
+					pidprocterms++;
 				}
 			}
 
@@ -644,6 +668,7 @@ void DoSharedWork()
 
 						if (deadlockDisplayed == 0)
 						{
+							deadlockCount++;
 							deadlockDisplayed = 1;
 							if (lineCount++ < MAX_LINES)
 							{
@@ -662,6 +687,9 @@ void DoSharedWork()
 						strcpy(msgbuf.mtext, "DIE");
 						msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 						DeleteProc(i, resQueue);
+						pidprocterms++;
+						pidreleases++;
+						deadlockProcs++;
 						if (lineCount++ < MAX_LINES)
 							fprintf(o, "%s: [%i:%i] [KILL SENT] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
 						break;
@@ -768,6 +796,7 @@ void DoSharedWork()
 			{
 				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
+				pidallocs++;
 				strcpy(msgbuf.mtext, "REQ_GRANT");
 				msgbuf.mtype = cpid;
 				//printf("Sending queue nowait");
