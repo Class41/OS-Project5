@@ -671,7 +671,7 @@ void DoSharedWork()
 								DisplayResources();
 								int j;
 								fprintf(o, "Deadlocked Procs are as follows:\n [ ");
-								for (j = 0; j < 20; j++)
+								for (j = 0; j < childCount; j++)
 									if (procFlags[j] == 0)
 										fprintf(o, "%i ", j);
 								fprintf(o, "]\n");
