@@ -123,7 +123,7 @@ void Handler(int signal)
 		}
 	}
 
-	double ratio = (float)deadlockProcs/(float)pidprocterms;
+	double ratio = ((double)deadlockProcs)/((double)pidprocterms);
 
 	printf("\n\n*** Statistics ***\n\n\
 	Resource Allocs: %i\n\
@@ -131,7 +131,7 @@ void Handler(int signal)
 	Process Terminations: %d\n\
 	Process Deadlock Proc Kills %d\n\
 	Process Deadlock Count: %i\n\
-	Process Deadlock to Normal Death Ratio: %d\n\n", pidallocs, pidreleases, pidprocterms, deadlockProcs, deadlockCount, ratio);
+	Process Deadlock to Normal Death Ratio: %f\n\n", pidallocs, pidreleases, pidprocterms, deadlockProcs, deadlockCount, ratio);
 
 
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
