@@ -32,7 +32,7 @@ FILE *o; //output log file pointer
 
 const int CLOCK_ADD_INC = 5000000;
 int VERBOSE_LEVEL = 0;
-int lineCount = 0;
+long lineCount = 0;
 
 int deadlockCount = 0;
 int deadlockProcs = 0;
