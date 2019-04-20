@@ -37,11 +37,11 @@ long lineCount = 0;
 
 /* Statistics */
 int deadlockCount = 0;
-double deadlockProcs = 0;
+int deadlockProcs = 0;
 
 int pidreleases = 0;
 int pidallocs = 0;
-double pidprocterms = 0;
+int pidprocterms = 0;
 
 /* Create prototypes for used functions*/
 void Handler(int signal);
@@ -123,14 +123,7 @@ void Handler(int signal)
 		}
 	}
 
-	/*int deadlockCount = 0;
-	int deadlockProcs = 0;
-
-	int pidreleases = 0;
-	int pidallocs = 0;
-	int pidprocterms = 0;*/
-
-	double ratio = deadlockProcs/pidprocterms;
+	double ratio = (float)deadlockProcs/(float)pidprocterms;
 
 	printf("\n\n*** Statistics ***\n\n\
 	Resource Allocs: %i\n\
@@ -889,7 +882,7 @@ int main(int argc, int **argv)
 		case 'h': //show help menu
 			printf("\t%s Help Menu\n\
 		\t-h : show help dialog \n\
-        \t-v : enable verbose mode \n\
+		\t-v : enable verbose mode \n\
 		\t-n [count] : max proccesses at the same time. Default: 19\n\n",
 				   filen);
 			return;
