@@ -37,11 +37,11 @@ long lineCount = 0;
 
 /* Statistics */
 int deadlockCount = 0;
-int deadlockProcs = 0;
+double deadlockProcs = 0;
 
 int pidreleases = 0;
 int pidallocs = 0;
-int pidprocterms = 0;
+double pidprocterms = 0;
 
 /* Create prototypes for used functions*/
 void Handler(int signal);
@@ -136,7 +136,7 @@ void Handler(int signal)
 	Process Terminations: %i\n\
 	Process Deadlock Proc Kills %i\n\
 	Process Deadlock Count: %i\n\
-	Process Deadlock to Normal Death Ratio: %d\n\n", pidallocs, pidreleases, pidprocterms, deadlockProcs, deadlockCount, (double)((double)deadlockProcs/(double)pidprocterms));
+	Process Deadlock to Normal Death Ratio: %d\n\n", pidallocs, pidreleases, pidprocterms, deadlockProcs, deadlockCount, deadlockProcs/pidprocterms);
 
 
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
