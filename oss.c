@@ -32,6 +32,7 @@ FILE *o; //output log file pointer
 
 #define MAX_LINES 20000
 const int CLOCK_ADD_INC = 5000000;
+int NUM_SHARED = -1;
 int VERBOSE_LEVEL = 0;
 long lineCount = 0;
 
@@ -245,14 +246,16 @@ void GenerateResources()
 		data->resVec[i] = (rand() % 10) + 1;
 		data->allocVec[i] = data->resVec[i];
 	}
+	
+	NUM_SHARED = (rand() % 4) + 2;
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < NUM_SHARED; i++)
 	{
 		while (1)
 		{
 			int tempval = rand() % 20;
 
-			if (CheckForExistence(data->sharedRes, 5, tempval) == -1)
+			if (CheckForExistence(data->sharedRes, NUM_SHARED, tempval) == -1)
 			{
 				data->sharedRes[i] = tempval;
 				break;
@@ -328,7 +331,7 @@ void DisplayResources()
 	}
 
 	fprintf(o, "\n\n\n** Shared Resource IDs **\n");
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < NUM_SHARED; i++)
 	{
 		fprintf(o, "%3i ", data->sharedRes[i]);
 	}
@@ -359,7 +362,7 @@ int AllocResource(int procRow, int resID)
 {
 	while (data->allocVec[resID] > 0 && data->req[resID][procRow] > 0)
 	{
-		if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+		if (CheckForExistence(&(data->sharedRes), NUM_SHARED, resID) == -1)
 		{
 			(data->allocVec[resID])--;
 		}
@@ -378,8 +381,11 @@ void DeleteProc(int procrow, struct Queue *queue)
 	int i;
 	for (i = 0; i < 20; i++)
 	{
-		if (CheckForExistence(&(data->sharedRes), 5, i) == -1)
+		if (CheckForExistence(&(data->sharedRes), NUM_SHARED, i) == -1)
 			data->allocVec[i] += data->alloc[i][procrow];
+		if(data->alloc[i][procrow] > 0)
+			pidreleases++;
+	
 		data->alloc[i][procrow] = 0;
 		data->req[i][procrow] = 0;
 	}
@@ -399,10 +405,11 @@ void DeleteProc(int procrow, struct Queue *queue)
 
 void DellocResource(int procRow, int resID)
 {
-	if (CheckForExistence(&(data->sharedRes), 5, resID) == -1)
+	if (CheckForExistence(&(data->sharedRes), NUM_SHARED, resID) == -1)
 	{
 		(data->allocVec[resID]) += (data->alloc[resID][procRow]);
 	}
+	pidreleases++;
 	data->alloc[resID][procRow] = 0;
 }
 
@@ -589,7 +596,6 @@ void DoSharedWork()
 				//printf("Waiting on release resource ID");
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
-				pidreleases++;
 				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}
@@ -602,7 +608,6 @@ void DoSharedWork()
 					DeleteProc(procpos, resQueue);
 					if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 						fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
-					pidreleases++;
 					pidprocterms++;
 				}
 			}
