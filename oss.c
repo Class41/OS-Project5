@@ -634,10 +634,11 @@ void DoSharedWork()
 							fprintf(o, "********** DEADLOCK DETECTED **********");
 							DisplayResources();
 							int j;
-							printf("Deadlocked Procs are as follows:\n [ ");
+							fprintf(o, "Deadlocked Procs are as follows:\n [ ");
 							for(j = 0; j < 20; j++)
-								printf("%i ");
-							printf("]");
+								if(procFlags[j] == 0)
+									fprintf(o, "%i ");
+							fprintf(o, "]");
 						}
 						terminated = 1;
 						msgbuf.mtype = data->proc[i].pid;
