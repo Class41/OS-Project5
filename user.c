@@ -22,7 +22,7 @@
 */
 
 /* Constants for termination and using all time--the reason termination is not const is because it changes depending if it is a realtime proccess or not */
-int CHANCE_TO_DIE_PERCENT = 1; //chance to die
+int CHANCE_TO_DIE_PERCENT = 1;	//chance to die
 const int CHANCE_TO_REQUEST = 55; //chance to make a request
 
 /* Housekeeping holders for shared memory and file name alias */
@@ -176,7 +176,7 @@ void CalcNextActionTime(Time *t)
 {
 	t->seconds = data->sysTime.seconds; //save current system time
 	t->ns = data->sysTime.ns;
-	long mstoadd = (rand() % 251) * 1000000; //add time to it as offset 
+	long mstoadd = (rand() % 251) * 1000000; //add time to it as offset
 	AddTimeLong(t, mstoadd);
 }
 
@@ -203,12 +203,12 @@ int main(int argc, int argv)
 
 	Time nextActionTime = {0, 0}; //time we should ask for next resources. 0 initially to get the ball rolling.
 
-	srand(pid); //ensure randomness by bitshifting and ORing the time based on the pid
+	srand(pid);			 //ensure randomness by bitshifting and ORing the time based on the pid
 	int resToReleasePos; //will keep track of resource release position in the future
 
 	while (1)
 	{
-		strcpy(data->proc[FindPID(pid)].status, "ST NEW LOOP"); //from now on, when you see these, these keep track of program state
+		strcpy(data->proc[FindPID(pid)].status, "ST NEW LOOP");	//from now on, when you see these, these keep track of program state
 		if (CompareTime(&(data->sysTime), &(nextActionTime)) == 1) //if it is time to rumble
 		{
 			strcpy(data->proc[FindPID(pid)].status, "EN TIME START");
@@ -244,7 +244,7 @@ int main(int argc, int argv)
 				msgsnd(toMasterQueue, &msgbuf, sizeof(msgbuf), 0);
 
 				//a bit of complicated calculation math here. The max number we should request is the system available - what we curently have allocated + 1 since a modulo 3 for example only produces 0 1 2, we and 1 2 3 instead.
-				
+
 				int resCount = abs((rand() % ((data->resVec[resToRequest] - (data->alloc[resToRequest][FindPID(pid)]) + 1))));
 
 				sprintf(convert, "%i", resCount); //converstion magic

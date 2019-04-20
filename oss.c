@@ -21,28 +21,28 @@
 *	Purpose: Launch user processes, allocate resourced or deny them depending on a shared memory table
 */
 
-int ipcid;           //inter proccess shared memory
-Shared *data;	     //shared memory data
-int toChildQueue;    //queue for communicating to child from master
+int ipcid;			 //inter proccess shared memory
+Shared *data;		 //shared memory data
+int toChildQueue;	//queue for communicating to child from master
 int toMasterQueue;   //queue for communicating from child to master
-char *filen;	     //name of this executable
+char *filen;		 //name of this executable
 int childCount = 19; //Max children concurrent
 
-FILE *o;             //output log file pointer
+FILE *o; //output log file pointer
 
-#define MAX_LINES 20000            //Max lines to be allowed in log file, multiply this by 5 to get real count
+#define MAX_LINES 20000			   //Max lines to be allowed in log file, multiply this by 5 to get real count
 const int CLOCK_ADD_INC = 5000000; //How much to increment the clock by per tick
-int NUM_SHARED = -1; 		   //number of shared resources, set at runtime
-int VERBOSE_LEVEL = 0; 		   //verbose level, 1 = verbose, 0 is non verbose
-long lineCount = 0; 		   //keeps track of # of lines written to file
+int NUM_SHARED = -1;			   //number of shared resources, set at runtime
+int VERBOSE_LEVEL = 0;			   //verbose level, 1 = verbose, 0 is non verbose
+long lineCount = 0;				   //keeps track of # of lines written to file
 
 /* Statistics */
-int deadlockCount = 0; 		   //keeps track of how many deadlocks happened
-int deadlockProcs = 0; 		   //keepstrack of how many procs were kille b/c of deadlock
+int deadlockCount = 0; //keeps track of how many deadlocks happened
+int deadlockProcs = 0; //keepstrack of how many procs were kille b/c of deadlock
 
-int pidreleases = 0; 		   //how many resouces released
-int pidallocs = 0; 		   //how many resources alloced
-int pidprocterms = 0; 		   //how many procceses terminated
+int pidreleases = 0;  //how many resouces released
+int pidallocs = 0;	//how many resources alloced
+int pidprocterms = 0; //how many procceses terminated
 
 /* Create prototypes for used functions*/
 void Handler(int signal);
@@ -126,7 +126,7 @@ void Handler(int signal)
 	}
 
 	/* Display program statistics to the screen */
-	double ratio = ((double)deadlockProcs)/((double)pidprocterms);
+	double ratio = ((double)deadlockProcs) / ((double)pidprocterms);
 
 	printf("\n\n*** Statistics ***\n\n\
 	Resource Allocs: %i\n\
@@ -134,16 +134,16 @@ void Handler(int signal)
 	Process Terminations: %d\n\
 	Process Deadlock Proc Kills %d\n\
 	Process Deadlock Count: %i\n\
-	Process Deadlock to Normal Death Ratio: %f\n\n", pidallocs, pidreleases, pidprocterms, deadlockProcs, deadlockCount, ratio);
-
+	Process Deadlock to Normal Death Ratio: %f\n\n",
+		   pidallocs, pidreleases, pidprocterms, deadlockProcs, deadlockCount, ratio);
 
 	for (i = 0; i < childCount; i++) //loop thorough the proccess table and issue a termination signal to all unkilled proccess/children
 		if (data->proc[i].pid != -1)
 			kill(data->proc[i].pid, SIGTERM);
 
-	fflush(o);	     		      //flush out the output file
-	fclose(o);			      //close output file
-	shmctl(ipcid, IPC_RMID, NULL);	      //free shared mem
+	fflush(o);							  //flush out the output file
+	fclose(o);							  //close output file
+	shmctl(ipcid, IPC_RMID, NULL);		  //free shared mem
 	msgctl(toChildQueue, IPC_RMID, NULL); //free queues
 	msgctl(toMasterQueue, IPC_RMID, NULL);
 
@@ -249,7 +249,7 @@ void GenerateResources()
 		data->resVec[i] = (rand() % 10) + 1;
 		data->allocVec[i] = data->resVec[i];
 	}
-	
+
 	NUM_SHARED = (rand() % 4) + 2; //Generate random size of shared resources -- sometimes sticks to 5 no matter what /shrug
 
 	for (i = 0; i < NUM_SHARED; i++)
@@ -396,9 +396,9 @@ void DeleteProc(int procrow, struct Queue *queue)
 	{
 		if (CheckForExistence(&(data->sharedRes), NUM_SHARED, i) == -1) //if not shared, add resource to alloc vector
 			data->allocVec[i] += data->alloc[i][procrow];
-		if(data->alloc[i][procrow] > 0)
+		if (data->alloc[i][procrow] > 0)
 			pidreleases++;
-	
+
 		data->alloc[i][procrow] = 0;
 		data->req[i][procrow] = 0;
 	}
@@ -471,7 +471,7 @@ void DeadLockDetector(int *procFlags)
 			if ((procFlags[i] == 1) || (data->proc[i].pid < 0))
 				continue; //proccess has already been marked as ending, no reason to check it again.
 
-			isEnding = 1; //assume the process will end until otherwise detected
+			isEnding = 1;			 //assume the process will end until otherwise detected
 			for (j = 0; j < 20; j++) //for each resource j in process i
 			{
 				if ((data->req[j][i]) > 0 && (tempVec[j] - data->req[j][i]) < 0) //if we are requesting more resources than will be available even after some processes finish
@@ -517,7 +517,7 @@ void DoSharedWork()
 	Time deadlockExec = {0, 0};
 	/* Create queues */
 	struct Queue *resQueue = createQueue(childCount); //Queue of real PIDS
-	
+
 	while (1)
 	{
 		AddTime(&(data->sysTime), CLOCK_ADD_INC); //increment clock between tasks to advance the clock a little
@@ -566,7 +566,7 @@ void DoSharedWork()
 		{
 			if (strcmp(msgbuf.mtext, "REQ") == 0) //If message recieved was a request for resource
 			{
-				int reqpid = msgbuf.mtype; //save its mtype which is the pid of process
+				int reqpid = msgbuf.mtype;			 //save its mtype which is the pid of process
 				int procpos = FindPID(msgbuf.mtype); //find its position in proc table
 				int resID = 0;
 				int count = 0;
@@ -592,7 +592,7 @@ void DoSharedWork()
 				}
 				else
 				{
-					pidallocs++; //increment alloc counter
+					pidallocs++;					   //increment alloc counter
 					strcpy(msgbuf.mtext, "REQ_GRANT"); //send message that resource has been granted to child
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT);
 					if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
@@ -601,11 +601,11 @@ void DoSharedWork()
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0) //if release request
 			{
-				int reqpid = msgbuf.mtype; //save pid of child
+				int reqpid = msgbuf.mtype;			 //save pid of child
 				int procpos = FindPID(msgbuf.mtype); //lookup child in proc table
 				//printf("Waiting on release resource ID");
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0); //wait for child to send releasing resource identifier
-				DellocResource(procpos, atoi(msgbuf.mtext)); //delloc the resource
+				DellocResource(procpos, atoi(msgbuf.mtext));			   //delloc the resource
 				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}
@@ -629,7 +629,7 @@ void DoSharedWork()
 				requestCounter = 0;
 			}
 		}
-	
+
 		if ((pid = waitpid((pid_t)-1, &status, WNOHANG)) > 0) //if a PID is returned meaning the child died
 		{
 			if (WIFEXITED(status))
@@ -641,7 +641,7 @@ void DoSharedWork()
 
 					int position = FindPID(pid);
 
-					if (position > -1) //if we could find the child in the proccess table, set it to unset 
+					if (position > -1) //if we could find the child in the proccess table, set it to unset
 						data->proc[position].pid = -1;
 				}
 			}
@@ -661,7 +661,7 @@ void DoSharedWork()
 			int terminated;
 			do
 			{
-				terminated = 0; //as long as we terminate a proccess...
+				terminated = 0;								 //as long as we terminate a proccess...
 				procFlags = calloc(childCount, sizeof(int)); //create a new proc flag vector
 
 				DeadLockDetector(procFlags); //run detection algorithm which returns a array of 0's and 1's based on process positions in the table
@@ -688,12 +688,12 @@ void DoSharedWork()
 								fprintf(o, "]\n");
 							}
 						}
-						
-						terminated = 1; //we are terminating a process this run
+
+						terminated = 1;					  //we are terminating a process this run
 						msgbuf.mtype = data->proc[i].pid; //send link to gannon's lair with light
 						strcpy(msgbuf.mtext, "DIE");
 						msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send signal
-						DeleteProc(i, resQueue); //remove the process from the table
+						DeleteProc(i, resQueue);								   //remove the process from the table
 						pidprocterms++;
 						deadlockProcs++;
 						if (lineCount++ < MAX_LINES)
@@ -701,16 +701,16 @@ void DoSharedWork()
 						break;
 					}
 				}
-				free(procFlags); //remove the current flag array and create a new one next time
+				free(procFlags);	   //remove the current flag array and create a new one next time
 			} while (terminated == 1); //while we are still removing items
-			//The flow is: remove item, check if deadlock still exists, remove the next item, starting the lowest index.
+									   //The flow is: remove item, check if deadlock still exists, remove the next item, starting the lowest index.
 		}
 
 		/* Check the queues if anything can be reenstated now with requested resources... */
-		for (iterator = 0; iterator < getSize(resQueue); iterator++) 
+		for (iterator = 0; iterator < getSize(resQueue); iterator++)
 		{
-			int cpid = dequeue(resQueue); //get realpid from the queue
-			int procpos = FindPID(cpid); //try to find the process in the table
+			int cpid = dequeue(resQueue);				//get realpid from the queue
+			int procpos = FindPID(cpid);				//try to find the process in the table
 			int resID = FindAllocationRequest(procpos); //get the requested resource
 
 			if (procpos < 0) //if our proccess is no longer in the table, then just skip it and remove it from the queue
@@ -787,7 +787,7 @@ void QueueAttatch()
 int main(int argc, int **argv)
 {
 	//alias for file name
-	filen = argv[0]; //shorthand for filename
+	filen = argv[0];					  //shorthand for filename
 	srand(time(NULL) ^ (getpid() << 16)); //set random seed, doesn't really seem all that random tho...
 
 	if (SetupInterrupt() == -1) //Handler for SIGPROF failed
