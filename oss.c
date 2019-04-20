@@ -32,6 +32,7 @@ FILE *o; //output log file pointer
 
 const int CLOCK_ADD_INC = 5000000;
 int VERBOSE_LEVEL = 0;
+int lineCount = 0;
 
 int deadlockCount = 0;
 int deadlockProcs = 0;
@@ -513,8 +514,8 @@ void DoSharedWork()
 			{
 				/* Initialize the proccess table */
 				data->proc[pos].pid = pid; //we stored the pid from fork call and now assign it to PID
-
-				fprintf(o, "%s: [PROC CREATE] pid: %i\n\n", filen, pid);
+				if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+					fprintf(o, "%s: [%i:%i] [PROC CREATE] pid: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, pid);
 				activeProcs++; //increment active execs
 			}
 			else
@@ -540,20 +541,24 @@ void DoSharedWork()
 
 				//printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
 
-				fprintf(o, "%s: [%i:%i] [REQUEST] pid: %i proc: %i resID: %i\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, procpos, resID);
+				if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+					fprintf(o, "%s: [%i:%i] [REQUEST] pid: %i proc: %i resID: %i\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, procpos, resID);
 
 				if (AllocResource(procpos, resID) == -1)
 				{
 					//printf("Alloc failed");
 					enqueue(resQueue, reqpid);
-					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request unfulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
+
+					if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+						fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request unfulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
 				else
 				{
 					//printf("Alloc succ");
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-					fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request fulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
+					if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+						fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request fulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
 			}
 			else if (strcmp(msgbuf.mtext, "REL") == 0)
@@ -563,16 +568,19 @@ void DoSharedWork()
 				//printf("Waiting on release resource ID");
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
-				fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
+				if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+					fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
 
 				if (procpos > -1)
+				{
 					DeleteProc(procpos, resQueue);
-
-				fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
+					if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+						fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
+				}
 			}
 
 			if ((requestCounter++) == 19)
@@ -631,21 +639,25 @@ void DoSharedWork()
 						if (deadlockDisplayed == 0)
 						{
 							deadlockDisplayed = 1;
-							fprintf(o, "********** DEADLOCK DETECTED **********");
-							DisplayResources();
-							int j;
-							fprintf(o, "Deadlocked Procs are as follows:\n [ ");
-							for(j = 0; j < 20; j++)
-								if(procFlags[j] == 0)
-									fprintf(o, "%i ", j);
-							fprintf(o, "]");
+							if (lineCount++ < 100000)
+							{
+								fprintf(o, "********** DEADLOCK DETECTED **********");
+								DisplayResources();
+								int j;
+								fprintf(o, "Deadlocked Procs are as follows:\n [ ");
+								for (j = 0; j < 20; j++)
+									if (procFlags[j] == 0)
+										fprintf(o, "%i ", j);
+								fprintf(o, "]\n");
+							}
 						}
 						terminated = 1;
 						msgbuf.mtype = data->proc[i].pid;
 						strcpy(msgbuf.mtext, "DIE");
 						msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 						DeleteProc(i, resQueue);
-						fprintf(o, "%s: [%i:%i] [KILL SENT] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
+						if (lineCount++ < 100000)
+							fprintf(o, "%s: [%i:%i] [KILL SENT] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
 						break;
 					}
 				}
@@ -748,6 +760,7 @@ void DoSharedWork()
 			}
 			else if (AllocResource(procpos, resID) == 1)
 			{
+				if(VERBOSE_LEVEL == 1 && lineCount++ < 100000)
 				fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				strcpy(msgbuf.mtext, "REQ_GRANT");
 				msgbuf.mtype = cpid;
