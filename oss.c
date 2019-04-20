@@ -809,7 +809,7 @@ int main(int argc, int **argv)
 		case 'h': //show help menu
 			printf("\t%s Help Menu\n\
 		\t-h : show help dialog \n\
-		\t-v : enable verbose mode \n\
+		\t-v : enable verbose mode. Default: off \n\
 		\t-n [count] : max proccesses at the same time. Default: 19\n\n",
 				   filen);
 			return;
