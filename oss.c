@@ -30,6 +30,7 @@ int childCount = 19; //Max children concurrent
 
 FILE *o; //output log file pointer
 
+#define MAX_LINES 100
 const int CLOCK_ADD_INC = 5000000;
 int VERBOSE_LEVEL = 0;
 long lineCount = 0;
@@ -105,7 +106,7 @@ void Handler(int signal)
 
 	int i;
 
-	if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+	if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 		DisplayResources();
 
 	if (VERBOSE_LEVEL == 1)
@@ -242,7 +243,7 @@ void GenerateResources()
 			}
 		}
 	}
-	if(VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+	if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 		DisplayResources();
 }
 
@@ -518,7 +519,7 @@ void DoSharedWork()
 			{
 				/* Initialize the proccess table */
 				data->proc[pos].pid = pid; //we stored the pid from fork call and now assign it to PID
-				if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					fprintf(o, "%s: [%i:%i] [PROC CREATE] pid: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, pid);
 				activeProcs++; //increment active execs
 			}
@@ -545,7 +546,7 @@ void DoSharedWork()
 
 				//printf("Request for resource ID: %i from proc pos %i with count %i\n", resID, procpos, count);
 
-				if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					fprintf(o, "%s: [%i:%i] [REQUEST] pid: %i proc: %i resID: %i\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, procpos, resID);
 
 				if (AllocResource(procpos, resID) == -1)
@@ -553,7 +554,7 @@ void DoSharedWork()
 					//printf("Alloc failed");
 					enqueue(resQueue, reqpid);
 
-					if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+					if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 						fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request unfulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
 				else
@@ -561,7 +562,7 @@ void DoSharedWork()
 					//printf("Alloc succ");
 					strcpy(msgbuf.mtext, "REQ_GRANT");
 					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-					if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+					if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 						fprintf(o, "\t-> [%i:%i] [REQUEST] pid: %i request fulfilled...\n\n", data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				}
 			}
@@ -572,7 +573,7 @@ void DoSharedWork()
 				//printf("Waiting on release resource ID");
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
-				if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
 			}
 			else if (strcmp(msgbuf.mtext, "TER") == 0)
@@ -582,14 +583,14 @@ void DoSharedWork()
 				if (procpos > -1)
 				{
 					DeleteProc(procpos, resQueue);
-					if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+					if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 						fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
 				}
 			}
 
 			if ((requestCounter++) == 19)
 			{
-				if(VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					DisplayResources();
 				requestCounter = 0;
 			}
@@ -644,7 +645,7 @@ void DoSharedWork()
 						if (deadlockDisplayed == 0)
 						{
 							deadlockDisplayed = 1;
-							if (lineCount++ < 100000)
+							if (lineCount++ < MAX_LINES)
 							{
 								fprintf(o, "********** DEADLOCK DETECTED **********");
 								DisplayResources();
@@ -661,7 +662,7 @@ void DoSharedWork()
 						strcpy(msgbuf.mtext, "DIE");
 						msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
 						DeleteProc(i, resQueue);
-						if (lineCount++ < 100000)
+						if (lineCount++ < MAX_LINES)
 							fprintf(o, "%s: [%i:%i] [KILL SENT] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
 						break;
 					}
@@ -765,7 +766,7 @@ void DoSharedWork()
 			}
 			else if (AllocResource(procpos, resID) == 1)
 			{
-				if (VERBOSE_LEVEL == 1 && lineCount++ < 100000)
+				if (VERBOSE_LEVEL == 1 && lineCount++ < MAX_LINES)
 					fprintf(o, "%s: [%i:%i] [REQUEST] [QUEUE] pid: %i request fulfilled...\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype);
 				strcpy(msgbuf.mtext, "REQ_GRANT");
 				msgbuf.mtype = cpid;
