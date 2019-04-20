@@ -17,6 +17,13 @@ In the case that a child cannot get a resouce, it enters a resource queue which 
 
 In the case that a deadlock occours, the deadlocking algorithm takes center stage and checks for obvious deadlocks at first, then attempts to free up the deadlock by killing the proccess which is located closer to the 0th position of the process table, then checking if that resolved the issue. It continues doing this until no further deadlocks exist.
 
+WARNINGS:
+
+Sometimes the random number generator...isn't quite random. Keep an eye out for that
+
+!!! Important !!!
+
+When you launch oss, it may take longer than 2 seconds. This is is because of I/O. Give it about 15 seconds you will get a termination prompt.
 ## How to Run
 ```
 $ make
