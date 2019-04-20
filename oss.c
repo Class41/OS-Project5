@@ -36,7 +36,6 @@ int VERBOSE_LEVEL = 0;
 int deadlockCount = 0;
 int deadlockProcs = 0;
 
-
 /* Create prototypes for used functions*/
 void Handler(int signal);
 void DoFork(int value);
@@ -352,10 +351,10 @@ int AllocResource(int procRow, int resID)
 	return 1;
 }
 
-void DeleteProc(int procrow, struct Queue* queue)
+void DeleteProc(int procrow, struct Queue *queue)
 {
 	int i;
-	for(i = 0; i < 20; i++)
+	for (i = 0; i < 20; i++)
 	{
 		if (CheckForExistence(&(data->sharedRes), 5, i) == -1)
 			data->allocVec[i] += data->alloc[i][procrow];
@@ -363,13 +362,13 @@ void DeleteProc(int procrow, struct Queue* queue)
 		data->req[i][procrow] = 0;
 	}
 
-//	printf("%i", getSize(queue));
+	//	printf("%i", getSize(queue));
 	int temp;
-	for(i = 0; i < getSize(queue); i++)
+	for (i = 0; i < getSize(queue); i++)
 	{
 		temp = dequeue(queue);
 
-		if(temp == data->proc[procrow].pid || temp == -1)
+		if (temp == data->proc[procrow].pid || temp == -1)
 			continue;
 		else
 			enqueue(queue, temp);
@@ -412,45 +411,44 @@ int CompareArrayAgainstReq(int *array1, int procpos)
 
 void DeadLockDetector(int *procFlags)
 {
-			int *tempVec = calloc(20, sizeof(int));
-			int i, j;
-			int isEnding = 0;
+	int *tempVec = calloc(20, sizeof(int));
+	int i, j;
+	int isEnding = 0;
 
-			for (i = 0; i < 20; i++)
-				tempVec[i] = data->allocVec[i];
+	for (i = 0; i < 20; i++)
+		tempVec[i] = data->allocVec[i];
 
-			int updated;
-			do
+	int updated;
+	do
+	{
+		updated = 0;
+		for (i = 0; i < 19; i++)
+		{
+			if ((procFlags[i] == 1) || (data->proc[i].pid < 0))
+				continue;
+
+			isEnding = 1;
+			for (j = 0; j < 20; j++)
 			{
-				updated = 0;
-				for (i = 0; i < 19; i++)
+				if ((tempVec[j] - data->req[j][i]) < 0)
 				{
-					if ((procFlags[i] == 1) || (data->proc[i].pid < 0))
-						continue;
-
-					isEnding = 1;
-					for (j = 0; j < 20; j++)
-					{
-						if ((tempVec[j] - data->req[j][i]) < 0)
-						{
-							isEnding = 0;
-						}
-					}
-
-					procFlags[i] = isEnding;
-
-					if (isEnding == 1)
-					{
-						updated = 1;
-
-						for (j = 0; j < 20; j++)
-							tempVec[j] += data->alloc[j][i];
-					}
+					isEnding = 0;
 				}
-			} while (updated == 1);
+			}
 
-			free(tempVec);
-	
+			procFlags[i] = isEnding;
+
+			if (isEnding == 1)
+			{
+				updated = 1;
+
+				for (j = 0; j < 20; j++)
+					tempVec[j] += data->alloc[j][i];
+			}
+		}
+	} while (updated == 1);
+
+	free(tempVec);
 }
 
 /* The biggest and fattest function west of the missisipi */
@@ -524,7 +522,7 @@ void DoSharedWork()
 				kill(pid, SIGTERM); //if child failed to find a proccess block, just kill it off
 			}
 		}
-//printf("did proc create");
+		//printf("did proc create");
 		if ((msgsize = msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), 0, IPC_NOWAIT)) > -1) //blocking wait while waiting for child to respond
 		{
 			if (strcmp(msgbuf.mtext, "REQ") == 0)
@@ -562,7 +560,7 @@ void DoSharedWork()
 			{
 				int reqpid = msgbuf.mtype;
 				int procpos = FindPID(msgbuf.mtype);
-//printf("Waiting on release resource ID");
+				//printf("Waiting on release resource ID");
 				msgrcv(toMasterQueue, &msgbuf, sizeof(msgbuf), reqpid, 0);
 				DellocResource(procpos, atoi(msgbuf.mtext));
 				fprintf(o, "%s: [%i:%i] [RELEASE] pid: %i proc: %i  resID: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype), atoi(msgbuf.mtext));
@@ -570,8 +568,8 @@ void DoSharedWork()
 			else if (strcmp(msgbuf.mtext, "TER") == 0)
 			{
 				int procpos = FindPID(msgbuf.mtype);
-				
-				if(procpos > -1)
+
+				if (procpos > -1)
 					DeleteProc(procpos, resQueue);
 
 				fprintf(o, "%s: [%i:%i] [TERMINATE] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, msgbuf.mtype, FindPID(msgbuf.mtype));
@@ -583,14 +581,14 @@ void DoSharedWork()
 				requestCounter = 0;
 			}
 		}
-//printf("\nGot to kill block");
+		//printf("\nGot to kill block");
 		if ((pid = waitpid((pid_t)-1, &status, WNOHANG)) > 0) //if a PID is returned meaning the child died
 		{
 			if (WIFEXITED(status))
 			{
 				if (WEXITSTATUS(status) == 21) //21 is my custom return val
 				{
-			//		printf("Child dies");
+					//		printf("Child dies");
 					exitCount++;
 					activeProcs--;
 
@@ -611,40 +609,41 @@ void DoSharedWork()
 			deadlockExec.ns = data->sysTime.ns;
 
 			AddTimeLong(&deadlockExec, abs((long)(rand() % 1000) * (long)1000000)); //set new exec time to 0 - 500ms after now
-			
+
 			int *procFlags;
 			int i;
-		
+
 			int deadlockDisplayed = 0;
-			int terminated;	
-			do {
-			terminated = 0;
-			procFlags = calloc(19, sizeof(int));
-
-			DeadLockDetector(procFlags);
-	
-			for (i = 0; i < 19; i++)
+			int terminated;
+			do
 			{
+				terminated = 0;
+				procFlags = calloc(19, sizeof(int));
 
-				if (procFlags[i] == 0 && data->proc[i].pid > 0)
+				DeadLockDetector(procFlags);
+
+				for (i = 0; i < 19; i++)
 				{
 
-				if (deadlockDisplayed == 0)
-				{
-					deadlockDisplayed = 1;
-					fprintf(o, "********** DEADLOCK DETECTED **********");
-					DisplayResources();
-				}
-					terminated = 1;
-					msgbuf.mtype = data->proc[i].pid;
-					strcpy(msgbuf.mtext, "DIE");
-					msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+					if (procFlags[i] == 0 && data->proc[i].pid > 0)
+					{
 
-					fprintf(o, "%s: [%i:%i] [TERMINATE] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
+						if (deadlockDisplayed == 0)
+						{
+							deadlockDisplayed = 1;
+							fprintf(o, "********** DEADLOCK DETECTED **********");
+							DisplayResources();
+						}
+						terminated = 1;
+						msgbuf.mtype = data->proc[i].pid;
+						strcpy(msgbuf.mtext, "DIE");
+						msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
+						DeleteProc(i);
+						fprintf(o, "%s: [%i:%i] [KILL SENT] [DEADLOCK BUSTER PRO V1337.420.360noscope edition] pid: %i proc: %i\n\n", filen, data->sysTime.seconds, data->sysTime.ns, data->proc[i].pid, i);
+					}
 				}
-			}
-			free(procFlags);
-			}while(terminated == 1);
+				free(procFlags);
+			} while (terminated == 1);
 		}
 
 		/*		int CompareArrayAgainstReq(int *array1, int procpos)
@@ -729,7 +728,7 @@ void DoSharedWork()
 			free(procFlags);
 			free(tempVec);
 		}*/
-//printf("Got to queue block");
+		//printf("Got to queue block");
 		for (iterator = 0; iterator < getSize(resQueue); iterator++)
 		{
 			int cpid = dequeue(resQueue);
@@ -747,7 +746,7 @@ void DoSharedWork()
 				msgbuf.mtype = cpid;
 				//printf("Sending queue nowait");
 				msgsnd(toChildQueue, &msgbuf, sizeof(msgbuf), IPC_NOWAIT); //send parent termination signal
-				//printf("GRANTED %i\n", resID);
+																		   //printf("GRANTED %i\n", resID);
 			}
 			else
 			{

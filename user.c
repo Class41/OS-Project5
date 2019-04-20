@@ -273,7 +273,6 @@ int main(int argc, int argv)
 				strcpy(data->proc[FindPID(pid)].status, "GOT REQ GRANT");
 
 				CalcNextActionTime(&nextActionTime);
-
 			}
 			else if (resToReleasePos >= 0)
 			{
