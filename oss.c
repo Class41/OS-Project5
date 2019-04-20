@@ -637,7 +637,7 @@ void DoSharedWork()
 							fprintf(o, "Deadlocked Procs are as follows:\n [ ");
 							for(j = 0; j < 20; j++)
 								if(procFlags[j] == 0)
-									fprintf(o, "%i ");
+									fprintf(o, "%i ", j);
 							fprintf(o, "]");
 						}
 						terminated = 1;
